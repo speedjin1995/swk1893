@@ -32,7 +32,7 @@ else{
         <meta name="description" content="Site Description Here">
         <link rel="shortcut icon" href="assets/images/favicon.png">
         
-        <title>Contact Us | Lovely Corporate Responsive HTML Theme</title>
+        <title>SWK | Sandalwood Tea<</title>
         
         <link href="assets/css/uikit.min.css" rel="stylesheet" type="text/css" media="all" />
         <link href="assets/css/uikit-width-ex.min.css" rel="stylesheet" type="text/css" media="all" />
