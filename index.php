@@ -1,4 +1,30 @@
 <!DOCTYPE html>
+<?php
+require_once 'php/db_connect.php';
+
+session_start();
+
+if(!isset($_SESSION['languageArray'])){
+    $message_resource = $db->query("SELECT * FROM message_resource");
+    $languageArray = Array();
+    
+    while($row=mysqli_fetch_assoc($message_resource)){
+        $languageArray[$row['message_key_code']] = array("en"=>$row['en'],"ch"=>$row['ch']);
+    }
+    
+    $_SESSION['languageArray'] = $languageArray;
+}
+else{
+    $languageArray = $_SESSION['languageArray'];
+}
+
+if(!isset($_SESSION['language'])){
+    $language = "ch";
+}
+else{
+    $language = $_SESSION['language'];
+}
+?>
 <html lang="en">
     <head>
         <meta charset="UTF-8"/>
@@ -30,25 +56,25 @@
         <div class="uk-navbar-center">
             <ul class="tw-main-menu uk-visible@m">
                 <li class="menu-item">
-                    <a href="aboutus.html">About Company</a>
+                    <a href="aboutus.html"><?=$languageArray['nav_about_us'][$language] ?></a>
                 </li>
                 <li class="menu-item">
-                    <a href="sandalwood.html">Sandalwood History</a>
+                    <a href="sandalwood.html"><?=$languageArray['nav_history'][$language] ?></a>
                 </li>
                 <li class="menu-item">
-                    <a href="product.html">Product Info</a>
+                    <a href="product.html"><?=$languageArray['nav_product_info'][$language] ?></a>
                 </li>
                 <li class="menu-item">
-                    <a href="testimony.html">Testimony</a>
+                    <a href="testimony.html"><?=$languageArray['nav_testimony'][$language] ?></a>
                 </li>
                 <li class="menu-item">
-                    <a href="gallery.html">Gallery</a>
+                    <a href="gallery.html"><?=$languageArray['nav_gallery'][$language] ?></a>
                 </li>
                 <li class="menu-item">
-                    <a href="contactus.html">Contact Us</a>
+                    <a href="contactus.html"><?=$languageArray['nav_contact_us'][$language] ?></a>
                 </li>
                 <li class="menu-item menu-item-has-children">
-                    <a href="#">Language</a>
+                    <a href="#"><?=$languageArray['nav_language'][$language] ?></a>
                     <ul class="sub-menu uk-animation-fade">
                         <li><a href="#">English</a></li>
                         <li><a href="#">中文</a></li>
@@ -73,25 +99,25 @@
                 <div class="uk-light uk-height-viewport tw-mobile-modal uk-flex uk-flex-middle uk-flex-center" data-uk-scrollspy="target:>ul>li,>div>a; cls:uk-animation-slide-bottom-medium; delay: 150;">
                     <ul class="uk-nav-default uk-nav-parent-icon" data-uk-nav>
                         <li class="uk-parent">
-                            <a href="aboutus.html">About Company</a>
+                            <a href="aboutus.html"><?=$languageArray['nav_about_us'][$language] ?></a>
                         </li>
                         <li class="uk-parent">
-                            <a href="sandalwood.html">Sandalwood History</a>
+                            <a href="sandalwood.html"><?=$languageArray['nav_history'][$language] ?></a>
                         </li>
                         <li class="uk-parent">
-                            <a href="product.html">Product Info</a>
+                            <a href="product.html"><?=$languageArray['nav_product_info'][$language] ?></a>
                         </li>
                         <li class="uk-parent">
-                            <a href="testimony.html">Testimony</a>
+                            <a href="testimony.html"><?=$languageArray['nav_testimony'][$language] ?></a>
                         </li>
                         <li class="uk-parent">
-                            <a href="gallery.html">Gallery</a>
+                            <a href="gallery.html"><?=$languageArray['nav_gallery'][$language] ?></a>
                         </li>
                         <li class="uk-parent">
-                            <a href="contactus.html">Contact Us</a>
+                            <a href="contactus.html"><?=$languageArray['nav_contact_us'][$language] ?>/a>
                         </li>
                         <li class="uk-parent">
-                            <a href="#">Language</a>
+                            <a href="#"><?=$languageArray['nav_language'][$language] ?></a>
                             <ul class="uk-nav-sub">
                                 <li><a href="#">English</a></li>
                                 <li><a href="#">中文</a></li>
@@ -417,112 +443,109 @@
                             <div class="client-item">
                                 <a href="#" class="uk-padding-small" title="Hookmiller" data-uk-tooltip="animation: uk-animation-slide-top"><img src="assets/demo/partner/partner-6.png" alt="" /></a>
                             </div>
-
-            </div>
-        </div>
-
-    </div>
-</section><footer class="uk-section uk-padding-remove-vertical uk-light" style="background-color: #222222;">
-        
-    <div class="bottom-area">
-        <div class="uk-container">
-            <div class="uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-4@m uk-grid-medium" data-uk-grid data-uk-scrollspy="target: > div; cls:uk-animation-fade; delay: 200;">
-                <div>
-                    <div class="widget">
-                        <div class="tw-logo">
-                            <h3 class="site-name">
-                                <a href="#"><img src="assets/demo/logo.png"></a>
-                            </h3>
-                        </div>
-                        <p>
-                            Duis sed odio sit amet nibh vulputate cursus sit amet mauris morbi accumsan ipsum velit nam nec tellus tincidunt auctor ornare odio sed non consequat auctor.
-                        </p>
-                        <div class="tw-socials">
-                            <a href="#"><i class="ion-social-facebook"></i></a>
-                            <a href="#"><i class="ion-social-instagram"></i></a>
-                            <a href="#"><i class="ion-social-pinterest"></i></a>
-                            <a href="#"><i class="ion-social-twitter"></i></a>
-                            <a href="#"><i class="ion-social-youtube"></i></a>
-                            <a href="#"><i class="ion-social-rss"></i></a>
                         </div>
                     </div>
                 </div>
+            </section>
+            <footer class="uk-section uk-padding-remove-vertical uk-light" style="background-color: #222222;">
+                <div class="bottom-area">
+                    <div class="uk-container">
+                        <div class="uk-child-width-1-1 uk-child-width-1-2@s uk-child-width-1-4@m uk-grid-medium" data-uk-grid data-uk-scrollspy="target: > div; cls:uk-animation-fade; delay: 200;">
+                            <div>
+                                <div class="widget">
+                                    <div class="tw-logo">
+                                        <h3 class="site-name">
+                                            <a href="#"><img src="assets/demo/logo.png"></a>
+                                        </h3>
+                                    </div>
+                                    <p><?=$languageArray['footer_description'][$language] ?></p>
+                                    <!--<div class="tw-socials">
+                                        <a href="#"><i class="ion-social-facebook"></i></a>
+                                        <a href="#"><i class="ion-social-instagram"></i></a>
+                                        <a href="#"><i class="ion-social-pinterest"></i></a>
+                                        <a href="#"><i class="ion-social-twitter"></i></a>
+                                        <a href="#"><i class="ion-social-youtube"></i></a>
+                                        <a href="#"><i class="ion-social-rss"></i></a>
+                                    </div>-->
+                                </div>
+                            </div>
 
-                <div>
-                    &nbsp;
+                            <div>&nbsp;</div>
+
+                            <div class="widget">
+                                <div class="uk-padding-left">
+                                    <h3 class="widget-title"><span><?=$languageArray['footer_useful_link'][$language] ?></span></h3>
+                                    <ul>
+                                        <li>
+                                            <a href="#"><?=$languageArray['footer_about_us'][$language] ?></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><?=$languageArray['footer_history'][$language] ?></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><?=$languageArray['footer_product_info'][$language] ?></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><?=$languageArray['footer_testimony'][$language] ?></a>
+                                        </li>
+                                        <!--li>
+                                            <a href="#">Privacy Policy</a>
+                                        </li-->
+                                        <li>
+                                            <a href="#"><?=$languageArray['footer_gallery'][$language] ?></a>
+                                        </li>
+                                        <li>
+                                            <a href="#"><?=$languageArray['footer_contact_us'][$language] ?></a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            
+                            <div>
+                                <div class="widget tw-contact-widget">
+                                    <h3 class="widget-title"><span><?=$languageArray['footer_contact_info'][$language] ?></span></h3>
+                                    <ul>
+                                        <li>
+                                            <i class="ion-ios-location"></i>
+                                            <a href="#">72-1-20, Jalan Mahsuri, Bandar Sunway Tunas, 11900 Bayan Lepas, Pulau Pinang</a>
+                                        </li>
+                                        <li>
+                                            <i class="ion-android-call"></i>
+                                            <a href="#">(604) 5368 942</a>
+                                        </li>
+                                        <li>
+                                            <i class="ion-android-mail"></i>
+                                            <a href="#">swk@gmail.com</a>
+                                        </li>
+                                        <li>
+                                            <i class="ion-ios-world-outline"></i>
+                                            <a href="#">www.swk1893.com</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>      
                 </div>
-
-                <div class="widget">
-                    <div class="uk-padding-left">
-                        <h3 class="widget-title"><span>Useful Links</span></h3>
-                        <ul>
-                            <li>
-                                <a href="#">About us</a>
-                            </li>
-                            <li>
-                                <a href="#">Services</a>
-                            </li>
-                            <li>
-                                <a href="#">News</a>
-                            </li>
-                            <li>
-                                <a href="#">Testimonails</a>
-                            </li>
-                            <li>
-                                <a href="#">Privacy Policy</a>
-                            </li>
-                            <li>
-                                <a href="#">Contact Us</a>
-                            </li>
-                        </ul>
+                    
+                <div class="footer-area footer-small">
+                    <div class="uk-container">
+                        <div class="uk-flex-middle uk-child-width-1-1 uk-child-width-expand@m" data-uk-grid>
+                            <div class="copyright">
+                                © Copyright 2017 - All Rights Reserved
+                            </div>
+                            <div class="uk-text-right">
+                                <a href="" data-uk-scroll>Back To Top &nbsp;&nbsp;<i class="ion-ios-arrow-up"></i></a>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                
-                <div>
-                    <div class="widget tw-contact-widget">
-                        <h3 class="widget-title"><span>Contact Info</span></h3>
-                        <ul>
-                            <li>
-                                <i class="ion-ios-location"></i>
-                                <a href="#">72-1-20, Jalan Mahsuri, Bandar Sunway Tunas, 11900 Bayan Lepas, Pulau Pinang</a>
-                            </li>
-                            <li>
-                                <i class="ion-android-call"></i>
-                                <a href="#">(604) 5368 942</a>
-                            </li>
-                            <li>
-                                <i class="ion-android-mail"></i>
-                                <a href="#">swk@gmail.com</a>
-                            </li>
-                            <li>
-                                <i class="ion-ios-world-outline"></i>
-                                <a href="#">www.swk1893.com</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-        </div>      
-    </div>
-        
-    <div class="footer-area footer-small">
-        <div class="uk-container">
-            <div class="uk-flex-middle uk-child-width-1-1 uk-child-width-expand@m" data-uk-grid>
-                <div class="copyright">
-                    © Copyright 2017 - All Rights Reserved
-                </div>
-                <div class="uk-text-right">
-                    <a href="" data-uk-scroll>Back To Top &nbsp;&nbsp;<i class="ion-ios-arrow-up"></i></a>
-                </div>
-            </div>
+            </footer>
         </div>
-    </div>
-        
-</footer></div>
-<!-- .main-container close -->        
-	<script src="assets/js/jquery-3.2.0.min.js"></script>
-	<script src="assets/js/jquery.easypiechart.min.js"></script>
+        <!-- .main-container close -->        
+        <script src="assets/js/jquery-3.2.0.min.js"></script>
+        <script src="assets/js/jquery.easypiechart.min.js"></script>
         <script src="assets/js/uikit.min.js"></script>
         <script src="assets/js/uikit-icons.min.js"></script>
         <script src="assets/js/isotope.pkgd.min.js"></script>
