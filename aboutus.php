@@ -324,7 +324,7 @@ else{
                                 © Copyright 2017 - All Rights Reserved
                             </div>
                             <div class="uk-text-right">
-                                <a href="" data-uk-scroll>Back To Top &nbsp;&nbsp;<i class="ion-ios-arrow-up"></i></a>
+                                <a href="" data-uk-scroll><?=$languageArray['footer_back_to_top'][$language] ?> &nbsp;&nbsp;<i class="ion-ios-arrow-up"></i></a>
                             </div>
                         </div>
                     </div>

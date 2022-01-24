@@ -1,4 +1,30 @@
 <!DOCTYPE html>
+<?php
+require_once 'php/db_connect.php';
+
+session_start();
+
+if(!isset($_SESSION['languageArray'])){
+    $message_resource = $db->query("SELECT * FROM message_resource");
+    $languageArray = Array();
+    
+    while($row=mysqli_fetch_assoc($message_resource)){
+        $languageArray[$row['message_key_code']] = array("en"=>$row['en'],"ch"=>$row['ch']);
+    }
+    
+    $_SESSION['languageArray'] = $languageArray;
+}
+else{
+    $languageArray = $_SESSION['languageArray'];
+}
+
+if(!isset($_SESSION['language'])){
+    $language = "ch";
+}
+else{
+    $language = $_SESSION['language'];
+}
+?>
 <html lang="en">
     <head>
         <meta charset="UTF-8"/>
@@ -378,7 +404,7 @@
                                 © Copyright 2017 - All Rights Reserved
                             </div>
                             <div class="uk-text-right">
-                                <a href="" data-uk-scroll>Back To Top &nbsp;&nbsp;<i class="ion-ios-arrow-up"></i></a>
+                                <a href="" data-uk-scroll><?=$languageArray['footer_back_to_top'][$language] ?> &nbsp;&nbsp;<i class="ion-ios-arrow-up"></i></a>
                             </div>
                         </div>
                     </div>
