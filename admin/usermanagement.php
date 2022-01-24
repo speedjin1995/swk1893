@@ -10,14 +10,7 @@ if(!isset($_SESSION['userID'])){
 }
 else{
   $user = $db->query("SELECT * FROM user");
-
-  if($_SESSION['userRole'] == 'PRIADMIN'){
-    $product = $db->query("SELECT * FROM product WHERE user_id = '2'");
-  }
-  else{
-    $product = $db->query("SELECT * FROM product WHERE user_id = '".$_SESSION['userID']."'");
-  }
-  
+  $role = $db->query("SELECT * FROM user_role");
 }
 ?>
 <html lang="en">
@@ -26,7 +19,7 @@ else{
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>SWK | Products</title>
+  <title>SWK | User Management</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -43,22 +36,22 @@ else{
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   
   <style type="text/css">
-    #image-preview {
-      width: 400px;
+    #background-image-preview {
+      width: 700px;
       height: 400px;
       position: relative;
       overflow: hidden;
       background-color: #ffffff;
       color: #ecf0f1;
     }
-    #image-preview input {
+    #background-image-preview input {
       line-height: 200px;
       font-size: 200px;
       position: absolute;
       opacity: 0;
       z-index: 10;
     }
-    #image-preview label {
+    #background-image-preview label {
       position: absolute;
       z-index: 5;
       opacity: 0.8;
@@ -76,7 +69,41 @@ else{
       margin: auto;
       text-align: center;
     }
-</style>
+
+    #profile-image-preview {
+      width: 400px;
+      height: 400px;
+      position: relative;
+      overflow: hidden;
+      background-color: #ffffff;
+      color: #ecf0f1;
+    }
+    #profile-image-preview input {
+      line-height: 200px;
+      font-size: 200px;
+      position: absolute;
+      opacity: 0;
+      z-index: 10;
+    }
+    #profile-image-preview label {
+      position: absolute;
+      z-index: 5;
+      opacity: 0.8;
+      cursor: pointer;
+      background-color: #bdc3c7;
+      width: 200px;
+      height: 50px;
+      font-size: 20px;
+      line-height: 50px;
+      text-transform: uppercase;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      text-align: center;
+    }
+  </style>
 </head>
 <!--
 BODY TAG OPTIONS:
@@ -139,14 +166,14 @@ to get the desired effect
             </a>
           </li>
           <li class="nav-item">
-            <a href="usermanagement.php" class="nav-link">
+            <a href="usermanagement.php" class="nav-link active">
               <i class="nav-icon fas fa-user"></i>
               <p>User Management</p>
             </a>
           </li>
           
           <li class="nav-item">
-            <a href="index.php" class="nav-link active">
+            <a href="index.php" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
               <p>Product Management</p>
             </a>
@@ -194,12 +221,12 @@ to get the desired effect
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Products</h1>
+            <h1 class="m-0 text-dark">User Management</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item">Home</li>
-              <li class="breadcrumb-item active">Products</li>
+              <li class="breadcrumb-item active">Users</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -223,17 +250,19 @@ to get the desired effect
                   <thead>
                     <tr>
                         <!--th>No.</th-->
-                        <th>Product Name</th>
-                        <th>Product Description</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Role</th>
                         <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                      <?php while($row=mysqli_fetch_assoc($product)){ ?>
+                      <?php while($row=mysqli_fetch_assoc($user)){ ?>
                         <tr class="message_row">
                             <!--td></td-->
-                            <td><?=$row['product_name'] ?></td>
-                            <td><?=$row['product_desc'] ?></td>
+                            <td><?=$row['user_name'] ?></td>
+                            <td><?=$row['user_email'] ?></td>
+                            <td><?=$row['user_role']?></td>
                             <td>
                                 <div class="row">
                                     <div class="col-3">
@@ -263,58 +292,131 @@ to get the desired effect
   </div>
   <!-- /.content-wrapper -->
   
-  <div class="modal fade" id="productModal" style="overflow: auto;">
+  <div class="modal fade" id="userModal" style="overflow: auto;">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
-        <form role="form" id="productForm" method="post" action="php/product.php" enctype="multipart/form-data">
-            <div class="modal-header">
-              <h4 class="modal-title">Product Details</h4>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">×</span>
-              </button>
+        <form role="form" id="userForm" method="post" action="php/user.php" enctype="multipart/form-data">
+          <div class="modal-header">
+            <h4 class="modal-title">User Details</h4>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-group">
+              <input type="hidden" class="form-control" id="id" name="id">
             </div>
-            <div class="modal-body">
-              <div class="form-group">
-                <input type="hidden" class="form-control" id="id" name="id">
+            <div class="form-group">
+              <label for="fileToUpload">Background Image</label>
+              <div id="background-image-preview">
+                <label for="background-image" id="background-image-label">Choose Image</label>
+                <input type="file" name="background-image" id="background-image" />
               </div>
-              <div class="form-group">
-                <label for="fileToUpload">Image</label>
-                <div id="image-preview">
-                  <label for="image-upload" id="image-label">Choose Image</label>
-                  <input type="file" name="image-upload" id="image-upload" />
+            </div>
+            <div class="form-group">
+              <label for="fileToUpload">Profile Image</label>
+              <div id="profile-image-preview">
+                <label for="profile-image" id="profile-image-label">Choose Image</label>
+                <input type="file" name="profile-image" id="profile-image" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="userName">Username *</label>
+              <input class="form-control" name="username" id="username" placeholder="Enter Username for Subdomain" required>
+            </div>
+            <div class="form-group">
+              <label for="newPassword">New Password *</label>
+              <input type="password" class="form-control" name="password" id="password" placeholder="Enter User Password" required>
+            </div>
+            <div class="form-group">
+              <label for="confirmPassword">Confirm Password *</label>
+              <input type="password" class="form-control" name="confirmPassword" id="confirmPassword" placeholder="Re-type User Password" required="">
+            </div>
+            <div class="form-group">
+              <label for="Name">Name *</label>
+              <input class="form-control" name="name" id="name" placeholder="Enter Company Name" required>
+            </div>
+            <div class="form-group">
+              <label for="engContent">English Content *</label>
+              <textarea class="textarea" id="engDescription" name="engDescription" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+            </div>
+            <div class="form-group"> 
+              <label for="chineseContent">中文内容 *</label>
+              <textarea class="textarea" id="chineseDescription" name="chineseDescription" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+            </div>
+            <div class="form-group"> 
+              <label for="chineseContent">Phone Number *</label>
+              <input class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+            <div class="form-group"> 
+              <label for="chineseContent">Email *</label>
+              <input class="form-control" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group"> 
+              <label for="chineseContent">Address *</label>
+              <textarea class="form-control" id="address" name="address" placeholder="Enter your address" required></textarea>
+            </div>
+            <div class="form-group">
+              <label for="roleCode">Role Code *</label>
+              <select class="form-control" id="roleCode" name="roleCode" required>
+                <?php while($row2=mysqli_fetch_assoc($role)){ ?>
+                  <option value="<?=$row2['role_code'] ?>"><?=$row2['role_name'] ?></option>
+                <?php } ?>
+              </select>
+              <div class="row">
+                <div class="col-4">
+                  <div class="form-group">
+                    <label for="facebook">Facebook</label>
+                    <input class="form-control" name="facebook" id="facebook">
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="form-group">
+                    <label for="instagram">Instagram</label>
+                    <input class="form-control" name="instagram" id="instagram">
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="form-group">
+                    <label for="instagram">WeChat</label>
+                    <input class="form-control" name="wechat" id="wechat">
+                  </div>
                 </div>
               </div>
-              <div class="form-group">
-                <label for="productName">Product Name *</label>
-                <input class="form-control" name="productName" id="productName" placeholder="Enter Product Name" required>
+              <div class="row">
+                <div class="col-4">
+                  <div class="form-group">
+                    <label for="twitter">Twitter</label>
+                    <input class="form-control" name="twitter" id="twitter">
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="form-group">
+                    <label for="twitter">Youtube</label>
+                    <input class="form-control" name="youtube" id="youtube">
+                  </div>
+                </div>
+                <div class="col-4">
+                  <div class="form-group">
+                    <label for="twitter">Tiktok</label>
+                    <input class="form-control" name="tiktok" id="tiktok">
+                  </div>
+                </div>
               </div>
-              <div class="form-group">
-                <label for="productNameCh">产品名称 *</label>
-                <input class="form-control" name="productNameCh" id="productNameCh" placeholder="Enter Product Name" required>
-              </div>
-              <div class="form-group">
-                <label for="engBlog">English Content</label>
-                <textarea class="textarea" id="engDesc" name="engDesc" placeholder="Place some text here"
-                              style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-              </div>
-              <div class="form-group"> 
-                <label for="chineseBlog">中文内容</label>
-                <textarea class="textarea" id="chineseDesc" name="chineseDesc" placeholder="Place some text here"
-                              style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-              </div>
-              <div class="form-group">
-                <label for="userName">Users *</label>
-                <select class="form-control" id="userName" name="userName" required>
-                  <?php while($row2=mysqli_fetch_assoc($user)){ ?>
-                    <option value="<?=$row2['id'] ?>"><?=$row2['name'] ?></option>
-                  <?php } ?>
-                </select>
-					    </div>
             </div>
-            <div class="modal-footer justify-content-between">
-              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary" name="submit" id="submitProduct">Submit</button>
+            <div class="form-group"> 
+              <label for="video1">Video 1</label>
+              <input class="form-control" id="video1" name="video1" placeholder="Video URL">
             </div>
+            <div class="form-group"> 
+              <label for="video2">Video 2</label>
+              <input class="form-control" id="video2" name="video2" placeholder="Video URL">
+            </div>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+            <button type="submit" class="btn btn-primary" name="submit" id="submitUser">Submit</button>
+          </div>
         </form>
       </div>
       <!-- /.modal-content -->
@@ -363,32 +465,50 @@ $(function () {
     });
     
     $.uploadPreview({
-        input_field: "#image-upload",   // Default: .image-upload
-        preview_box: "#image-preview",  // Default: .image-preview
-        label_field: "#image-label",    // Default: .image-label
+        input_field: "#profile-image",   // Default: .image-upload
+        preview_box: "#profile-image-preview",  // Default: .image-preview
+        label_field: "#profile-image-label",    // Default: .image-label
         label_default: "Choose Image",   // Default: Choose File
         label_selected: "Change Image",  // Default: Change File
         no_label: false                 // Default: false
     });
-    
-    $('.textarea').summernote();
+
+    $.uploadPreview({
+        input_field: "#background-image",   // Default: .image-upload
+        preview_box: "#background-image-preview",  // Default: .image-preview
+        label_field: "#background-image-label",    // Default: .image-label
+        label_default: "Choose Image",   // Default: Choose File
+        label_selected: "Change Image",  // Default: Change File
+        no_label: false                 // Default: false
+    });
+
+    $('#engDescription').summernote();
+    $('#chineseDescription').summernote();
     
     $('#addBlog').on('click', function(){
-      $('#productModal').find('#id').val('');
-      $('#productModal').find('#productName').val('');
-      $('#productModal').find('#productNameCh').val('');
-      $('#productModal').find('#engDesc').summernote("code", "");
-      $('#productModal').find('#chineseDesc').summernote("code", "");
-      $('#productModal').find('#userName').val('');
-      
-      <?php if($_SESSION['userRole'] != 'PRIADMIN'){
-        echo "$('#productModal').find('#userName').val('".$_SESSION['userID']."');";
-        echo "$('#productModal').find('#userName').attr('readonly', true);";
-      } ?>
+      $('#userModal').find('#id').val('');
+      $('#userModal').find('#username').val('');
+      $('#userModal').find('#password').val('');
+      $('#userModal').find('#confirmPassword').val('');
+      $('#userModal').find('#name').val("");
+      $('#userModal').find('#engDescription').summernote("code", "");
+      $('#userModal').find('#chineseDescription').summernote("code", "");
+      $('#userModal').find('#phone').val("");
+      $('#userModal').find('#email').val("");
+      $('#userModal').find('#address').val("");
+      $('#userModal').find('#roleCode').val("");
+      $('#userModal').find('#facebook').val("");
+      $('#userModal').find('#instagram').val("");
+      $('#userModal').find('#twitter').val("");
+      $('#userModal').find('#youtube').val("");
+      $('#userModal').find('#wechat').val("");
+      $('#userModal').find('#tiktok').val("");
 
-      $('#productModal').modal('show');
+      $('#userModal').find('#password').removeAttr('readonly');
+      $('#userModal').find('#confirmPassword').removeAttr('readonly');
+      $('#userModal').modal('show');
       
-      $('#productForm').validate({
+      $('#userForm').validate({
           errorElement: 'span',
           errorPlacement: function (error, element) {
               error.addClass('invalid-feedback');
@@ -405,24 +525,38 @@ $(function () {
 });
 
 function edit(id){
-    $.post( "php/getProduct.php", { messageId: id}, function( data ) {
+    $.post( "php/getUser.php", { messageId: id}, function( data ) {
         var decode = JSON.parse(data)
         
         if(decode.status === 'success'){
-          $('#productModal').find('#id').val(decode.message.id);
-          $('#productModal').find('#productName').val(decode.message.product_name);
-          $('#productModal').find('#productNameCh').val(decode.message.product_name_ch);
-          $('#productModal').find('#engDesc').summernote("code", decode.message.product_desc);
-          $('#productModal').find('#chineseDesc').summernote("code", decode.message.product_desc_ch);
-          $('#productModal').find('#userName').val(decode.message.user_id);
+          $('#userModal').find('#id').val(decode.message.id);
+          $('#userModal').find('#username').val(decode.message.user_name);
+          $('#userModal').find('#password').val(decode.message.password);
+          $('#userModal').find('#confirmPassword').val(decode.message.password);
+          $('#userModal').find('#name').val(decode.message.name);
+          $('#userModal').find('#engDescription').summernote("code", decode.message.english_description);
+          $('#userModal').find('#chineseDescription').summernote("code", decode.message.chinese_description);
+          $('#userModal').find('#phone').val(decode.message.phone_number);
+          $('#userModal').find('#email').val(decode.message.user_email);
+          $('#userModal').find('#address').val(decode.message.address);
+          $('#userModal').find('#roleCode').val(decode.message.user_role);
+          $('#userModal').find('#video1').val(decode.message.video_1);
+          $('#userModal').find('#video2').val(decode.message.video_2);
+          $('#userModal').find('#password').attr('readonly', true);
+          $('#userModal').find('#confirmPassword').attr('readonly', true);
 
-          <?php if($_SESSION['userRole'] != 'PRIADMIN'){
-            echo "$('#productModal').find('#userName').attr('readonly', true);";
-          } ?>
+          var social = JSON.parse(decode.message.social_media);
 
-          $('#productModal').modal('show');
+          $('#userModal').find('#facebook').val(social.facebook);
+          $('#userModal').find('#instagram').val(social.instagram);
+          $('#userModal').find('#twitter').val(social.twitter);
+          $('#userModal').find('#youtube').val(social.youtube);
+          $('#userModal').find('#wechat').val(social.wechat);
+          $('#userModal').find('#tiktok').val(social.tiktok);
+
+          $('#userModal').modal('show');
           
-          $('#productForm').validate({
+          $('#userForm').validate({
               errorElement: 'span',
               errorPlacement: function (error, element) {
                   error.addClass('invalid-feedback');
@@ -440,7 +574,7 @@ function edit(id){
 }
 
 function deletes(id){
-    $.post( "php/deleteProduct.php", { messageId: id}, function( data ) {
+    $.post( "php/deleteblog.php", { messageId: id}, function( data ) {
         var decode = JSON.parse(data)
         
         if(decode.status === 'success'){

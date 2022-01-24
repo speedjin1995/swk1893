@@ -9,7 +9,7 @@ if(!isset($_SESSION['userID'])){
   echo 'window.location.href = "login.html";</script>';
 }
 else{
-    $message = $db->query("SELECT * FROM message_resource");
+    $blog = $db->query("SELECT * FROM blog");
 }
 ?>
 <html lang="en">
@@ -18,7 +18,7 @@ else{
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>SWK | Message Resource</title>
+  <title>SWK | Testomony</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -29,10 +29,57 @@ else{
   <link rel="stylesheet" href="plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="dist/css/adminlte.min.css">
+  <!-- summernote -->
+  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+  
+  <style type="text/css">
+    #image-preview {
+      width: 700px;
+      height: 400px;
+      position: relative;
+      overflow: hidden;
+      background-color: #ffffff;
+      color: #ecf0f1;
+    }
+    #image-preview input {
+      line-height: 200px;
+      font-size: 200px;
+      position: absolute;
+      opacity: 0;
+      z-index: 10;
+    }
+    #image-preview label {
+      position: absolute;
+      z-index: 5;
+      opacity: 0.8;
+      cursor: pointer;
+      background-color: #bdc3c7;
+      width: 200px;
+      height: 50px;
+      font-size: 20px;
+      line-height: 50px;
+      text-transform: uppercase;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      text-align: center;
+    }
+</style>
 </head>
-
+<!--
+BODY TAG OPTIONS:
+=================
+Apply one or more of the following classes to to the body tag
+to get the desired effect
+|---------------------------------------------------------|
+|LAYOUT OPTIONS | sidebar-collapse                        |
+|               | sidebar-mini                            |
+|---------------------------------------------------------|
+-->
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
   <!-- Navbar -->
@@ -72,13 +119,13 @@ else{
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="blog.php" class="nav-link">
+            <a href="blog.php" class="nav-link active">
               <i class="nav-icon fas fa-th "></i>
               <p>Testimony</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="message.php" class="nav-link active">
+            <a href="message.php" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>Message Resource</p>
             </a>
@@ -89,6 +136,7 @@ else{
               <p>User Management</p>
             </a>
           </li>
+          
           <li class="nav-item">
             <a href="index.php" class="nav-link">
               <i class="nav-icon fas fa-book"></i>
@@ -138,12 +186,12 @@ else{
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Message Resources</h1>
+            <h1 class="m-0 text-dark">Blog</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item">Home</li>
-              <li class="breadcrumb-item active">Message Resources</li>
+              <li class="breadcrumb-item active">Blog</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -159,33 +207,33 @@ else{
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title"></h3>
-                <!--button type="button" class="btn btn-block btn-primary btn-sm" id="addMessage" style="width: 10%;float: right;">Add</button-->
+                <button type="button" class="btn btn-block btn-primary btn-sm" id="addBlog" style="width: 10%;float: right;">Add</button>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table id="messageTable" class="table table-bordered table-striped">
+                <table id="example1" class="table table-bordered table-striped">
                   <thead>
                     <tr>
-                        <th>No.</th>
-                        <th>Message Code</th>
-                        <th>English</th>
-                        <th>Chinese</th>
+                        <!--th>No.</th-->
+                        <th>English Title</th>
+                        <th>Chinese Title</th>
+                        <th>Created Date</th>
                         <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                      <?php while($row=mysqli_fetch_assoc($message)){ ?>
+                      <?php while($row=mysqli_fetch_assoc($blog)){ ?>
                         <tr class="message_row">
-                            <td><?=$row['id'] ?></td>
-                            <td><?=$row['message_key_code'] ?></td>
-                            <td><?=$row['en'] ?></td>
-                            <td><?=$row['ch'] ?></td>
+                            <!--td></td-->
+                            <td><?=$row['title_en'] ?></td>
+                            <td><?=$row['title_ch'] ?></td>
+                            <td><?=$row['created_datetime']?></td>
                             <td>
                                 <div class="row">
-                                    <div class="col-4">
+                                    <div class="col-3">
                                         <button type="button" id="edit<?=$row['id'] ?>" onclick="edit(<?=$row['id'] ?>)" class="btn btn-success btn-sm"><i class="fas fa-edit"></i></button>
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-3">
                                         <button type="button" id="delete<?=$row['id'] ?>" onclick="deletes(<?=$row['id'] ?>)" class="btn btn-danger btn-sm"><i class="fas fa-trash"></i></button>
                                     </div>
                                 </div>
@@ -209,38 +257,49 @@ else{
   </div>
   <!-- /.content-wrapper -->
   
-  <div class="modal fade" id="messageModal">
+  <div class="modal fade" id="blogModal" style="overflow: auto;">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
-        <form role="form" id="messageForm" method="post" action="php/message.php">
+        <form role="form" id="blogForm" method="post" action="php/blog.php" enctype="multipart/form-data">
             <div class="modal-header">
-              <h4 class="modal-title">Message Resource Details</h4>
+              <h4 class="modal-title">Blog Details</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">×</span>
               </button>
             </div>
             <div class="modal-body">
-                <div class="card-body">
-                    <div class="form-group">
-    					<input type="hidden" class="form-control" id="keyId" name="keyId">
-    				</div>
-    				<div class="form-group">
-    					<label for="keyCode">Message Key Code *</label>
-    					<input class="form-control" name="keyCode" id="keyCode" placeholder="Message Key Code" required>
-    				</div>
-    				<div class="form-group">
-    					<label for="englishDecs">English Description</label>
-    					<textarea class="form-control" name="englishDecs" id="englishDecs" rows="3" placeholder="English Description" required></textarea>
-    				</div>
-    				<div class="form-group">
-    					<label for="chineseDecs">中文解释</label>
-    					<textarea class="form-control" name="chineseDecs" id="chineseDecs" rows="3" placeholder="中文解释" required></textarea>
-    				</div>
-    			</div>
+              <div class="form-group">
+                <input type="hidden" class="form-control" id="blogId" name="blogId">
+              </div>
+              <div class="form-group">
+                <label for="fileToUpload">Image</label>
+                <div id="image-preview">
+                  <label for="image-upload" id="image-label">Choose Image</label>
+                  <input type="file" name="image-upload" id="image-upload" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="keyCode">English Title *</label>
+                <input class="form-control" name="engTitle" id="engTitle" placeholder="Message Key Code" required>
+              </div>
+              <div class="form-group">
+                <label for="keyCode">中文主题 *</label>
+                <input class="form-control" name="chTitle" id="chTitle" placeholder="Message Key Code" required>
+              </div>
+              <div class="form-group">
+                <label for="engBlog">English Content</label>
+                <textarea class="textarea" id="engBlog" name="engBlog" placeholder="Place some text here"
+                              style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+              </div>
+              <div class="form-group"> 
+                <label for="chineseBlog">中文内容</label>
+                <textarea class="textarea" id="chineseBlog" name="chineseBlog" placeholder="Place some text here"
+                              style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+              </div>
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-              <button type="submit" class="btn btn-primary" name="submit" id="submitMessage">Submit</button>
+              <button type="submit" class="btn btn-primary" name="submit" id="submitBlog">Submit</button>
             </div>
         </form>
       </div>
@@ -257,7 +316,7 @@ else{
 
   <!-- Main Footer -->
   <footer class="main-footer">
-    <strong>Copyright &copy; 2021 <a href="https://www.dqit4u.com/">dqit</a>.</strong> All rights reserved.
+    <strong>Copyright &copy; 2021 <a href="https://www.dqit4u.com/">dqit</a>.</strong>All rights reserved.
   </footer>
 </div>
 <!-- ./wrapper -->
@@ -265,6 +324,7 @@ else{
 <!-- REQUIRED SCRIPTS -->
 <!-- jQuery -->
 <script src="plugins/jquery/jquery.min.js"></script>
+<script src="plugins/image-preview/jquery.uploadPreview.min.js"></script>
 <script src="plugins/jquery-validation/jquery.validate.min.js"></script>
 <!-- Bootstrap 4 -->
 <script src="plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -275,9 +335,11 @@ else{
 <script src="plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
 <!-- AdminLTE App -->
 <script src="dist/js/adminlte.min.js"></script>
+<!-- Summernote -->
+<script src="plugins/summernote/summernote-bs4.min.js"></script>
 <script>
 $(function () {
-    $("#messageTable").DataTable({
+    $("#example1").DataTable({
       "responsive": true,
       "autoWidth": false,
       "paging": true,
@@ -286,14 +348,26 @@ $(function () {
       "info": true,
     });
     
-    $('#addMessage').on('click', function(){
-        $('#messageModal').find('#keyId').val('');
-        $('#messageModal').find('#keyCode').val('');
-        $('#messageModal').find('#englishDecs').val('');
-        $('#messageModal').find('#chineseDecs').val('');
-        $('#messageModal').modal('show');
+    $.uploadPreview({
+        input_field: "#image-upload",   // Default: .image-upload
+        preview_box: "#image-preview",  // Default: .image-preview
+        label_field: "#image-label",    // Default: .image-label
+        label_default: "Choose Image",   // Default: Choose File
+        label_selected: "Change Image",  // Default: Change File
+        no_label: false                 // Default: false
+    });
+    
+    $('.textarea').summernote();
+    
+    $('#addBlog').on('click', function(){
+        $('#blogModal').find('#blogId').val('');
+        $('#blogModal').find('#engTitle').val('');
+        $('#blogModal').find('#chTitle').val('');
+        $('#blogModal').find('#engBlog').summernote("code", "");
+        $('#blogModal').find('#chineseBlog').summernote("code", "");
+        $('#blogModal').modal('show');
         
-        $('#messageForm').validate({
+        $('#blogForm').validate({
             errorElement: 'span',
             errorPlacement: function (error, element) {
                 error.addClass('invalid-feedback');
@@ -310,17 +384,18 @@ $(function () {
 });
 
 function edit(id){
-    $.post( "php/getmessage.php", { messageId: id}, function( data ) {
+    $.post( "php/getblog.php", { messageId: id}, function( data ) {
         var decode = JSON.parse(data)
         
         if(decode.status === 'success'){
-            $('#messageModal').find('#keyId').val(decode.message.id);
-            $('#messageModal').find('#keyCode').val(decode.message.message_key_code);
-            $('#messageModal').find('#englishDecs').val(decode.message.en);
-            $('#messageModal').find('#chineseDecs').val(decode.message.ch);
-            $('#messageModal').modal('show');
+            $('#blogModal').find('#blogId').val(decode.message.id);
+            $('#blogModal').find('#engTitle').val(decode.message.title_en);
+            $('#blogModal').find('#chTitle').val(decode.message.title_ch);
+            $('#blogModal').find('#engBlog').summernote("code", decode.message.en);
+            $('#blogModal').find('#chineseBlog').summernote("code", decode.message.ch);
+            $('#blogModal').modal('show');
             
-            $('#messageForm').validate({
+            $('#blogForm').validate({
                 errorElement: 'span',
                 errorPlacement: function (error, element) {
                     error.addClass('invalid-feedback');
@@ -338,7 +413,7 @@ function edit(id){
 }
 
 function deletes(id){
-    $.post( "php/deletemessage.php", { messageId: id}, function( data ) {
+    $.post( "php/deleteblog.php", { messageId: id}, function( data ) {
         var decode = JSON.parse(data)
         
         if(decode.status === 'success'){
