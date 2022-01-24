@@ -175,12 +175,6 @@ to get the desired effect
             </a>
           </li>';
           } ?>
-          <li class="nav-item">
-            <a href="usermanagement.php" class="nav-link active">
-              <i class="nav-icon fas fa-user"></i>
-              <p>User Management</p>
-            </a>
-          </li>
           
           <li class="nav-item">
             <a href="index.php" class="nav-link">
