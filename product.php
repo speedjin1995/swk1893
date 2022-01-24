@@ -30,7 +30,7 @@ else{
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Site Description Here">
-        <link rel="shortcut icon" href="assets/images/favicon.png">
+        <link rel="shortcut icon" href="assets/demo/logo.png">
         
         <title>SWK | Sandalwood Tea</title>
         

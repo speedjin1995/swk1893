@@ -30,9 +30,9 @@ else{
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="description" content="Site Description Here">
-        <link rel="shortcut icon" href="assets/images/favicon.png">
+        <link rel="shortcut icon" href="assets/demo/logo.png">
         
-        <title>SWK | Sandalwood Tea<</title>
+        <title>SWK | Sandalwood Tea</title>
         
         <link href="assets/css/uikit.min.css" rel="stylesheet" type="text/css" media="all" />
         <link href="assets/css/uikit-width-ex.min.css" rel="stylesheet" type="text/css" media="all" />
@@ -54,7 +54,7 @@ else{
                 <div class="uk-navbar-left">
                     <div class="tw-logo">
                         <h3 class="site-name">
-                            <a href="index.html"><img src="assets/demo/logo.png"></a>
+                            <a href="index.php"><img src="assets/demo/logo.png"></a>
                         </h3>
                     </div>
                 </div>
