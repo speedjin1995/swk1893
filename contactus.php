@@ -141,12 +141,11 @@ else{
         <div class="main-container">
             <section class="uk-section uk-text-center uk-flex uk-flex-middle uk-flex-center uk-light uk-background-cover uk-background-top-center" data-overlay="0.4" style="background-color: #151515; background-image: url(assets/demo/page-bg.jpg); height: 500px;">
                 <div class="tw-page-title-container tw-element">
-                    <h1 class="tw-page-title uk-text-uppercase">Contact Us</h1>
+                    <h1 class="tw-page-title uk-text-uppercase"><?=$languageArray['page_contact_us'][$language] ?></h1>
                 </div>
                 <div class="tw-breadcrumb-container uk-position-absolute uk-position-bottom-center tw-element">
-                    <a href="index.html" class="tw-breadrumb-child home">Home</a>
-                    <a href="#" class="tw-breadrumb-child">Pages</a>
-                    <a href="#" class="tw-breadrumb-child">Contact Us</a>
+                    <a href="index.php" class="tw-breadrumb-child home"><?=$languageArray['page_contact_home'][$language] ?></a>
+                    <a href="#" class="tw-breadrumb-child"><?=$languageArray['page_contact_us'][$language] ?></a>
                 </div>
             </section>
             <section class="uk-section uk-background-cover">
@@ -156,27 +155,27 @@ else{
                         <div>
                             <div class="tw-element tw-box custom-typography uk-margin-bottom">
                                 <i class="et-map-pin uk-border-circle layout-2"></i>
-                                <h4>Location</h4>
+                                <h4><?=$languageArray['page_contact_location'][$language] ?></h4>
                                 <p class="description">
-                                    88, Orchard St, New York
+                                    72-1-20, Jalan Mahsuri, Bandar Sunway Tunas, 11900 Bayan Lepas, Pulau Pinang
                                 </p>
                             </div>
                         </div>
                         <div>
                             <div class="tw-element tw-box custom-typography uk-margin-remove-top uk-margin-bottom">
                                 <i class="et-phone uk-border-circle layout-2"></i>
-                                <h4>Call Us</h4>
+                                <h4><?=$languageArray['page_call_us'][$language] ?></h4>
                                 <p class="description">
-                                    (001) 8686 234 432
+                                    (604) 5368 942
                                 </p>
                             </div>
                         </div>
                         <div>
                             <div class="tw-element tw-box custom-typography uk-margin-remove-top">
                                 <i class="et-envelope uk-border-circle layout-2"></i>
-                                <h4>Email Us</h4>
+                                <h4><?=$languageArray['page_email_us'][$language] ?></h4>
                                 <p class="description">
-                                    support@themewaves.com
+                                    swk@gmail.com
                                 </p>
                             </div>
                         </div>
@@ -194,9 +193,8 @@ else{
             <section class="uk-section">
                 <div class="uk-container uk-container-xsmall">
                     <div class="tw-heading tw-element uk-text-center">
-                        <h3>Contact Form</h3>
-                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos mauris erat justo condimentum
-                            sit amet augue.</p>
+                        <h3><?=$languageArray['page_contact_form'][$language] ?></h3>
+                        <p><?=$languageArray['page_contact_form_desc'][$language] ?></p>
                     </div>
                     <div class="tw-contact-form tw-element" data-uk-scrollspy="target: > form > div; cls:uk-animation-slide-bottom-small; delay: 500;">
                         <form action="#" method="post" class=" uk-grid-small uk-child-width-1-1" data-uk-grid>
