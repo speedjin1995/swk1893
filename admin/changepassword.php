@@ -149,12 +149,12 @@ to get the desired effect
               </p>
             </a>
             <ul class="nav nav-treeview">
-              <li class="nav-item">
+              <!--li class="nav-item">
                 <a href="profile.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Update Profile</p>
                 </a>
-              </li>
+              </li-->
               <li class="nav-item">
                 <a href="changepassword.php" class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
