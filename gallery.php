@@ -24,29 +24,29 @@
         <div class="uk-navbar-left">
             <div class="tw-logo">
                 <h3 class="site-name">
-                    <a href="index.html"><img src="assets/demo/logo.png"></a>
+                    <a href="index.php"><img src="assets/demo/logo.png"></a>
                 </h3>
             </div>
         </div>
         <div class="uk-navbar-center">
             <ul class="tw-main-menu uk-visible@m">
                 <li class="menu-item">
-                    <a href="aboutus.html">About Company</a>
+                    <a href="aboutus.php">About Company</a>
                 </li>
                 <li class="menu-item">
-                    <a href="sandalwood.html">Sandalwood History</a>
+                    <a href="sandalwood.php">Sandalwood History</a>
                 </li>
                 <li class="menu-item">
-                    <a href="product.html">Product Info</a>
+                    <a href="product.php">Product Info</a>
                 </li>
                 <li class="menu-item">
-                    <a href="testimony.html">Testimony</a>
+                    <a href="testimony.php">Testimony</a>
                 </li>
                 <li class="menu-item">
-                    <a href="gallery.html">Gallery</a>
+                    <a href="gallery.php">Gallery</a>
                 </li>
                 <li class="menu-item">
-                    <a href="contactus.html">Contact Us</a>
+                    <a href="contactus.php">Contact Us</a>
                 </li>
                 <li class="menu-item menu-item-has-children">
                     <a href="#">Language</a>
@@ -74,22 +74,22 @@
                 <div class="uk-light uk-height-viewport tw-mobile-modal uk-flex uk-flex-middle uk-flex-center" data-uk-scrollspy="target:>ul>li,>div>a; cls:uk-animation-slide-bottom-medium; delay: 150;">
                     <ul class="uk-nav-default uk-nav-parent-icon" data-uk-nav>
                         <li class="uk-parent">
-                            <a href="aboutus.html">About Company</a>
+                            <a href="aboutus.php">About Company</a>
                         </li>
                         <li class="uk-parent">
-                            <a href="sandalwood.html">Sandalwood History</a>
+                            <a href="sandalwood.php">Sandalwood History</a>
                         </li>
                         <li class="uk-parent">
-                            <a href="product.html">Product Info</a>
+                            <a href="product.php">Product Info</a>
                         </li>
                         <li class="uk-parent">
-                            <a href="testimony.html">Testimony</a>
+                            <a href="testimony.php">Testimony</a>
                         </li>
                         <li class="uk-parent">
-                            <a href="gallery.html">Gallery</a>
+                            <a href="gallery.php">Gallery</a>
                         </li>
                         <li class="uk-parent">
-                            <a href="contactus.html">Contact Us</a>
+                            <a href="contactus.php">Contact Us</a>
                         </li>
                         <li class="uk-parent">
                             <a href="#">Language</a>
@@ -115,7 +115,7 @@
         <h1 class="tw-page-title uk-text-uppercase">Grid 2 Column</h1>
     </div>
     <div class="tw-breadcrumb-container uk-position-absolute uk-position-bottom-center tw-element">
-        <a href="index.html" class="tw-breadrumb-child home">Home</a>
+        <a href="index.php" class="tw-breadrumb-child home">Home</a>
         <a href="#" class="tw-breadrumb-child">Works</a>
         <a href="#" class="tw-breadrumb-child">Grid 2 Column</a>
     </div>
