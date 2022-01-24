@@ -3,15 +3,17 @@ require_once "db_connect.php";
 
 session_start();
 $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png");
+$path = '../../portfolio/';
 
-if(isset($_POST['engTitle'], $_POST['chTitle'])){
-	$title_en = filter_input(INPUT_POST, 'engTitle', FILTER_SANITIZE_STRING);
-	$title_ch = filter_input(INPUT_POST, 'chTitle', FILTER_SANITIZE_STRING);
-	$engBlog = $_POST['engBlog'];
-	$chineseBlog = $_POST['chineseBlog'];
-	$uploadOk = 0;
-	$filePath = "";
-    $target_dir = "blog/";
+if(isset($_POST['productName'], $_POST['productNameCh'], $_POST['engDesc'], $_POST['chineseDesc'], $_POST['userName'])){
+	$productName = filter_input(INPUT_POST, 'productName', FILTER_SANITIZE_STRING);
+	$productNameCh = filter_input(INPUT_POST, 'productNameCh', FILTER_SANITIZE_STRING);
+	$engDesc = $_POST['engDesc'];
+    $chineseDesc = $_POST['chineseDesc'];
+	$userName = filter_input(INPUT_POST, 'userName', FILTER_SANITIZE_STRING);
+    $path = $path.$_SESSION['userName'].'/';
+    $filePath = $_SESSION['userName'].'/';
+    $uploadOk = 0;
 
     if(isset($_FILES["image-upload"]) && $_FILES["image-upload"]["error"] == 0){
         $filename = $_FILES["image-upload"]["name"];
@@ -22,14 +24,14 @@ if(isset($_POST['engTitle'], $_POST['chTitle'])){
         $ext = pathinfo($filename, PATHINFO_EXTENSION);
         if(!array_key_exists($ext, $allowed)){
             echo '<script type="text/javascript">alert("Please select a valid file format.");';
-            echo 'location.href = "../blog.php";</script>';
+            echo 'location.href = "../index.php";</script>';
         }
     
         // Verify file size - 5MB maximum
         $maxsize = 5 * 1024 * 1024;
         if($filesize > $maxsize){
             echo '<script type="text/javascript">alert("File size is larger than the allowed limit.");';
-            echo 'location.href = "../blog.php";</script>';
+            echo 'location.href = "../index.php";</script>';
         }
     
         // Verify MYME type of the file
@@ -38,87 +40,87 @@ if(isset($_POST['engTitle'], $_POST['chTitle'])){
             $newfilename = round(microtime(true)) . '.' . end($temp);
 
             // Check whether file exists before uploading it
-            if(file_exists($target_dir.$newfilename)){
+            if(file_exists($path.$newfilename)){
                 echo '<script type="text/javascript">alert("'.$newfilename.' is already exists.");';
-                echo 'location.href = "../blog.php";</script>';
+                echo 'location.href = "../index.php";</script>';
             } 
             else{
-                if (move_uploaded_file($_FILES["image-upload"]["tmp_name"], $target_dir.$newfilename)) {
-                    $filePath = $target_dir.$newfilename;
+                if (move_uploaded_file($_FILES["image-upload"]["tmp_name"], $path.$newfilename)) {
+                    $filePath = $filePath.$newfilename;
                     $uploadOk = 1;
                 } 
                 else {
                     echo '<script type="text/javascript">alert("Sorry, there was an error uploading your file.");';
-                    echo 'location.href = "../blog.php";</script>';
+                    echo 'location.href = "../index.php";</script>';
                 }
             } 
         } 
         else{
             echo '<script type="text/javascript">alert("Sorry, there was an error uploading your file.");';
-            echo 'location.href = "../blog.php";</script>';
+            echo 'location.href = "../index.php";</script>';
         }
     } 
 
-    if($_POST['blogId'] != null && $_POST['blogId'] != ''){
+    if($_POST['id'] != null && $_POST['id'] != ''){
         if($uploadOk == 1){
-            if ($update_stmt = $db->prepare("UPDATE blog SET title_en=?, title_ch=?, en=?, ch=?, img=? WHERE id=?")) {
-                $update_stmt->bind_param('ssssss', $title_en, $title_ch, $engBlog, $chineseBlog, $filePath, $_POST['blogId']);
+            if ($update_stmt = $db->prepare("UPDATE product SET product_name=?, product_name_ch=?, product_desc=?, product_desc_ch=?, product_photo=?, user_id=? WHERE id=?")) {
+                $update_stmt->bind_param('sssssss', $productName, $productNameCh, $engDesc, $chineseDesc, $filePath, $userName, $_POST['id']);
                 
                 // Execute the prepared query.
                 if (! $update_stmt->execute()) {
                     echo '<script type="text/javascript">alert("Somethings wrong");';
-                    echo 'location.href = "../blog.php";</script>';  
+                    echo 'location.href = "../index.php";</script>';  
                 }
                 else{
                     echo '<script type="text/javascript">alert("Updated successfully");';
-                    echo 'location.href = "../blog.php";</script>';   
+                    echo 'location.href = "../index.php";</script>';   
                 }
             }
         }
         else{
-            if ($update_stmt = $db->prepare("UPDATE blog SET title_en=?, title_ch=?, en=?, ch=? WHERE id=?")) {
-                $update_stmt->bind_param('sssss', $title_en, $title_ch, $engBlog, $chineseBlog, $_POST['blogId']);
+            if ($update_stmt = $db->prepare("UPDATE product SET product_name=?, product_name_ch=?, product_desc=?, product_desc_ch=?, user_id=? WHERE id=?")) {
+                $update_stmt->bind_param('ssssss', $productName, $productNameCh, $engDesc, $chineseDesc, $userName, $_POST['id']);
                 
                 // Execute the prepared query.
                 if (! $update_stmt->execute()) {
                     echo '<script type="text/javascript">alert("Somethings wrong");';
-                    echo 'location.href = "../blog.php";</script>';  
+                    echo 'location.href = "../index.php";</script>';  
                 }
                 else{
                     echo '<script type="text/javascript">alert("Updated successfully");';
-                    echo 'location.href = "../blog.php";</script>';   
+                    echo 'location.href = "../index.php";</script>';   
                 }
             }
         }
     }
     else{
         if($uploadOk == 1){
-            if ($insert_stmt = $db->prepare("INSERT INTO blog (title_en, title_ch, en, ch, img) VALUES (?, ?, ?, ?, ?)")) {
-                $insert_stmt->bind_param('sssss', $title_en, $title_ch, $engBlog, $chineseBlog, $filePath);
-
-                // Execute the prepared query.
-                if (! $insert_stmt->execute()) {
-                    echo '<script type="text/javascript">alert("Somethings wrong");';
-                    echo 'location.href = "../blog.php";</script>';  
-                }
-                else{
-                    echo '<script type="text/javascript">alert("Added successfully");';
-                    echo 'location.href = "../blog.php";</script>';   
-                }
-            }
-        }
-        else{
-            if ($insert_stmt = $db->prepare("INSERT INTO blog (title_en, title_ch, en, ch) VALUES (?, ?, ?, ?)")) {
-                $insert_stmt->bind_param('ssss', $title_en, $title_ch, $engBlog, $chineseBlog);
+            if ($insert_stmt = $db->prepare("INSERT INTO product (product_name, product_name_ch	, product_desc, product_desc_ch, product_photo, user_id) VALUES (?, ?, ?, ?, ?, ?)")) {
+                $insert_stmt->bind_param('ssssss', $productName, $productNameCh, $engDesc, $chineseDesc, $filePath, $userName);
                 
                 // Execute the prepared query.
                 if (! $insert_stmt->execute()) {
                     echo '<script type="text/javascript">alert("Somethings wrong");';
-                    echo 'location.href = "../blog.php";</script>';  
+                    echo 'location.href = "../index.php";</script>';  
                 }
                 else{
                     echo '<script type="text/javascript">alert("Added successfully");';
-                    echo 'location.href = "../blog.php";</script>';   
+                    echo 'location.href = "../index.php";</script>';   
+                }
+            }
+        }
+        else{
+            if ($insert_stmt = $db->prepare("INSERT INTO product (product_name, product_name_ch	, product_desc, product_desc_ch, user_id) VALUES (?, ?, ?, ?, ?)")) {
+                $insert_stmt->bind_param('sssss', $productName, $productNameCh, $engDesc, $chineseDesc, $userName);
+                
+                // Execute the prepared query.
+                if (! $insert_stmt->execute()) {
+                    echo '<script type="text/javascript">alert("Somethings wrong");';
+                    echo 'location.href = "../index.php";</script>';  
+                }
+                else{
+                    echo '<script type="text/javascript">alert("Added successfully");';
+                    echo 'location.href = "../index.php";</script>';   
                 }
             }
         }
@@ -126,6 +128,6 @@ if(isset($_POST['engTitle'], $_POST['chTitle'])){
 }
 else{
     echo '<script type="text/javascript">alert("Missing Attributes");';
-    echo 'window.location.href = "../blog.php";</script>';
+    echo 'window.location.href = "../index.php";</script>';
 }
 ?>
