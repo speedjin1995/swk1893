@@ -12,7 +12,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 if($row = $result->fetch_assoc()){
-    if($row['user_role'] == 'PRIADMIN' || $row['user_role'] == 'EDITOR'){
+    if($row['user_role'] == 'PRIADMIN' || $row['user_role'] == 'EDITOR' || $row['user_role'] == 'MEMBER'){
 		$password = hash('sha512', $password . $row['password_salt']);
 
 		if($password == $row['user_password']){

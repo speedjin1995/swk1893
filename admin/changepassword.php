@@ -8,6 +8,9 @@ if(!isset($_SESSION['userID'])){
   echo '<script type="text/javascript">';
   echo 'window.location.href = "login.html";</script>';
 }
+else{
+  $userRole = $_SESSION['userRole'];
+}
 ?>
 <html lang="en">
 <head>
@@ -127,13 +130,14 @@ to get the desired effect
               <p>Message Resource</p>
             </a>
           </li>
-          <li class="nav-item">
+          <?php if($userRole=="EDITOR" || $userRole=="PRIADMIN"){
+            echo '<li class="nav-item">
             <a href="usermanagement.php" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <p>User Management</p>
             </a>
-          </li>
-          
+          </li>';
+          } ?>
           <li class="nav-item">
             <a href="index.php" class="nav-link">
               <i class="nav-icon fas fa-book"></i>

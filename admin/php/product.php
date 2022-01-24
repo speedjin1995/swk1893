@@ -11,8 +11,8 @@ if(isset($_POST['productName'], $_POST['productNameCh'], $_POST['engDesc'], $_PO
 	$engDesc = $_POST['engDesc'];
     $chineseDesc = $_POST['chineseDesc'];
 	$userName = filter_input(INPUT_POST, 'userName', FILTER_SANITIZE_STRING);
-    $path = $path.$_SESSION['userName'].'/';
-    $filePath = $_SESSION['userName'].'/';
+    $path = "product/";
+    $filePath = "";
     $uploadOk = 0;
 
     if(isset($_FILES["image-upload"]) && $_FILES["image-upload"]["error"] == 0){
@@ -46,7 +46,7 @@ if(isset($_POST['productName'], $_POST['productNameCh'], $_POST['engDesc'], $_PO
             } 
             else{
                 if (move_uploaded_file($_FILES["image-upload"]["tmp_name"], $path.$newfilename)) {
-                    $filePath = $filePath.$newfilename;
+                    $filePath = $path.$newfilename;
                     $uploadOk = 1;
                 } 
                 else {

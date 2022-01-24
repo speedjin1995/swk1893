@@ -10,14 +10,8 @@ if(!isset($_SESSION['userID'])){
 }
 else{
   $user = $db->query("SELECT * FROM user");
-
-  if($_SESSION['userRole'] == 'PRIADMIN'){
-    $product = $db->query("SELECT * FROM product WHERE user_id = '2'");
-  }
-  else{
-    $product = $db->query("SELECT * FROM product WHERE user_id = '".$_SESSION['userID']."'");
-  }
-  
+  $product = $db->query("SELECT * FROM product");
+  $userRole = $_SESSION['userRole'];
 }
 ?>
 <html lang="en">
@@ -138,13 +132,14 @@ to get the desired effect
               <p>Message Resource</p>
             </a>
           </li>
-          <li class="nav-item">
+          <?php if($userRole=="EDITOR" || $userRole=="PRIADMIN"){
+            echo '<li class="nav-item">
             <a href="usermanagement.php" class="nav-link">
               <i class="nav-icon fas fa-user"></i>
               <p>User Management</p>
             </a>
-          </li>
-          
+          </li>';
+          } ?>
           <li class="nav-item">
             <a href="index.php" class="nav-link active">
               <i class="nav-icon fas fa-book"></i>

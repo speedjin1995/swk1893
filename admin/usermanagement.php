@@ -9,8 +9,9 @@ if(!isset($_SESSION['userID'])){
   echo 'window.location.href = "login.html";</script>';
 }
 else{
-  $user = $db->query("SELECT * FROM user");
+  $user = $db->query("SELECT * FROM user WHERE id <> '1' AND id <> '2' ");
   $role = $db->query("SELECT * FROM user_role");
+  $userRole = $_SESSION['userRole'];
 }
 ?>
 <html lang="en">
@@ -165,6 +166,15 @@ to get the desired effect
               <p>Message Resource</p>
             </a>
           </li>
+
+          <?php if($userRole=="EDITOR" || $userRole=="PRIADMIN"){
+            echo '<li class="nav-item">
+            <a href="usermanagement.php" class="nav-link active">
+              <i class="nav-icon fas fa-user"></i>
+              <p>User Management</p>
+            </a>
+          </li>';
+          } ?>
           <li class="nav-item">
             <a href="usermanagement.php" class="nav-link active">
               <i class="nav-icon fas fa-user"></i>
@@ -307,20 +317,6 @@ to get the desired effect
               <input type="hidden" class="form-control" id="id" name="id">
             </div>
             <div class="form-group">
-              <label for="fileToUpload">Background Image</label>
-              <div id="background-image-preview">
-                <label for="background-image" id="background-image-label">Choose Image</label>
-                <input type="file" name="background-image" id="background-image" />
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="fileToUpload">Profile Image</label>
-              <div id="profile-image-preview">
-                <label for="profile-image" id="profile-image-label">Choose Image</label>
-                <input type="file" name="profile-image" id="profile-image" />
-              </div>
-            </div>
-            <div class="form-group">
               <label for="userName">Username *</label>
               <input class="form-control" name="username" id="username" placeholder="Enter Username for Subdomain" required>
             </div>
@@ -336,25 +332,9 @@ to get the desired effect
               <label for="Name">Name *</label>
               <input class="form-control" name="name" id="name" placeholder="Enter Company Name" required>
             </div>
-            <div class="form-group">
-              <label for="engContent">English Content *</label>
-              <textarea class="textarea" id="engDescription" name="engDescription" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-            </div>
-            <div class="form-group"> 
-              <label for="chineseContent">中文内容 *</label>
-              <textarea class="textarea" id="chineseDescription" name="chineseDescription" placeholder="Place some text here" style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
-            </div>
-            <div class="form-group"> 
-              <label for="chineseContent">Phone Number *</label>
-              <input class="form-control" id="phone" name="phone" placeholder="Enter your phone number" required>
-            </div>
             <div class="form-group"> 
               <label for="chineseContent">Email *</label>
               <input class="form-control" id="email" name="email" placeholder="Enter your email" required>
-            </div>
-            <div class="form-group"> 
-              <label for="chineseContent">Address *</label>
-              <textarea class="form-control" id="address" name="address" placeholder="Enter your address" required></textarea>
             </div>
             <div class="form-group">
               <label for="roleCode">Role Code *</label>
@@ -363,54 +343,6 @@ to get the desired effect
                   <option value="<?=$row2['role_code'] ?>"><?=$row2['role_name'] ?></option>
                 <?php } ?>
               </select>
-              <div class="row">
-                <div class="col-4">
-                  <div class="form-group">
-                    <label for="facebook">Facebook</label>
-                    <input class="form-control" name="facebook" id="facebook">
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="form-group">
-                    <label for="instagram">Instagram</label>
-                    <input class="form-control" name="instagram" id="instagram">
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="form-group">
-                    <label for="instagram">WeChat</label>
-                    <input class="form-control" name="wechat" id="wechat">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-4">
-                  <div class="form-group">
-                    <label for="twitter">Twitter</label>
-                    <input class="form-control" name="twitter" id="twitter">
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="form-group">
-                    <label for="twitter">Youtube</label>
-                    <input class="form-control" name="youtube" id="youtube">
-                  </div>
-                </div>
-                <div class="col-4">
-                  <div class="form-group">
-                    <label for="twitter">Tiktok</label>
-                    <input class="form-control" name="tiktok" id="tiktok">
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="form-group"> 
-              <label for="video1">Video 1</label>
-              <input class="form-control" id="video1" name="video1" placeholder="Video URL">
-            </div>
-            <div class="form-group"> 
-              <label for="video2">Video 2</label>
-              <input class="form-control" id="video2" name="video2" placeholder="Video URL">
             </div>
           </div>
           <div class="modal-footer justify-content-between">
@@ -464,46 +396,15 @@ $(function () {
       "info": true,
     });
     
-    $.uploadPreview({
-        input_field: "#profile-image",   // Default: .image-upload
-        preview_box: "#profile-image-preview",  // Default: .image-preview
-        label_field: "#profile-image-label",    // Default: .image-label
-        label_default: "Choose Image",   // Default: Choose File
-        label_selected: "Change Image",  // Default: Change File
-        no_label: false                 // Default: false
-    });
-
-    $.uploadPreview({
-        input_field: "#background-image",   // Default: .image-upload
-        preview_box: "#background-image-preview",  // Default: .image-preview
-        label_field: "#background-image-label",    // Default: .image-label
-        label_default: "Choose Image",   // Default: Choose File
-        label_selected: "Change Image",  // Default: Change File
-        no_label: false                 // Default: false
-    });
-
-    $('#engDescription').summernote();
-    $('#chineseDescription').summernote();
-    
     $('#addBlog').on('click', function(){
       $('#userModal').find('#id').val('');
       $('#userModal').find('#username').val('');
       $('#userModal').find('#password').val('');
       $('#userModal').find('#confirmPassword').val('');
       $('#userModal').find('#name').val("");
-      $('#userModal').find('#engDescription').summernote("code", "");
-      $('#userModal').find('#chineseDescription').summernote("code", "");
-      $('#userModal').find('#phone').val("");
       $('#userModal').find('#email').val("");
-      $('#userModal').find('#address').val("");
       $('#userModal').find('#roleCode').val("");
-      $('#userModal').find('#facebook').val("");
-      $('#userModal').find('#instagram').val("");
-      $('#userModal').find('#twitter').val("");
-      $('#userModal').find('#youtube').val("");
-      $('#userModal').find('#wechat').val("");
-      $('#userModal').find('#tiktok').val("");
-
+      
       $('#userModal').find('#password').removeAttr('readonly');
       $('#userModal').find('#confirmPassword').removeAttr('readonly');
       $('#userModal').modal('show');
@@ -534,26 +435,11 @@ function edit(id){
           $('#userModal').find('#password').val(decode.message.password);
           $('#userModal').find('#confirmPassword').val(decode.message.password);
           $('#userModal').find('#name').val(decode.message.name);
-          $('#userModal').find('#engDescription').summernote("code", decode.message.english_description);
-          $('#userModal').find('#chineseDescription').summernote("code", decode.message.chinese_description);
-          $('#userModal').find('#phone').val(decode.message.phone_number);
           $('#userModal').find('#email').val(decode.message.user_email);
-          $('#userModal').find('#address').val(decode.message.address);
           $('#userModal').find('#roleCode').val(decode.message.user_role);
-          $('#userModal').find('#video1').val(decode.message.video_1);
-          $('#userModal').find('#video2').val(decode.message.video_2);
+
           $('#userModal').find('#password').attr('readonly', true);
           $('#userModal').find('#confirmPassword').attr('readonly', true);
-
-          var social = JSON.parse(decode.message.social_media);
-
-          $('#userModal').find('#facebook').val(social.facebook);
-          $('#userModal').find('#instagram').val(social.instagram);
-          $('#userModal').find('#twitter').val(social.twitter);
-          $('#userModal').find('#youtube').val(social.youtube);
-          $('#userModal').find('#wechat').val(social.wechat);
-          $('#userModal').find('#tiktok').val(social.tiktok);
-
           $('#userModal').modal('show');
           
           $('#userForm').validate({
@@ -574,7 +460,7 @@ function edit(id){
 }
 
 function deletes(id){
-    $.post( "php/deleteblog.php", { messageId: id}, function( data ) {
+    $.post( "php/deleteuser.php", { messageId: id}, function( data ) {
         var decode = JSON.parse(data)
         
         if(decode.status === 'success'){
