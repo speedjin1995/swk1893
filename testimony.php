@@ -54,7 +54,7 @@ else{
                 <div class="uk-navbar-left">
                     <div class="tw-logo">
                         <h3 class="site-name">
-                            <a href="index.html"><img src="assets/demo/logo.png"></a>
+                            <a href="index.php"><img src="assets/demo/logo.png"></a>
                         </h3>
                     </div>
                 </div>
@@ -103,22 +103,22 @@ else{
                         <div class="uk-light uk-height-viewport tw-mobile-modal uk-flex uk-flex-middle uk-flex-center" data-uk-scrollspy="target:>ul>li,>div>a; cls:uk-animation-slide-bottom-medium; delay: 150;">
                             <ul class="uk-nav-default uk-nav-parent-icon" data-uk-nav>
                                 <li class="uk-parent">
-                                    <a href="aboutus.html"><?=$languageArray['nav_about_us'][$language] ?></a>
+                                    <a href="aboutus.php"><?=$languageArray['nav_about_us'][$language] ?></a>
                                 </li>
                                 <li class="uk-parent">
-                                    <a href="sandalwood.html"><?=$languageArray['nav_history'][$language] ?></a>
+                                    <a href="sandalwood.php"><?=$languageArray['nav_history'][$language] ?></a>
                                 </li>
                                 <li class="uk-parent">
-                                    <a href="product.html"><?=$languageArray['nav_product_info'][$language] ?></a>
+                                    <a href="product.php"><?=$languageArray['nav_product_info'][$language] ?></a>
                                 </li>
                                 <li class="uk-parent">
-                                    <a href="testimony.html"><?=$languageArray['nav_testimony'][$language] ?></a>
+                                    <a href="testimony.php"><?=$languageArray['nav_testimony'][$language] ?></a>
                                 </li>
                                 <li class="uk-parent">
-                                    <a href="gallery.html"><?=$languageArray['nav_gallery'][$language] ?></a>
+                                    <a href="gallery.php"><?=$languageArray['nav_gallery'][$language] ?></a>
                                 </li>
                                 <li class="uk-parent">
-                                    <a href="contactus.html"><?=$languageArray['nav_contact_us'][$language] ?>/a>
+                                    <a href="contactus.php"><?=$languageArray['nav_contact_us'][$language] ?>/a>
                                 </li>
                                 <li class="uk-parent">
                                     <a href="#"><?=$languageArray['nav_language'][$language] ?></a>
@@ -145,7 +145,7 @@ else{
                     <h1 class="tw-page-title uk-text-uppercase">Services</h1>
                 </div>
                 <div class="tw-breadcrumb-container uk-position-absolute uk-position-bottom-center tw-element">
-                    <a href="index.html" class="tw-breadrumb-child home">Home</a>
+                    <a href="index.php" class="tw-breadrumb-child home">Home</a>
                     <a href="#" class="tw-breadrumb-child">Pages</a>
                     <a href="#" class="tw-breadrumb-child">Services</a>
                 </div>
