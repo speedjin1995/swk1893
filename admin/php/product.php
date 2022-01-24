@@ -5,7 +5,7 @@ session_start();
 $allowed = array("jpg" => "image/jpg", "jpeg" => "image/jpeg", "gif" => "image/gif", "png" => "image/png");
 $path = '../../portfolio/';
 
-if(isset($_POST['productName'], $_POST['productNameCh'], $_POST['engDesc'], $_POST['chineseDesc'], $_POST['userName'])){
+if(isset($_POST['productName'], $_POST['productNameCh'], $_POST['engDesc'], $_POST['chineseDesc'])){
 	$productName = filter_input(INPUT_POST, 'productName', FILTER_SANITIZE_STRING);
 	$productNameCh = filter_input(INPUT_POST, 'productNameCh', FILTER_SANITIZE_STRING);
 	$engDesc = $_POST['engDesc'];
@@ -63,8 +63,8 @@ if(isset($_POST['productName'], $_POST['productNameCh'], $_POST['engDesc'], $_PO
 
     if($_POST['id'] != null && $_POST['id'] != ''){
         if($uploadOk == 1){
-            if ($update_stmt = $db->prepare("UPDATE product SET product_name=?, product_name_ch=?, product_desc=?, product_desc_ch=?, product_photo=?, user_id=? WHERE id=?")) {
-                $update_stmt->bind_param('sssssss', $productName, $productNameCh, $engDesc, $chineseDesc, $filePath, $userName, $_POST['id']);
+            if ($update_stmt = $db->prepare("UPDATE product SET product_name=?, product_name_ch=?, product_desc=?, product_desc_ch=?, product_photo=? WHERE id=?")) {
+                $update_stmt->bind_param('ssssss', $productName, $productNameCh, $engDesc, $chineseDesc, $filePath, $_POST['id']);
                 
                 // Execute the prepared query.
                 if (! $update_stmt->execute()) {
@@ -78,8 +78,8 @@ if(isset($_POST['productName'], $_POST['productNameCh'], $_POST['engDesc'], $_PO
             }
         }
         else{
-            if ($update_stmt = $db->prepare("UPDATE product SET product_name=?, product_name_ch=?, product_desc=?, product_desc_ch=?, user_id=? WHERE id=?")) {
-                $update_stmt->bind_param('ssssss', $productName, $productNameCh, $engDesc, $chineseDesc, $userName, $_POST['id']);
+            if ($update_stmt = $db->prepare("UPDATE product SET product_name=?, product_name_ch=?, product_desc=?, product_desc_ch=? WHERE id=?")) {
+                $update_stmt->bind_param('sssss', $productName, $productNameCh, $engDesc, $chineseDesc, $_POST['id']);
                 
                 // Execute the prepared query.
                 if (! $update_stmt->execute()) {
@@ -95,8 +95,8 @@ if(isset($_POST['productName'], $_POST['productNameCh'], $_POST['engDesc'], $_PO
     }
     else{
         if($uploadOk == 1){
-            if ($insert_stmt = $db->prepare("INSERT INTO product (product_name, product_name_ch	, product_desc, product_desc_ch, product_photo, user_id) VALUES (?, ?, ?, ?, ?, ?)")) {
-                $insert_stmt->bind_param('ssssss', $productName, $productNameCh, $engDesc, $chineseDesc, $filePath, $userName);
+            if ($insert_stmt = $db->prepare("INSERT INTO product (product_name, product_name_ch	, product_desc, product_desc_ch, product_photo) VALUES (?, ?, ?, ?, ?)")) {
+                $insert_stmt->bind_param('sssss', $productName, $productNameCh, $engDesc, $chineseDesc, $filePath);
                 
                 // Execute the prepared query.
                 if (! $insert_stmt->execute()) {
@@ -110,8 +110,8 @@ if(isset($_POST['productName'], $_POST['productNameCh'], $_POST['engDesc'], $_PO
             }
         }
         else{
-            if ($insert_stmt = $db->prepare("INSERT INTO product (product_name, product_name_ch	, product_desc, product_desc_ch, user_id) VALUES (?, ?, ?, ?, ?)")) {
-                $insert_stmt->bind_param('sssss', $productName, $productNameCh, $engDesc, $chineseDesc, $userName);
+            if ($insert_stmt = $db->prepare("INSERT INTO product (product_name, product_name_ch	, product_desc, product_desc_ch) VALUES (?, ?, ?, ?)")) {
+                $insert_stmt->bind_param('ssss', $productName, $productNameCh, $engDesc, $chineseDesc);
                 
                 // Execute the prepared query.
                 if (! $insert_stmt->execute()) {

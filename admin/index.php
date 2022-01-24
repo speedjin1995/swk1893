@@ -105,7 +105,7 @@ to get the desired effect
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
     <a href="#" class="brand-link">
-      <img src="../assets/demo/logo.png" alt="Durian Duke Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
+      <img src="../assets/demo/logo.png" alt="SWK Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
       <span class="brand-text font-weight-light">SWK</span>
     </a>
 
@@ -302,14 +302,6 @@ to get the desired effect
                 <textarea class="textarea" id="chineseDesc" name="chineseDesc" placeholder="Place some text here"
                               style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
               </div>
-              <div class="form-group">
-                <label for="userName">Users *</label>
-                <select class="form-control" id="userName" name="userName" required>
-                  <?php while($row2=mysqli_fetch_assoc($user)){ ?>
-                    <option value="<?=$row2['id'] ?>"><?=$row2['name'] ?></option>
-                  <?php } ?>
-                </select>
-					    </div>
             </div>
             <div class="modal-footer justify-content-between">
               <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
@@ -379,13 +371,6 @@ $(function () {
       $('#productModal').find('#productNameCh').val('');
       $('#productModal').find('#engDesc').summernote("code", "");
       $('#productModal').find('#chineseDesc').summernote("code", "");
-      $('#productModal').find('#userName').val('');
-      
-      <?php if($_SESSION['userRole'] != 'PRIADMIN'){
-        echo "$('#productModal').find('#userName').val('".$_SESSION['userID']."');";
-        echo "$('#productModal').find('#userName').attr('readonly', true);";
-      } ?>
-
       $('#productModal').modal('show');
       
       $('#productForm').validate({
@@ -414,12 +399,6 @@ function edit(id){
           $('#productModal').find('#productNameCh').val(decode.message.product_name_ch);
           $('#productModal').find('#engDesc').summernote("code", decode.message.product_desc);
           $('#productModal').find('#chineseDesc').summernote("code", decode.message.product_desc_ch);
-          $('#productModal').find('#userName').val(decode.message.user_id);
-
-          <?php if($_SESSION['userRole'] != 'PRIADMIN'){
-            echo "$('#productModal').find('#userName').attr('readonly', true);";
-          } ?>
-
           $('#productModal').modal('show');
           
           $('#productForm').validate({

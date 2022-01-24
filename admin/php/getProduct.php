@@ -27,7 +27,6 @@ if(isset($_POST['messageId'])){
                 $message['product_name_ch'] = $row['product_name_ch'];
                 $message['product_desc'] = $row['product_desc'];
                 $message['product_desc_ch'] = $row['product_desc_ch'];
-                $message['user_id'] = $row['user_id'];
             }
             
             echo json_encode(
