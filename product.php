@@ -54,7 +54,7 @@ else{
                 <div class="uk-navbar-left">
                     <div class="tw-logo">
                         <h3 class="site-name">
-                            <a href="index.php"><img src="assets/demo/logo.png"></a>
+                            <a href="index.html"><img src="assets/demo/logo.png"></a>
                         </h3>
                     </div>
                 </div>
@@ -141,12 +141,7 @@ else{
         <div class="main-container">
             <section class="uk-section tw-dynamic-page-title uk-text-center uk-flex uk-flex-middle uk-flex-center uk-light uk-background-cover uk-background-top-center" data-overlay="0.4" style="background-color: #151515; background-image: url(assets/demo/shop-bg.jpg); height: 500px;">
                 <div class="tw-page-title-container tw-element">
-                    <h1 class="tw-page-title uk-text-uppercase">Default Shop</h1>
-                </div>
-                <div class="tw-breadcrumb-container uk-position-absolute uk-position-bottom-center tw-element">
-                    <a href="index.html" class="tw-breadrumb-child home">Home</a>
-                    <a href="shop.html" class="tw-breadrumb-child">Shop</a>
-                    <a href="shop-cart.html" class="tw-breadrumb-child">Default Shop</a>
+                    <h1 class="tw-page-title uk-text-uppercase">产品信息</h1>
                 </div>
             </section>
             <section class="uk-section uk-section-shop">
@@ -154,7 +149,7 @@ else{
                     <div data-uk-grid>
                         <div class="content-area uk-width-expand">
                             <div class="tw-element tw-shop">
-                                <div class="shop-lead-meta uk-child-width-1-2" data-uk-grid>
+                                <!--<div class="shop-lead-meta uk-child-width-1-2" data-uk-grid>
                                     <div>
                                         <h4 class="shop-result-text uk-float-left">Showing 1–12 of 60 results</h4>
                                     </div>
@@ -172,7 +167,7 @@ else{
                                             </div>
                                         </h4>
                                     </div>
-                                </div>
+                                </div>-->
 
                                 <div class="shop-container uk-child-width-1-1@xxs uk-child-width-1-2@xs uk-child-width-1-3@s uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid data-uk-scrollspy="target: > .shop-item; cls:uk-animation-slide-bottom-medium; delay: 300;">
 
@@ -182,12 +177,12 @@ else{
                                                 <div class="shop-image-container uk-inline tw-onhover visible">
                                                     <img alt="Backpack In Black" src="assets/demo/shop/product-1.jpg">
                                                     <div class="uk-position-bottom">
-                                                        <a class="add-to-cart"><i class="icon ion-bag"></i>Add to Cart</a>
+                                                        <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
                                                 </div>
                                                 <h4><a href="shop-single.html" class="shop-title">Backpack In Black With Zip Top</a></h4>
                                                 <a class="shop-category">Accessories</a>
-                                                <div class="price">
+                                                <!--<div class="price">
                                                     <span class="old-price">$26.00</span>
                                                     <span class="new-price">$28.00</span>
                                                         <div class="shop-rating-container uk-clearfix">
@@ -204,7 +199,7 @@ else{
                                                                 <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                                                             </fieldset>
                                                         </div>
-                                                </div>
+                                                </div>-->
                                             </div>
                                         </div>
                                     </div>
@@ -215,12 +210,12 @@ else{
                                                 <div class="shop-image-container uk-inline tw-onhover visible">
                                                     <img alt="Backpack In Black" src="assets/demo/shop/product-2.jpg">
                                                     <div class="uk-position-bottom">
-                                                        <a class="add-to-cart"><i class="icon ion-bag"></i>Add to Cart</a>
+                                                        <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
                                                 </div>
                                                 <h4><a href="shop-single.html" class="shop-title">Criminal Damage Polo Shirt</a></h4>
                                                 <a class="shop-category">Clothing, Man</a>
-                                                <div class="price">
+                                                <!--<div class="price">
                                                     <span class="new-price">$40.00</span>
                                                         <div class="shop-rating-container uk-clearfix">
                                                             <fieldset class="rating">
@@ -236,7 +231,7 @@ else{
                                                                 <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                                                             </fieldset>
                                                         </div>
-                                                </div>
+                                                </div>-->
                                             </div>
                                         </div>
                                     </div>
@@ -247,12 +242,12 @@ else{
                                                 <div class="shop-image-container uk-inline tw-onhover visible">
                                                     <img alt="Backpack In Black" src="assets/demo/shop/product-3.jpg">
                                                     <div class="uk-position-bottom">
-                                                        <a class="add-to-cart"><i class="icon ion-bag"></i>Add to Cart</a>
+                                                        <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
                                                 </div>
                                                 <h4><a href="shop-single.html" class="shop-title">Military Backpack In Burgundy</a></h4>
                                                 <a class="shop-category">Accessories</a>
-                                                <div class="price">
+                                                <!--<div class="price">
                                                     <span class="new-price">$36.00</span>
                                                         <div class="shop-rating-container uk-clearfix">
                                                             <fieldset class="rating">
@@ -268,7 +263,7 @@ else{
                                                                 <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                                                             </fieldset>
                                                         </div>
-                                                </div>
+                                                </div>-->
                                             </div>
                                         </div>
                                     </div>
@@ -279,12 +274,12 @@ else{
                                                 <div class="shop-image-container uk-inline tw-onhover visible">
                                                     <img alt="Backpack In Black" src="assets/demo/shop/product-4.jpg">
                                                     <div class="uk-position-bottom">
-                                                        <a class="add-to-cart"><i class="icon ion-bag"></i>Add to Cart</a>
+                                                        <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
                                                 </div>
                                                 <h4><a href="shop-single.html" class="shop-title">Diesel T-Shirt CL-T-FRACAS Crewneck</a></h4>
                                                 <a class="shop-category">Clothing, Man</a>
-                                                <div class="price">
+                                                <!--<div class="price">
                                                     <span class="old-price">$30.00</span>
                                                         <div class="shop-rating-container uk-clearfix">
                                                             <fieldset class="rating">
@@ -300,7 +295,7 @@ else{
                                                                 <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                                                             </fieldset>
                                                         </div>
-                                                </div>
+                                                </div>-->
                                             </div>
                                         </div>
                                     </div>
@@ -311,12 +306,12 @@ else{
                                                 <div class="shop-image-container uk-inline tw-onhover visible">
                                                     <img alt="Backpack In Black" src="assets/demo/shop/product-5.jpg">
                                                     <div class="uk-position-bottom">
-                                                        <a class="add-to-cart"><i class="icon ion-bag"></i>Add to Cart</a>
+                                                        <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
                                                 </div>
                                                 <h4><a href="shop-single.html" class="shop-title">The North Face Microbyte Backpack</a></h4>
                                                 <a class="shop-category">Accessories</a>
-                                                <div class="price">
+                                                <!--<div class="price">
                                                     <span class="old-price">$25.00</span>
                                                     <span class="new-price">$16.00</span>
                                                         <div class="shop-rating-container uk-clearfix">
@@ -333,7 +328,7 @@ else{
                                                                 <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                                                             </fieldset>
                                                         </div>
-                                                </div>
+                                                </div>-->
                                             </div>
                                         </div>
                                     </div>
@@ -344,12 +339,12 @@ else{
                                                 <div class="shop-image-container uk-inline tw-onhover visible">
                                                     <img alt="Backpack In Black" src="assets/demo/shop/product-6.jpg">
                                                     <div class="uk-position-bottom">
-                                                        <a class="add-to-cart"><i class="icon ion-bag"></i>Add to Cart</a>
+                                                        <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
                                                 </div>
                                                 <h4><a href="shop-single.html" class="shop-title">Orange T-Shirt Flamingo Sunset</a></h4>
                                                 <a class="shop-category">T-Shirts & Vests</a>
-                                                <div class="price">
+                                                <!--<div class="price">
                                                     <span class="new-price">$40.00</span>
                                                         <div class="shop-rating-container uk-clearfix">
                                                             <fieldset class="rating">
@@ -365,7 +360,7 @@ else{
                                                                 <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                                                             </fieldset>
                                                         </div>
-                                                </div>
+                                                </div>-->
                                             </div>
                                         </div>
                                     </div>
@@ -376,12 +371,12 @@ else{
                                                 <div class="shop-image-container uk-inline tw-onhover visible">
                                                     <img alt="Backpack In Black" src="assets/demo/shop/product-7.jpg">
                                                     <div class="uk-position-bottom">
-                                                        <a class="add-to-cart"><i class="icon ion-bag"></i>Add to Cart</a>
+                                                        <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
                                                 </div>
                                                 <h4><a href="shop-single.html" class="shop-title">Military Backpack</a></h4>
                                                 <a class="shop-category">Accessories</a>
-                                                <div class="price">
+                                                <!--<div class="price">
                                                     <span class="new-price">$36.00</span>
                                                         <div class="shop-rating-container uk-clearfix">
                                                             <fieldset class="rating">
@@ -397,7 +392,7 @@ else{
                                                                 <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                                                             </fieldset>
                                                         </div>
-                                                </div>
+                                                </div>-->
                                             </div>
                                         </div>
                                     </div>
@@ -408,12 +403,12 @@ else{
                                                 <div class="shop-image-container uk-inline tw-onhover visible">
                                                     <img alt="Backpack In Black" src="assets/demo/shop/product-8.jpg">
                                                     <div class="uk-position-bottom">
-                                                        <a class="add-to-cart"><i class="icon ion-bag"></i>Add to Cart</a>
+                                                        <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
                                                 </div>
                                                 <h4><a href="shop-single.html" class="shop-title">Hype T-shirt With Paisley Sun</a></h4>
                                                 <a class="shop-category">Clothing, Man</a>
-                                                <div class="price">
+                                                <!--<div class="price">
                                                     <span class="old-price">$30.00</span>
                                                         <div class="shop-rating-container uk-clearfix">
                                                             <fieldset class="rating">
@@ -429,7 +424,7 @@ else{
                                                                 <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                                                             </fieldset>
                                                         </div>
-                                                </div>
+                                                </div>-->
                                             </div>
                                         </div>
                                     </div>
@@ -440,12 +435,12 @@ else{
                                                 <div class="shop-image-container uk-inline tw-onhover visible">
                                                     <img alt="Backpack In Black" src="assets/demo/shop/product-9.jpg">
                                                     <div class="uk-position-bottom">
-                                                        <a class="add-to-cart"><i class="icon ion-bag"></i>Add to Cart</a>
+                                                        <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
                                                 </div>
                                                 <h4><a href="shop-single.html" class="shop-title">Backpack In Black</a></h4>
                                                 <a class="shop-category">Accessories</a>
-                                                <div class="price">
+                                                <!--<div class="price">
                                                     <span class="old-price">$26.00</span>
                                                     <span class="new-price">$28.00</span>
                                                         <div class="shop-rating-container uk-clearfix">
@@ -462,7 +457,7 @@ else{
                                                                 <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                                                             </fieldset>
                                                         </div>
-                                                </div>
+                                                </div>-->
                                             </div>
                                         </div>
                                     </div>
@@ -472,7 +467,7 @@ else{
 
                         </div>
 
-                        <div class="sidebar-area">
+                        <!--<div class="sidebar-area">
                             <div class="sidebar-inner" data-uk-sticky="bottom: true;offset: 40">
 
                                 <div class="widget-item">
@@ -566,7 +561,7 @@ else{
                                 </div>
 
                             </div>
-                        </div>
+                        </div>-->
                     </div>
                 </div>
             </section>
