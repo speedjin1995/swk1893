@@ -139,14 +139,9 @@ else{
             </nav>
         </div>
         <div class="main-container">
-            <section class="uk-section uk-text-center uk-flex uk-flex-middle uk-flex-center uk-light uk-background-cover uk-background-top-center" data-overlay="0.4" style="background-color: #151515; background-image: url(assets/demo/page-title-elements.jpg); height: 500px;">
+            <section class="uk-section uk-text-center uk-flex uk-flex-middle uk-flex-center uk-light uk-background-cover uk-background-top-center" data-overlay="0.4" style="background-color: #151515; background-image: url(assets/demo/sandalwood.jpg); height: 500px;">
                 <div class="tw-page-title-container tw-element">
-                    <h1 class="tw-page-title uk-text-uppercase">Promo</h1>
-                </div>
-                <div class="tw-breadcrumb-container uk-position-absolute uk-position-bottom-center tw-element">
-                    <a href="index.php" class="tw-breadrumb-child home">Home</a>
-                    <a href="#" class="tw-breadrumb-child">Works</a>
-                    <a href="#" class="tw-breadrumb-child">Promo</a>
+                    <h1 class="tw-page-title uk-text-uppercase">Sandalwood</h1>
                 </div>
             </section>
             <section class="uk-section uk-section-normal">
@@ -157,18 +152,16 @@ else{
                             <div class="uk-grid-collapse uk-child-width-1-1 uk-child-width-1-2@m  uk-child-width-1-1@s" data-uk-grid>
                                 <div id="video" class="entry-media uk-responsive-width tw-video" data-video="target:.tw-video-container;show_play:true;hide_pause:true;loop:true" data-uk-scrollspy="target: .promo-image-container; cls:uk-animation-slide-bottom-medium; delay: 400;">
                                     <div class="promo-image-container">
-                                        <button type="button" class="tw-video-icon" data-uk-toggle="target: #video>*"><i class="ion-play"></i></button>
-                                        <img class="promo-image uk-box-shadow-small" src="assets/demo/portfolio/promo/portfolio-1.jpg">
+                                        <!--<button type="button" class="tw-video-icon" data-uk-toggle="target: #video>*"><i class="ion-play"></i></button>-->
+                                        <img class="promo-image uk-box-shadow-small" src="assets/demo/sandalwood1.jpg">
                                     </div>
-                                    <div class="tw-video-container" hidden><iframe width="853" height="480" src="https://www.youtube.com/embed/fafEHMnFe3g" allowfullscreen></iframe></div>
+                                    <!--<div class="tw-video-container" hidden><iframe width="853" height="480" src="https://www.youtube.com/embed/fafEHMnFe3g" allowfullscreen></iframe></div>-->
                                 </div>
                                 <div class="uk-flex uk-flex-middle">
                                     <div class="tw-element promo-text-container full tw-box big-typography" data-uk-scrollspy="target: > *; cls:uk-animation-slide-bottom-medium; delay: 400;">
-                                        <h6 class="tw-sub-title">Realize Your Ideas</h6>
-                                        <h1 class="tw-big-title">Creative Project</h1>
-                                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra person inceptos himenaeos
-                                            mauris in erat proin condimentum fermentum nunc etiam pharetra erat fermentu feugiat velit
-                                            mauris.
+                                        <h6 class="tw-sub-title"></h6>
+                                        <h1 class="tw-big-title">檀香树</h1>
+                                        <p>檀香树每年都会增值它的价值是一年至少5至12巴仙， 因为天气的变化， 马来西亚气候变成了种植檀香树最佳地方， 就如以前美国的檀香山，因为天气暖化，而不能种檀香树，就是现在的夏威夷。
                                         </p>
                                         <a href="#" class="uk-button uk-button-silver uk-button-default uk-button-small uk-button-radius tw-hover"><span class="tw-hover-inner"><span>Read More</span><i class="ion-ios-arrow-thin-right"></i></span></a>
                                     </div>
@@ -184,31 +177,29 @@ else{
                             <div class="uk-grid-collapse uk-child-width-1-1 uk-child-width-1-2@m  uk-child-width-1-1@s" data-uk-grid>
                                 <div class="uk-flex uk-flex-middle">
                                     <div class="tw-element promo-text-container full tw-box big-typography" data-uk-scrollspy="target: > *; cls:uk-animation-slide-bottom-medium; delay: 400;">
-                                        <h6 class="tw-sub-title">Realize Your Ideas</h6>
-                                        <h1 class="tw-big-title">Creative Project</h1>
-                                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra person inceptos himenaeos
-                                            mauris in erat proin condimentum fermentum nunc etiam pharetra erat fermentu feugiat velit
-                                            mauris.
+                                        <h6 class="tw-sub-title"></h6>
+                                        <h1 class="tw-big-title">檀香树的医药解释</h1>
+                                        <p>檀香树酸性非常的高,所以他的茶叶会使人减瘦。檀香树的茶叶本品味辛性温，气味芳香功能宣发气滞，畅膈宽胸，温胃散寒。凡胸腹疼痛，噎膈呕吐等症，均可应用。
                                         </p>
                                         <a href="#" class="uk-button uk-button-silver uk-button-default uk-button-small uk-button-radius tw-hover"><span class="tw-hover-inner"><span>Read More</span><i class="ion-ios-arrow-thin-right"></i></span></a>
                                     </div>
                                 </div>
                                 <div data-uk-scrollspy="target: > *; cls:uk-animation-slide-bottom-medium; delay: 400;">
                                     <div class="promo-carousel-container uk-light uk-box-shadow-small">
-                                        <div class="owl-carousel onhover owl-theme" data-uk-scrollspy="target: .shop-item; cls:uk-animation-slide-bottom-medium; delay: 300;">
+                                        <div class="onhover owl-theme" data-uk-scrollspy="target: .shop-item; cls:uk-animation-slide-bottom-medium; delay: 300;">
                                             <div class="gallery-item">
                                                 <div class="shop-content">
-                                                    <img alt="Backpack In Black" src="assets/demo/portfolio/promo/portfolio-2.jpg">
+                                                    <img alt="Backpack In Black" src="assets/demo/sandalwood2.jpg">
                                                 </div>
                                             </div>
-                                            <div class="gallery-item">
+                                            <!--<div class="gallery-item">
                                                 <div class="shop-content">
                                                     <img alt="Backpack In Black" src="assets/demo/portfolio/promo/portfolio-4.jpg">
                                                 </div>
                                             </div>
                                             <div class="gallery-item">
                                                 <img alt="Backpack In Black" src="assets/demo/portfolio/promo/portfolio-3.jpg">
-                                            </div>
+                                            </div>-->
                                         </div>
                                     </div>
                                 </div>
@@ -223,16 +214,14 @@ else{
                             <div class="uk-grid-collapse uk-child-width-1-1 uk-child-width-1-2@m  uk-child-width-1-1@s" data-uk-grid>
                                 <div data-uk-scrollspy="target: > *; cls:uk-animation-slide-bottom-medium; delay: 400;">
                                     <div class="promo-image-container">
-                                        <img class="promo-image uk-box-shadow-small" src="assets/demo/portfolio/promo/portfolio-4.jpg">
+                                        <img class="promo-image uk-box-shadow-small" src="assets/demo/sandalwood3.jpg">
                                     </div>
                                 </div>
                                 <div class="uk-flex uk-flex-middle">
                                     <div class="tw-element promo-text-container full tw-box big-typography" data-uk-scrollspy="target: > *; cls:uk-animation-slide-bottom-medium; delay: 400;">
-                                        <h6 class="tw-sub-title">Realize Your Ideas</h6>
-                                        <h1 class="tw-big-title">Creative Project</h1>
-                                        <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra person inceptos himenaeos
-                                            mauris in erat proin condimentum fermentum nunc etiam pharetra erat fermentu feugiat velit
-                                            mauris.
+                                        <h6 class="tw-sub-title"></h6>
+                                        <h1 class="tw-big-title">檀香树的应用</h1>
+                                        <p>1．用于寒凝气滞，胸腹疼痛，常与藿香、白豆蔻、砂仁、丁香等同用。若用于胸痹绞痛，常与丹参、砂仁同用，如丹参饮。<br />2。用于胃寒疼痛，呕吐清水，可与菖蒲、丁香、木香等同用。
                                         </p>
                                         <a href="#" class="uk-button uk-button-silver uk-button-default uk-button-small uk-button-radius tw-hover"><span class="tw-hover-inner"><span>Read More</span><i class="ion-ios-arrow-thin-right"></i></span></a>
                                     </div>
