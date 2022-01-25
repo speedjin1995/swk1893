@@ -175,7 +175,7 @@ else{
                                         <div class="shop-item">
                                             <div class="shop-content">
                                                 <div class="shop-image-container uk-inline tw-onhover visible">
-                                                    <img alt="Backpack In Black" src="assets/demo/shop/product-1.jpg">
+                                                    <img alt="Backpack In Black" src="assets/demo/product/product1.jpeg">
                                                     <div class="uk-position-bottom">
                                                         <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
@@ -208,7 +208,7 @@ else{
                                         <div class="shop-item">
                                             <div class="shop-content">
                                                 <div class="shop-image-container uk-inline tw-onhover visible">
-                                                    <img alt="Backpack In Black" src="assets/demo/shop/product-2.jpg">
+                                                    <img alt="Backpack In Black" src="assets/demo/product/product2.jpeg">
                                                     <div class="uk-position-bottom">
                                                         <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
@@ -240,7 +240,7 @@ else{
                                         <div class="shop-item">
                                             <div class="shop-content">
                                                 <div class="shop-image-container uk-inline tw-onhover visible">
-                                                    <img alt="Backpack In Black" src="assets/demo/shop/product-3.jpg">
+                                                    <img alt="Backpack In Black" src="assets/demo/product/product3.jpeg">
                                                     <div class="uk-position-bottom">
                                                         <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
@@ -272,7 +272,7 @@ else{
                                         <div class="shop-item">
                                             <div class="shop-content">
                                                 <div class="shop-image-container uk-inline tw-onhover visible">
-                                                    <img alt="Backpack In Black" src="assets/demo/shop/product-4.jpg">
+                                                    <img alt="Backpack In Black" src="assets/demo/product/product4.jpeg">
                                                     <div class="uk-position-bottom">
                                                         <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
@@ -304,7 +304,7 @@ else{
                                         <div class="shop-item">
                                             <div class="shop-content">
                                                 <div class="shop-image-container uk-inline tw-onhover visible">
-                                                    <img alt="Backpack In Black" src="assets/demo/shop/product-5.jpg">
+                                                    <img alt="Backpack In Black" src="assets/demo/product/product5.jpg">
                                                     <div class="uk-position-bottom">
                                                         <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
@@ -337,7 +337,7 @@ else{
                                         <div class="shop-item">
                                             <div class="shop-content">
                                                 <div class="shop-image-container uk-inline tw-onhover visible">
-                                                    <img alt="Backpack In Black" src="assets/demo/shop/product-6.jpg">
+                                                    <img alt="Backpack In Black" src="assets/demo/product/product6.jpg">
                                                     <div class="uk-position-bottom">
                                                         <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
@@ -369,7 +369,7 @@ else{
                                         <div class="shop-item">
                                             <div class="shop-content">
                                                 <div class="shop-image-container uk-inline tw-onhover visible">
-                                                    <img alt="Backpack In Black" src="assets/demo/shop/product-7.jpg">
+                                                    <img alt="Backpack In Black" src="assets/demo/product/product7.jpg">
                                                     <div class="uk-position-bottom">
                                                         <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
@@ -401,7 +401,7 @@ else{
                                         <div class="shop-item">
                                             <div class="shop-content">
                                                 <div class="shop-image-container uk-inline tw-onhover visible">
-                                                    <img alt="Backpack In Black" src="assets/demo/shop/product-8.jpg">
+                                                    <img alt="Backpack In Black" src="assets/demo/product/product8.jpg">
                                                     <div class="uk-position-bottom">
                                                         <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
@@ -433,7 +433,7 @@ else{
                                         <div class="shop-item">
                                             <div class="shop-content">
                                                 <div class="shop-image-container uk-inline tw-onhover visible">
-                                                    <img alt="Backpack In Black" src="assets/demo/shop/product-9.jpg">
+                                                    <img alt="Backpack In Black" src="assets/demo/product/product9.jpg">
                                                     <div class="uk-position-bottom">
                                                         <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
