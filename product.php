@@ -54,7 +54,7 @@ else{
                 <div class="uk-navbar-left">
                     <div class="tw-logo">
                         <h3 class="site-name">
-                            <a href="index.html"><img src="assets/demo/logo.png"></a>
+                            <a href="index.php"><img src="assets/demo/logo.png"></a>
                         </h3>
                     </div>
                 </div>
