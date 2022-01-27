@@ -54,7 +54,7 @@ else{
                 <div class="uk-navbar-left">
                     <div class="tw-logo">
                         <h3 class="site-name">
-                            <a href="index.html"><img src="assets/demo/logo.png"></a>
+                            <a href="index.php"><img src="assets/demo/logo.png"></a>
                         </h3>
                     </div>
                 </div>
@@ -139,7 +139,7 @@ else{
             </nav>
         </div>
         <div class="main-container">
-            <section class="uk-section tw-dynamic-page-title uk-text-center uk-flex uk-flex-middle uk-flex-center uk-light uk-background-cover uk-background-top-center" data-overlay="0.4" style="background-color: #151515; background-image: url(assets/demo/shop-bg.jpg); height: 500px;">
+            <section class="uk-section tw-dynamic-page-title uk-text-center uk-flex uk-flex-middle uk-flex-center uk-light uk-background-cover uk-background-top-center" data-overlay="0.4" style="background-color: #151515; background-image: url(assets/demo/product/productmain.jpg); height: 500px;">
                 <div class="tw-page-title-container tw-element">
                     <h1 class="tw-page-title uk-text-uppercase">产品信息</h1>
                 </div>
@@ -180,7 +180,7 @@ else{
                                                         <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
                                                 </div>
-                                                <h4><a href="shop-single.html" class="shop-title">Backpack In Black With Zip Top</a></h4>
+                                                <h4><a href="shop-single.html" class="shop-title">Sandalwood Box 1</a></h4>
                                                 <a class="shop-category">Accessories</a>
                                                 <!--<div class="price">
                                                     <span class="old-price">$26.00</span>
@@ -213,8 +213,8 @@ else{
                                                         <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
                                                 </div>
-                                                <h4><a href="shop-single.html" class="shop-title">Criminal Damage Polo Shirt</a></h4>
-                                                <a class="shop-category">Clothing, Man</a>
+                                                <h4><a href="shop-single.html" class="shop-title">Sandalwood Box 1</a></h4>
+                                                <a class="shop-category">Accessories</a>
                                                 <!--<div class="price">
                                                     <span class="new-price">$40.00</span>
                                                         <div class="shop-rating-container uk-clearfix">
@@ -245,7 +245,7 @@ else{
                                                         <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
                                                 </div>
-                                                <h4><a href="shop-single.html" class="shop-title">Military Backpack In Burgundy</a></h4>
+                                                <h4><a href="shop-single.html" class="shop-title">Sandalwood Box 3</a></h4>
                                                 <a class="shop-category">Accessories</a>
                                                 <!--<div class="price">
                                                     <span class="new-price">$36.00</span>
@@ -277,8 +277,8 @@ else{
                                                         <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
                                                 </div>
-                                                <h4><a href="shop-single.html" class="shop-title">Diesel T-Shirt CL-T-FRACAS Crewneck</a></h4>
-                                                <a class="shop-category">Clothing, Man</a>
+                                                <h4><a href="shop-single.html" class="shop-title">Sandalwood Box 4</a></h4>
+                                                <a class="shop-category">Accessories</a>
                                                 <!--<div class="price">
                                                     <span class="old-price">$30.00</span>
                                                         <div class="shop-rating-container uk-clearfix">
@@ -309,8 +309,8 @@ else{
                                                         <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
                                                 </div>
-                                                <h4><a href="shop-single.html" class="shop-title">The North Face Microbyte Backpack</a></h4>
-                                                <a class="shop-category">Accessories</a>
+                                                <h4><a href="shop-single.html" class="shop-title">Tea 1</a></h4>
+                                                <a class="shop-category">Beverages</a>
                                                 <!--<div class="price">
                                                     <span class="old-price">$25.00</span>
                                                     <span class="new-price">$16.00</span>
@@ -342,8 +342,8 @@ else{
                                                         <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
                                                 </div>
-                                                <h4><a href="shop-single.html" class="shop-title">Orange T-Shirt Flamingo Sunset</a></h4>
-                                                <a class="shop-category">T-Shirts & Vests</a>
+                                                <h4><a href="shop-single.html" class="shop-title">Tea 2</a></h4>
+                                                <a class="shop-category">Beverages</a>
                                                 <!--<div class="price">
                                                     <span class="new-price">$40.00</span>
                                                         <div class="shop-rating-container uk-clearfix">
@@ -374,8 +374,8 @@ else{
                                                         <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
                                                 </div>
-                                                <h4><a href="shop-single.html" class="shop-title">Military Backpack</a></h4>
-                                                <a class="shop-category">Accessories</a>
+                                                <h4><a href="shop-single.html" class="shop-title">Tea 3</a></h4>
+                                                <a class="shop-category">Beverages</a>
                                                 <!--<div class="price">
                                                     <span class="new-price">$36.00</span>
                                                         <div class="shop-rating-container uk-clearfix">
@@ -406,8 +406,8 @@ else{
                                                         <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
                                                 </div>
-                                                <h4><a href="shop-single.html" class="shop-title">Hype T-shirt With Paisley Sun</a></h4>
-                                                <a class="shop-category">Clothing, Man</a>
+                                                <h4><a href="shop-single.html" class="shop-title">Tea 4</a></h4>
+                                                <a class="shop-category">Beverages</a>
                                                 <!--<div class="price">
                                                     <span class="old-price">$30.00</span>
                                                         <div class="shop-rating-container uk-clearfix">
@@ -438,8 +438,8 @@ else{
                                                         <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                     </div>
                                                 </div>
-                                                <h4><a href="shop-single.html" class="shop-title">Backpack In Black</a></h4>
-                                                <a class="shop-category">Accessories</a>
+                                                <h4><a href="shop-single.html" class="shop-title">Tea 5</a></h4>
+                                                <a class="shop-category">Beverages</a>
                                                 <!--<div class="price">
                                                     <span class="old-price">$26.00</span>
                                                     <span class="new-price">$28.00</span>
