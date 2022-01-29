@@ -365,7 +365,7 @@ else{
                                         </div>
                                     </div>
 
-                                    <div>
+                                    <!--<div>
                                         <div class="shop-item">
                                             <div class="shop-content">
                                                 <div class="shop-image-container uk-inline tw-onhover visible">
@@ -392,12 +392,12 @@ else{
                                                                 <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                                                             </fieldset>
                                                         </div>
-                                                </div>-->
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>-->
 
-                                    <div>
+                                    <!--<div>
                                         <div class="shop-item">
                                             <div class="shop-content">
                                                 <div class="shop-image-container uk-inline tw-onhover visible">
@@ -424,12 +424,12 @@ else{
                                                                 <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                                                             </fieldset>
                                                         </div>
-                                                </div>-->
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>-->
 
-                                    <div>
+                                    <!--<div>
                                         <div class="shop-item">
                                             <div class="shop-content">
                                                 <div class="shop-image-container uk-inline tw-onhover visible">
@@ -457,10 +457,10 @@ else{
                                                                 <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
                                                             </fieldset>
                                                         </div>
-                                                </div>-->
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div>-->
 
                                 </div>
                             </div>

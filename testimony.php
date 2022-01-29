@@ -144,11 +144,11 @@ else{
                 <div class="tw-page-title-container tw-element">
                     <h1 class="tw-page-title uk-text-uppercase">Services</h1>
                 </div>
-                <div class="tw-breadcrumb-container uk-position-absolute uk-position-bottom-center tw-element">
+                <!--<div class="tw-breadcrumb-container uk-position-absolute uk-position-bottom-center tw-element">
                     <a href="index.php" class="tw-breadrumb-child home">Home</a>
                     <a href="#" class="tw-breadrumb-child">Pages</a>
                     <a href="#" class="tw-breadrumb-child">Services</a>
-                </div>
+                </div>-->
             </section>
             <section class="uk-section">
                 <div class="uk-container">
@@ -157,7 +157,7 @@ else{
                             Why choose us ?
                         </h3>
                         <p class="subtitle">
-                            Class aptent taciti sociosqu ad litora torquent per conubia nostra per inceptos himenaeos mauris erat justo condimentum sit amet augue.
+                            Sandalwood tea is the latest trend. 
                         </p>
                     </div>
                     
@@ -165,9 +165,9 @@ else{
                         
                         <div>
                             <div class="tw-element tw-box small-typography layout-2">
-                                <i class="et-laptop"></i>
+                                <i class="ion-leaf"></i>
                                 <h4>
-                                    Web Design
+                                    Antioxidant
                                 </h4>
                                 <p class="description">
                                     Duis sed odio sit amet nibh vulputate cursus sit amet mauris morbi accumsan ipsum velit erot auctor ornare lorem ipsum odio.
@@ -177,9 +177,9 @@ else{
                         
                         <div>
                             <div class="tw-element tw-box small-typography layout-2">
-                                <i class="et-tools-2"></i>
+                                <i class="ion-leaf"></i>
                                 <h4>
-                                    Web Development
+                                    Tannin
                                 </h4>
                                 <p class="description">
                                     Duis sed odio sit amet nibh vulputate cursus sit amet mauris morbi accumsan ipsum velit erot auctor ornare lorem ipsum odio.
@@ -189,9 +189,9 @@ else{
                         
                         <div>
                             <div class="tw-element tw-box small-typography layout-2">
-                                <i class="et-global"></i>
+                                <i class="ion-leaf"></i>
                                 <h4>
-                                    Social Media
+                                    Peace of mind
                                 </h4>
                                 <p class="description">
                                     Duis sed odio sit amet nibh vulputate cursus sit amet mauris morbi accumsan ipsum velit erot auctor ornare lorem ipsum odio.
@@ -199,9 +199,9 @@ else{
                             </div>
                         </div>
                         
-                        <div>
+                        <!--<div>
                             <div class="tw-element tw-box small-typography layout-2">
-                                <i class="et-mobile"></i>
+                                <i class="ion-leaf"></i>
                                 <h4>
                                     Fully responsive
                                 </h4>
@@ -213,7 +213,7 @@ else{
                         
                         <div>
                             <div class="tw-element tw-box small-typography layout-2">
-                                <i class="et-puzzle"></i>
+                                <i class="ion-leaf"></i>
                                 <h4>
                                     Graphic Design
                                 </h4>
@@ -225,7 +225,7 @@ else{
                         
                         <div>
                             <div class="tw-element tw-box small-typography layout-2">
-                                <i class="et-happy"></i>
+                                <i class="ion-leaf"></i>
                                 <h4>
                                     Friendly Support
                                 </h4>
@@ -233,7 +233,7 @@ else{
                                     Duis sed odio sit amet nibh vulputate cursus sit amet mauris morbi accumsan ipsum velit erot auctor ornare lorem ipsum odio.
                                 </p>
                             </div>
-                        </div>
+                        </div>-->
                         
                     </div>
                     
