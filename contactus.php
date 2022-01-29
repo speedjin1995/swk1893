@@ -184,12 +184,6 @@ else{
                 </div>
             </section>
 
-            <section class="uk-section uk-padding-remove">
-                <div uk-scrollspy="target: > div; cls:uk-animation-fade; delay: 300">
-                    <div id="map2" style="width: 100%; height: 500px;"></div>
-                </div>
-            </section>
-
             <section class="uk-section">
                 <div class="uk-container uk-container-xsmall">
                     <div class="tw-heading tw-element uk-text-center">

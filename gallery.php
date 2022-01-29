@@ -50,7 +50,7 @@ else{
         <div class="uk-navbar-left">
             <div class="tw-logo">
                 <h3 class="site-name">
-                    <a href="index.php"><img src="assets/demo/icon.png"></a>
+                    <a href="index.php"><img src="assets/demo/logo.png"></a>
                 </h3>
             </div>
         </div>
@@ -136,15 +136,15 @@ else{
     </nav>
 
 </div><!-- .main-container close -->
-<div class="main-container"><section class="uk-section uk-text-center uk-flex uk-flex-middle uk-flex-center uk-light uk-background-cover uk-background-top-center" data-overlay="0.4" style="background-color: #151515; background-image: url(assets/demo/page-title-elements.jpg); height: 500px;">
+<div class="main-container"><section class="uk-section uk-text-center uk-flex uk-flex-middle uk-flex-center uk-light uk-background-cover uk-background-top-center" data-overlay="0.4" style="background-color: #151515; background-image: url(assets/demo/page-gallery.jpg); height: 500px;">
     <div class="tw-page-title-container tw-element">
-        <h1 class="tw-page-title uk-text-uppercase">Grid 2 Column</h1>
+        <h1 class="tw-page-title uk-text-uppercase">GALLERY</h1>
     </div>
-    <div class="tw-breadcrumb-container uk-position-absolute uk-position-bottom-center tw-element">
+    <!--<div class="tw-breadcrumb-container uk-position-absolute uk-position-bottom-center tw-element">
         <a href="index.php" class="tw-breadrumb-child home">Home</a>
         <a href="#" class="tw-breadrumb-child">Works</a>
         <a href="#" class="tw-breadrumb-child">Grid 2 Column</a>
-    </div>
+    </div>-->
 </section><section class="uk-section uk-section-large">
     <div class="uk-container">
 
@@ -153,18 +153,18 @@ else{
             <div class="tw-portfolio-filter uk-text-center uk-text-uppercase">
                 <ul class="uk-list">
                     <li><span data-filter="*">Show All</span></li>
-                    <li><span data-filter=".category-web-design">Web Design</span></li>
-                    <li><span data-filter=".category-branding">Branding</span></li>
-                    <li><span data-filter=".category-print">Print</span></li>
-                    <li><span data-filter=".category-photography">Photography</span></li>
+                    <li><span data-filter=".category-overview">Overview</span></li>
+                    <li><span data-filter=".category-farm">Farm</span></li>
+                    <li><span data-filter=".category-tree">Tree</span></li>
+                    <li><span data-filter=".category-tea">Tea Leaf</span></li>
                 </ul>
             </div>
 
             <div class="isotope-container uk-grid-medium uk-child-width-1-1 uk-child-width-1-2@m" data-uk-grid data-uk-scrollspy="target: > .portfolio-item; cls:uk-animation-slide-bottom-medium; delay: 400;">
 
-                <div class="portfolio-item category-print">
+                <div class="portfolio-item category-tea">
                     <div class="portfolio-media tw-image-hover">
-                        <img src="assets/demo/portfolio/portfolio-large-1.jpg" alt="" />
+                        <img src="assets/demo/portfolio/port1.jpg" alt="" />
                         <a href="#" class="portfolio-content uk-light">
                             <h3 class="portfolio-title"><span>One Day In Paradise</span></h3>
                             <div class="tw-meta"><span>Print</span></div>
@@ -172,9 +172,9 @@ else{
                     </div>
                 </div>
 
-                <div class="portfolio-item category-branding category-web-design">
+                <div class="portfolio-item category-tree">
                     <div class="portfolio-media tw-image-hover">
-                        <img src="assets/demo/portfolio/portfolio-large-2.jpg" alt="" />
+                        <img src="assets/demo/portfolio/port2.jpg" alt="" />
                         <a href="#" class="portfolio-content uk-light">
                             <h3 class="portfolio-title"><span>Day & Age Ora</span></h3>
                             <div class="tw-meta"><span>Branding</span></div>
@@ -182,9 +182,9 @@ else{
                     </div>
                 </div>
 
-                <div class="portfolio-item category-photography category-web-design">
+                <div class="portfolio-item category-overview category-farm">
                     <div class="portfolio-media tw-image-hover">
-                        <img src="assets/demo/portfolio/portfolio-large-3.jpg" alt="" />
+                        <img src="assets/demo/portfolio/port3.jpg" alt="" />
                         <a href="#" class="portfolio-content uk-light">
                             <h3 class="portfolio-title"><span>Kolonihagen Branding</span></h3>
                             <div class="tw-meta"><span>Photography</span></div>
@@ -192,9 +192,9 @@ else{
                     </div>
                 </div>
 
-                <div class="portfolio-item category-branding category-web-design">
+                <div class="portfolio-item category-tea">
                     <div class="portfolio-media tw-image-hover">
-                        <img src="assets/demo/portfolio/portfolio-large-4.jpg" alt="" />
+                        <img src="assets/demo/portfolio/port4.jpg" alt="" />
                         <a href="#" class="portfolio-content uk-light">
                             <h3 class="portfolio-title"><span>Axiom Essential Watch</span></h3>
                             <div class="tw-meta"><span>Branding</span></div>
@@ -202,9 +202,9 @@ else{
                     </div>
                 </div>
 
-                <div class="portfolio-item category-print">
+                <div class="portfolio-item category-overview">
                     <div class="portfolio-media tw-image-hover">
-                        <img src="assets/demo/portfolio/portfolio-large-5.jpg" alt="" />
+                        <img src="assets/demo/portfolio/port5.jpg" alt="" />
                         <a href="#" class="portfolio-content uk-light">
                             <h3 class="portfolio-title"><span>Alud. Winter Magazine nº1 Cover 1</span></h3>
                             <div class="tw-meta"><span>Print</span></div>
@@ -212,9 +212,9 @@ else{
                     </div>
                 </div>
 
-                <div class="portfolio-item category-photography">
+                <div class="portfolio-item category-tree">
                     <div class="portfolio-media tw-image-hover">
-                        <img src="assets/demo/portfolio/portfolio-large-6.jpg" alt="" />
+                        <img src="assets/demo/portfolio/port6.jpg" alt="" />
                         <a href="#" class="portfolio-content uk-light">
                             <h3 class="portfolio-title"><span>HAY + COS Collab</span></h3>
                             <div class="tw-meta"><span>Photography</span></div>
@@ -226,9 +226,9 @@ else{
 
             </div>
 
-            <div class="tw-pagination uk-text-center">
+            <!--<div class="tw-pagination uk-text-center">
                 <a href="#" class="uk-button uk-button-default uk-button-small uk-button-radius uk-button-silver tw-hover"><span class="tw-hover-inner"><span>More Works</span><i class="ion-ios-arrow-thin-right"></i></span></a>
-            </div>
+            </div>-->
         </div>
 
     </div>
