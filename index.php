@@ -140,7 +140,7 @@ else{
         <div class="main-container">
             <section class="tw-slider tw-slider-fullscreen uk-light" data-uk-height-viewport="offset-top: true">
                 <div class="owl-carousel owl-theme" data-autoplay="true" data-autoplay-timeout="4000" data-autoplay-hoverpause="true">
-                    <div class="slider-item" data-overlay="0.4" style="background-color: #151515; background-image: url(assets/demo/slider/slider-main-1.jpg);" data-uk-height-viewport="offset-top: true">
+                    <div class="slider-item" data-overlay="0.4" style="background-color: #151515; background-image: url(assets/demo/slider/slider-main-one.jpg);" data-uk-height-viewport="offset-top: true">
                         <div class="slider-content">
                             <div class="tw-element uk-text-center full tw-heading" data-uk-scrollspy="target: > *; cls:uk-animation-slide-bottom-medium; delay: 400;">
                                 <h4 class="tw-sub-title">
@@ -155,7 +155,7 @@ else{
                             </div>
                         </div>
                     </div>
-                    <div class="slider-item" data-overlay="0.4" style="background-color: #151515; background-image: url(assets/demo/slider/slider-main-2.jpg);" data-uk-height-viewport="offset-top: true">
+                    <div class="slider-item" data-overlay="0.4" style="background-color: #151515; background-image: url(assets/demo/slider/slider-main-two.jpg);" data-uk-height-viewport="offset-top: true">
                         <div class="slider-content">
                             <div class="tw-element uk-text-center full tw-heading" data-uk-scrollspy="target: > *; cls:uk-animation-slide-bottom-medium; delay: 400;">
                                 <h4 class="tw-sub-title">
@@ -182,7 +182,7 @@ else{
                     <div class="isotope-container data-uk-grid-medium uk-grid-collapse with-bg tw-calc-width uk-child-width-1-1 uk-child-width-1-3@m" data-uk-grid data-uk-scrollspy="target: > .portfolio-item; cls:uk-animation-slide-bottom-medium; delay: 300;">
                         <div class="portfolio-item category-print">
                             <div class="portfolio-media tw-image-hover">
-                                <img src="assets/demo/portfolio/grid/grid-full-1.jpg" alt="" />
+                                <img src="assets/demo/portfolio/grid/grid1.jpg" alt="" />
                                 <a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>One Day In Paradise</span></h3>
                                     <div class="tw-meta"><span>Print</span></div>
@@ -191,7 +191,7 @@ else{
                         </div>
                         <div class="portfolio-item category-branding category-web-design">
                             <div class="portfolio-media tw-image-hover">
-                                <img src="assets/demo/portfolio/grid/grid-full-2.jpg" alt="" />
+                                <img src="assets/demo/portfolio/grid/grid2.jpg" alt="" />
                                 <a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>Day & Age Ora</span></h3>
                                     <div class="tw-meta"><span>Branding</span></div>
@@ -200,7 +200,7 @@ else{
                         </div>
                         <div class="portfolio-item category-photography category-web-design">
                             <div class="portfolio-media tw-image-hover">
-                                <img src="assets/demo/portfolio/grid/grid-full-3.jpg" alt="" />
+                                <img src="assets/demo/portfolio/grid/grid3.jpg" alt="" />
                                 <a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>Kolonihagen Branding</span></h3>
                                     <div class="tw-meta"><span>Photography</span></div>
@@ -209,7 +209,7 @@ else{
                         </div>
                         <div class="portfolio-item category-branding category-web-design">
                             <div class="portfolio-media tw-image-hover">
-                                <img src="assets/demo/portfolio/grid/grid-full-4.jpg" alt="" />
+                                <img src="assets/demo/portfolio/grid/grid4.jpg" alt="" />
                                 <a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>Axiom Essential Watch</span></h3>
                                     <div class="tw-meta"><span>Branding</span></div>
@@ -218,7 +218,7 @@ else{
                         </div>
                         <div class="portfolio-item category-print">
                             <div class="portfolio-media tw-image-hover">
-                                <img src="assets/demo/portfolio/grid/grid-full-5.jpg" alt="" />
+                                <img src="assets/demo/portfolio/grid/grid5.jpg" alt="" />
                                 <a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>Alud. Winter Magazine nº1 Cover 1</span></h3>
                                     <div class="tw-meta"><span>Print</span></div>
@@ -227,7 +227,7 @@ else{
                         </div>
                         <div class="portfolio-item category-print">
                             <div class="portfolio-media tw-image-hover">
-                                <img src="assets/demo/portfolio/grid/grid-full-6.jpg" alt="" />
+                                <img src="assets/demo/portfolio/grid/grid6.jpg" alt="" />
                                 <a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>HAY + COS Collab</span></h3>
                                     <div class="tw-meta"><span>Photography</span></div>
@@ -256,7 +256,7 @@ else{
                     <div class="isotope-container data-uk-grid-medium uk-grid-collapse with-bg tw-calc-width uk-child-width-1-1 uk-child-width-1-3@m" data-uk-grid data-uk-scrollspy="target: > .portfolio-item; cls:uk-animation-slide-bottom-medium; delay: 300;">
                         <div class="portfolio-item category-print">
                             <div class="portfolio-media tw-image-hover">
-                                <img src="assets/demo/testimonials/testimonial-1.jpg" alt="" />
+                                <img src="" alt="" />
                                 <a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>One Day In Paradise</span></h3>
                                     <div class="tw-meta"><span>Print</span></div>
@@ -265,7 +265,7 @@ else{
                         </div>
                         <div class="portfolio-item category-branding category-web-design">
                             <div class="portfolio-media tw-image-hover">
-                                <img src="assets/demo/testimonials/testimonial-1.jpg" alt="" />
+                                <img src="" alt="" />
                                 <a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>Day & Age Ora</span></h3>
                                     <div class="tw-meta"><span>Branding</span></div>
@@ -274,7 +274,7 @@ else{
                         </div>
                         <div class="portfolio-item category-photography category-web-design">
                             <div class="portfolio-media tw-image-hover">
-                                <img src="assets/demo/testimonials/testimonial-1.jpg" alt="" />
+                                <img src="" alt="" />
                                 <a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>Kolonihagen Branding</span></h3>
                                     <div class="tw-meta"><span>Photography</span></div>
@@ -283,7 +283,7 @@ else{
                         </div>
                         <div class="portfolio-item category-branding category-web-design">
                             <div class="portfolio-media tw-image-hover">
-                                <img src="assets/demo/testimonials/testimonial-1.jpg" alt="" />
+                                <img src="" alt="" />
                                 <a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>Axiom Essential Watch</span></h3>
                                     <div class="tw-meta"><span>Branding</span></div>
@@ -292,7 +292,7 @@ else{
                         </div>
                         <div class="portfolio-item category-print">
                             <div class="portfolio-media tw-image-hover">
-                                <img src="assets/demo/testimonials/testimonial-1.jpg" alt="" />
+                                <img src="" alt="" />
                                 <a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>Alud. Winter Magazine nº1 Cover 1</span></h3>
                                     <div class="tw-meta"><span>Print</span></div>
@@ -301,7 +301,7 @@ else{
                         </div>
                         <div class="portfolio-item category-print">
                             <div class="portfolio-media tw-image-hover">
-                                <img src="assets/demo/testimonials/testimonial-1.jpg" alt="" />
+                                <img src="" alt="" />
                                 <a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>HAY + COS Collab</span></h3>
                                     <div class="tw-meta"><span>Photography</span></div>
