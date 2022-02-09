@@ -24,6 +24,8 @@ if(!isset($_SESSION['language'])){
 else{
     $language = $_SESSION['language'];
 }
+
+$products = $db->query("SELECT * FROM product");
 ?>
 <html lang="en">
     <head>
@@ -118,7 +120,7 @@ else{
                                     <a href="gallery.html"><?=$languageArray['nav_gallery'][$language] ?></a>
                                 </li>
                                 <li class="uk-parent">
-                                    <a href="contactus.html"><?=$languageArray['nav_contact_us'][$language] ?>/a>
+                                    <a href="contactus.html"><?=$languageArray['nav_contact_us'][$language] ?></a>
                                 </li>
                                 <li class="uk-parent">
                                     <a href="#"><?=$languageArray['nav_language'][$language] ?></a>
@@ -141,7 +143,7 @@ else{
         <div class="main-container">
             <section class="uk-section tw-dynamic-page-title uk-text-center uk-flex uk-flex-middle uk-flex-center uk-light uk-background-cover uk-background-top-center" data-overlay="0.4" style="background-color: #151515; background-image: url(assets/demo/product/productmain.jpg); height: 500px;">
                 <div class="tw-page-title-container tw-element">
-                    <h1 class="tw-page-title uk-text-uppercase">产品信息</h1>
+                    <h1 class="tw-page-title uk-text-uppercase"><?=$languageArray['page_products_info'][$language] ?></h1>
                 </div>
             </section>
             <section class="uk-section uk-section-shop">
@@ -170,41 +172,30 @@ else{
                                 </div>-->
 
                                 <div class="shop-container uk-child-width-1-1@xxs uk-child-width-1-2@xs uk-child-width-1-3@s uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid data-uk-scrollspy="target: > .shop-item; cls:uk-animation-slide-bottom-medium; delay: 300;">
-
-                                    <div>
-                                        <div class="shop-item">
-                                            <div class="shop-content">
-                                                <div class="shop-image-container uk-inline tw-onhover visible">
-                                                    <img alt="Backpack In Black" src="assets/demo/product/product1.jpeg">
-                                                    <div class="uk-position-bottom">
-                                                        <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
-                                                    </div>
-                                                </div>
-                                                <h4><a href="shop-single.html" class="shop-title">Sandalwood Box 1</a></h4>
-                                                <a class="shop-category">Accessories</a>
-                                                <!--<div class="price">
-                                                    <span class="old-price">$26.00</span>
-                                                    <span class="new-price">$28.00</span>
-                                                        <div class="shop-rating-container uk-clearfix">
-                                                            <fieldset class="rating">
-                                                                <input type="radio" id="star5" name="rating" value="5"><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                                <input type="radio" id="star4half" name="rating" value="4 and a half"><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                                <input type="radio" id="star4" name="rating" value="4"><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                                <input type="radio" id="star3half" name="rating" value="3 and a half"><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                                <input type="radio" id="star3" name="rating" value="3"><label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                                <input type="radio" id="star2half" name="rating" value="2 and a half"><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                                <input type="radio" id="star2" name="rating" value="2"><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                                <input type="radio" id="star1half" name="rating" value="1 and a half"><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                                <input type="radio" id="star1" name="rating" value="1"><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                                <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                                            </fieldset>
+                                    <?php while($row=mysqli_fetch_assoc($products)){
+                                        echo '<div>
+                                            <div class="shop-item">
+                                                <div class="shop-content">
+                                                    <div class="shop-image-container uk-inline tw-onhover visible">
+                                                        <img alt="Backpack In Black" src="admin/php/'.$row['product_photo'].'">
+                                                        <div class="uk-position-bottom">
+                                                            <a class="add-to-cart" onclick="edit('.$row['id'].')">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                         </div>
-                                                </div>-->
-                                            </div>
-                                        </div>
-                                    </div>
+                                                    </div>';
+                                                    
+                                        if($language == "ch"){
+                                            echo '<h4 onclick="edit('.$row['id'].')">'.$row['product_name_ch'].'</h4>';
+                                        }
+                                        else{
+                                            echo '<h4 onclick="edit('.$row['id'].')">'.$row['product_name'].'</h4>';
+                                        }
 
-                                    <div>
+                                        echo '</div>
+                                            </div>
+                                        </div>';
+                                    } ?>
+
+                                    <!--div>
                                         <div class="shop-item">
                                             <div class="shop-content">
                                                 <div class="shop-image-container uk-inline tw-onhover visible">
@@ -215,23 +206,6 @@ else{
                                                 </div>
                                                 <h4><a href="shop-single.html" class="shop-title">Sandalwood Box 1</a></h4>
                                                 <a class="shop-category">Accessories</a>
-                                                <!--<div class="price">
-                                                    <span class="new-price">$40.00</span>
-                                                        <div class="shop-rating-container uk-clearfix">
-                                                            <fieldset class="rating">
-                                                                <input type="radio" id="star5" name="rating" value="5"><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                                <input type="radio" id="star4half" name="rating" value="4 and a half"><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                                <input type="radio" id="star4" name="rating" value="4"><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                                <input type="radio" id="star3half" name="rating" value="3 and a half"><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                                <input type="radio" id="star3" name="rating" value="3"><label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                                <input type="radio" id="star2half" name="rating" value="2 and a half"><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                                <input type="radio" id="star2" name="rating" value="2"><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                                <input type="radio" id="star1half" name="rating" value="1 and a half"><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                                <input type="radio" id="star1" name="rating" value="1"><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                                <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                                            </fieldset>
-                                                        </div>
-                                                </div>-->
                                             </div>
                                         </div>
                                     </div>
@@ -247,58 +221,25 @@ else{
                                                 </div>
                                                 <h4><a href="shop-single.html" class="shop-title">Sandalwood Box 3</a></h4>
                                                 <a class="shop-category">Accessories</a>
-                                                <!--<div class="price">
-                                                    <span class="new-price">$36.00</span>
-                                                        <div class="shop-rating-container uk-clearfix">
-                                                            <fieldset class="rating">
-                                                                <input type="radio" id="star5" name="rating" value="5"><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                                <input type="radio" id="star4half" name="rating" value="4 and a half"><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                                <input type="radio" id="star4" name="rating" value="4"><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                                <input type="radio" id="star3half" name="rating" value="3 and a half"><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                                <input type="radio" id="star3" name="rating" value="3"><label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                                <input type="radio" id="star2half" name="rating" value="2 and a half"><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                                <input type="radio" id="star2" name="rating" value="2"><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                                <input type="radio" id="star1half" name="rating" value="1 and a half"><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                                <input type="radio" id="star1" name="rating" value="1"><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                                <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                                            </fieldset>
-                                                        </div>
-                                                </div>-->
                                             </div>
                                         </div>
                                     </div>
 
-                                    <div>
-                                        <div class="shop-item">
-                                            <div class="shop-content">
-                                                <div class="shop-image-container uk-inline tw-onhover visible">
-                                                    <img alt="Backpack In Black" src="assets/demo/product/product4.jpeg">
-                                                    <div class="uk-position-bottom">
-                                                        <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
-                                                    </div>
-                                                </div>
-                                                <h4><a href="shop-single.html" class="shop-title">Sandalwood Box 4</a></h4>
-                                                <a class="shop-category">Accessories</a>
-                                                <!--<div class="price">
-                                                    <span class="old-price">$30.00</span>
-                                                        <div class="shop-rating-container uk-clearfix">
-                                                            <fieldset class="rating">
-                                                                <input type="radio" id="star5" name="rating" value="5"><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                                <input type="radio" id="star4half" name="rating" value="4 and a half"><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                                <input type="radio" id="star4" name="rating" value="4"><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                                <input type="radio" id="star3half" name="rating" value="3 and a half"><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                                <input type="radio" id="star3" name="rating" value="3"><label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                                <input type="radio" id="star2half" name="rating" value="2 and a half"><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                                <input type="radio" id="star2" name="rating" value="2"><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                                <input type="radio" id="star1half" name="rating" value="1 and a half"><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                                <input type="radio" id="star1" name="rating" value="1"><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                                <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                                            </fieldset>
+                                    
+                                        <div>
+                                            <div class="shop-item">
+                                                <div class="shop-content">
+                                                    <div class="shop-image-container uk-inline tw-onhover visible">
+                                                        <img alt="Backpack In Black" src="assets/demo/product/product4.jpeg">
+                                                        <div class="uk-position-bottom">
+                                                            <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                         </div>
-                                                </div>-->
+                                                    </div>
+                                                    <h4><a href="shop-single.html" class="shop-title">Sandalwood Box 4</a></h4>
+                                                    <a class="shop-category">Accessories</a>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
 
                                     <div>
                                         <div class="shop-item">
@@ -311,24 +252,6 @@ else{
                                                 </div>
                                                 <h4><a href="shop-single.html" class="shop-title">Tea 1</a></h4>
                                                 <a class="shop-category">Beverages</a>
-                                                <!--<div class="price">
-                                                    <span class="old-price">$25.00</span>
-                                                    <span class="new-price">$16.00</span>
-                                                        <div class="shop-rating-container uk-clearfix">
-                                                            <fieldset class="rating">
-                                                                <input type="radio" id="star5" name="rating" value="5"><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                                <input type="radio" id="star4half" name="rating" value="4 and a half"><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                                <input type="radio" id="star4" name="rating" value="4"><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                                <input type="radio" id="star3half" name="rating" value="3 and a half"><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                                <input type="radio" id="star3" name="rating" value="3"><label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                                <input type="radio" id="star2half" name="rating" value="2 and a half"><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                                <input type="radio" id="star2" name="rating" value="2"><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                                <input type="radio" id="star1half" name="rating" value="1 and a half"><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                                <input type="radio" id="star1" name="rating" value="1"><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                                <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                                            </fieldset>
-                                                        </div>
-                                                </div>-->
                                             </div>
                                         </div>
                                     </div>
@@ -344,123 +267,9 @@ else{
                                                 </div>
                                                 <h4><a href="shop-single.html" class="shop-title">Tea 2</a></h4>
                                                 <a class="shop-category">Beverages</a>
-                                                <!--<div class="price">
-                                                    <span class="new-price">$40.00</span>
-                                                        <div class="shop-rating-container uk-clearfix">
-                                                            <fieldset class="rating">
-                                                                <input type="radio" id="star5" name="rating" value="5"><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                                <input type="radio" id="star4half" name="rating" value="4 and a half"><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                                <input type="radio" id="star4" name="rating" value="4"><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                                <input type="radio" id="star3half" name="rating" value="3 and a half"><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                                <input type="radio" id="star3" name="rating" value="3"><label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                                <input type="radio" id="star2half" name="rating" value="2 and a half"><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                                <input type="radio" id="star2" name="rating" value="2"><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                                <input type="radio" id="star1half" name="rating" value="1 and a half"><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                                <input type="radio" id="star1" name="rating" value="1"><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                                <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                                            </fieldset>
-                                                        </div>
-                                                </div>-->
                                             </div>
                                         </div>
-                                    </div>
-
-                                    <!--<div>
-                                        <div class="shop-item">
-                                            <div class="shop-content">
-                                                <div class="shop-image-container uk-inline tw-onhover visible">
-                                                    <img alt="Backpack In Black" src="assets/demo/product/product7.jpg">
-                                                    <div class="uk-position-bottom">
-                                                        <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
-                                                    </div>
-                                                </div>
-                                                <h4><a href="shop-single.html" class="shop-title">Tea 3</a></h4>
-                                                <a class="shop-category">Beverages</a>
-                                                <!--<div class="price">
-                                                    <span class="new-price">$36.00</span>
-                                                        <div class="shop-rating-container uk-clearfix">
-                                                            <fieldset class="rating">
-                                                                <input type="radio" id="star5" name="rating" value="5"><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                                <input type="radio" id="star4half" name="rating" value="4 and a half"><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                                <input type="radio" id="star4" name="rating" value="4"><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                                <input type="radio" id="star3half" name="rating" value="3 and a half"><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                                <input type="radio" id="star3" name="rating" value="3"><label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                                <input type="radio" id="star2half" name="rating" value="2 and a half"><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                                <input type="radio" id="star2" name="rating" value="2"><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                                <input type="radio" id="star1half" name="rating" value="1 and a half"><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                                <input type="radio" id="star1" name="rating" value="1"><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                                <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                                            </fieldset>
-                                                        </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>-->
-
-                                    <!--<div>
-                                        <div class="shop-item">
-                                            <div class="shop-content">
-                                                <div class="shop-image-container uk-inline tw-onhover visible">
-                                                    <img alt="Backpack In Black" src="assets/demo/product/product8.jpg">
-                                                    <div class="uk-position-bottom">
-                                                        <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
-                                                    </div>
-                                                </div>
-                                                <h4><a href="shop-single.html" class="shop-title">Tea 4</a></h4>
-                                                <a class="shop-category">Beverages</a>
-                                                <!--<div class="price">
-                                                    <span class="old-price">$30.00</span>
-                                                        <div class="shop-rating-container uk-clearfix">
-                                                            <fieldset class="rating">
-                                                                <input type="radio" id="star5" name="rating" value="5"><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                                <input type="radio" id="star4half" name="rating" value="4 and a half"><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                                <input type="radio" id="star4" name="rating" value="4"><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                                <input type="radio" id="star3half" name="rating" value="3 and a half"><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                                <input type="radio" id="star3" name="rating" value="3"><label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                                <input type="radio" id="star2half" name="rating" value="2 and a half"><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                                <input type="radio" id="star2" name="rating" value="2"><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                                <input type="radio" id="star1half" name="rating" value="1 and a half"><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                                <input type="radio" id="star1" name="rating" value="1"><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                                <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                                            </fieldset>
-                                                        </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>-->
-
-                                    <!--<div>
-                                        <div class="shop-item">
-                                            <div class="shop-content">
-                                                <div class="shop-image-container uk-inline tw-onhover visible">
-                                                    <img alt="Backpack In Black" src="assets/demo/product/product9.jpg">
-                                                    <div class="uk-position-bottom">
-                                                        <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
-                                                    </div>
-                                                </div>
-                                                <h4><a href="shop-single.html" class="shop-title">Tea 5</a></h4>
-                                                <a class="shop-category">Beverages</a>
-                                                <!--<div class="price">
-                                                    <span class="old-price">$26.00</span>
-                                                    <span class="new-price">$28.00</span>
-                                                        <div class="shop-rating-container uk-clearfix">
-                                                            <fieldset class="rating">
-                                                                <input type="radio" id="star5" name="rating" value="5"><label class="full" for="star5" title="Awesome - 5 stars"></label>
-                                                                <input type="radio" id="star4half" name="rating" value="4 and a half"><label class="half" for="star4half" title="Pretty good - 4.5 stars"></label>
-                                                                <input type="radio" id="star4" name="rating" value="4"><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-                                                                <input type="radio" id="star3half" name="rating" value="3 and a half"><label class="half" for="star3half" title="Meh - 3.5 stars"></label>
-                                                                <input type="radio" id="star3" name="rating" value="3"><label class="full" for="star3" title="Meh - 3 stars"></label>
-                                                                <input type="radio" id="star2half" name="rating" value="2 and a half"><label class="half" for="star2half" title="Kinda bad - 2.5 stars"></label>
-                                                                <input type="radio" id="star2" name="rating" value="2"><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-                                                                <input type="radio" id="star1half" name="rating" value="1 and a half"><label class="half" for="star1half" title="Meh - 1.5 stars"></label>
-                                                                <input type="radio" id="star1" name="rating" value="1"><label class="full" for="star1" title="Sucks big time - 1 star"></label>
-                                                                <input type="radio" id="starhalf" name="rating" value="half"><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
-                                                            </fieldset>
-                                                        </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>-->
+                                    </div-->
 
                                 </div>
                             </div>
@@ -661,10 +470,35 @@ else{
                 </div>
             </footer>
         </div>
+
+        <div class="modal fade" id="productModal">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="container">
+                    <div class="row align-items-center productInfo">
+                        
+                    </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+            </div>
         <!-- .main-container close -->        
         <script src="assets/js/jquery-3.2.0.min.js"></script>
         <script src="assets/js/jquery.ui.js"></script>
         <script src="assets/js/jquery.easypiechart.min.js"></script>
+        <script src="admin/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
         <script src="assets/js/uikit.min.js"></script>
         <script src="assets/js/uikit-icons.min.js"></script>
         <script src="assets/js/isotope.pkgd.min.js"></script>
@@ -749,6 +583,24 @@ else{
                 });
 
             });
+        </script>
+        <script>
+            function edit(id){
+                $.post( "php/getProduct.php", { messageId: id}, function( data ) {
+                    var decode = JSON.parse(data)
+                        
+                    if(decode.status === 'success'){
+                        <?php if($language == "ch"){
+                            echo "$('#productModal').find('.productInfo').html(decode.message.product_desc_ch);";
+                        }
+                        else{
+                            echo "$('#productModal').find('.productInfo').html(decode.message.product_desc);";
+                        } ?>
+                        
+                        $('#productModal').modal('show');
+                    }
+                })
+            }
         </script>
     </body>
 </html>

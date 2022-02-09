@@ -162,7 +162,7 @@ else{
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title"></h3>
-                <!--button type="button" class="btn btn-block btn-primary btn-sm" id="addMessage" style="width: 10%;float: right;">Add</button-->
+                <button type="button" class="btn btn-block btn-primary btn-sm" id="addMessage" style="width: 10%;float: right;">Add</button>
               </div>
               <!-- /.card-header -->
               <div class="card-body">

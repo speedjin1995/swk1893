@@ -11,7 +11,7 @@ if(isset($_POST['engTitle'], $_POST['chTitle'])){
 	$chineseBlog = $_POST['chineseBlog'];
 	$uploadOk = 0;
 	$filePath = "";
-    $target_dir = "blog/";
+    $target_dir = "testimony/";
 
     if(isset($_FILES["image-upload"]) && $_FILES["image-upload"]["error"] == 0){
         $filename = $_FILES["image-upload"]["name"];

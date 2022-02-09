@@ -10,7 +10,7 @@ if(!isset($_SESSION['userID'])){
 }
 else{
   $user = $db->query("SELECT * FROM user WHERE id <> '1' AND id <> '2' ");
-  $role = $db->query("SELECT * FROM user_role");
+  $role = $db->query("SELECT * FROM user_role WHERE role_code <> 'EDITOR' AND role_code <> 'PRIADMIN'");
   $userRole = $_SESSION['userRole'];
 }
 ?>

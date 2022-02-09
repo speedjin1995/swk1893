@@ -9,7 +9,7 @@ if(!isset($_SESSION['userID'])){
   echo 'window.location.href = "login.html";</script>';
 }
 else{
-    $blog = $db->query("SELECT * FROM blog");
+    $blog = $db->query("SELECT * FROM testimony");
     $userRole = $_SESSION['userRole'];
 }
 ?>
@@ -188,12 +188,12 @@ to get the desired effect
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Blog</h1>
+            <h1 class="m-0 text-dark">Testimony</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item">Home</li>
-              <li class="breadcrumb-item active">Blog</li>
+              <li class="breadcrumb-item active">Testimony</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -217,9 +217,8 @@ to get the desired effect
                   <thead>
                     <tr>
                         <!--th>No.</th-->
-                        <th>English Title</th>
-                        <th>Chinese Title</th>
-                        <th>Created Date</th>
+                        <th>Testimony Name</th>
+                        <th>Testimony Description</th>
                         <th>Action</th>
                     </tr>
                   </thead>
@@ -229,7 +228,6 @@ to get the desired effect
                             <!--td></td-->
                             <td><?=$row['title_en'] ?></td>
                             <td><?=$row['title_ch'] ?></td>
-                            <td><?=$row['created_datetime']?></td>
                             <td>
                                 <div class="row">
                                     <div class="col-3">
@@ -264,7 +262,7 @@ to get the desired effect
       <div class="modal-content">
         <form role="form" id="blogForm" method="post" action="php/blog.php" enctype="multipart/form-data">
             <div class="modal-header">
-              <h4 class="modal-title">Blog Details</h4>
+              <h4 class="modal-title">Testimony Details</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">×</span>
               </button>
@@ -281,11 +279,11 @@ to get the desired effect
                 </div>
               </div>
               <div class="form-group">
-                <label for="keyCode">English Title *</label>
+                <label for="keyCode">English Testimony *</label>
                 <input class="form-control" name="engTitle" id="engTitle" placeholder="Message Key Code" required>
               </div>
               <div class="form-group">
-                <label for="keyCode">中文主题 *</label>
+                <label for="keyCode">中文见证 *</label>
                 <input class="form-control" name="chTitle" id="chTitle" placeholder="Message Key Code" required>
               </div>
               <div class="form-group">

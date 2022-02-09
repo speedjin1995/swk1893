@@ -118,7 +118,7 @@ else{
                                     <a href="gallery.php"><?=$languageArray['nav_gallery'][$language] ?></a>
                                 </li>
                                 <li class="uk-parent">
-                                    <a href="contactus.php"><?=$languageArray['nav_contact_us'][$language] ?>/a>
+                                    <a href="contactus.php"><?=$languageArray['nav_contact_us'][$language] ?></a>
                                 </li>
                                 <li class="uk-parent">
                                     <a href="#"><?=$languageArray['nav_language'][$language] ?></a>

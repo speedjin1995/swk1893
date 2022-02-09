@@ -102,27 +102,27 @@ else{
                         <button class="uk-modal-close-full" type="button" data-uk-close></button>
                         <div class="uk-light uk-height-viewport tw-mobile-modal uk-flex uk-flex-middle uk-flex-center" data-uk-scrollspy="target:>ul>li,>div>a; cls:uk-animation-slide-bottom-medium; delay: 150;">
                             <ul class="uk-nav-default uk-nav-parent-icon" data-uk-nav>
-                                <li class="uk-parent">
-                                    <a href="aboutus.html"><?=$languageArray['nav_about_us'][$language] ?></a>
+                                <li class="menu-item">
+                                    <a href="aboutus.php"><?=$languageArray['nav_about_us'][$language] ?></a>
                                 </li>
-                                <li class="uk-parent">
-                                    <a href="sandalwood.html"><?=$languageArray['nav_history'][$language] ?></a>
+                                <li class="menu-item">
+                                    <a href="sandalwood.php"><?=$languageArray['nav_history'][$language] ?></a>
                                 </li>
-                                <li class="uk-parent">
-                                    <a href="product.html"><?=$languageArray['nav_product_info'][$language] ?></a>
+                                <li class="menu-item">
+                                    <a href="product.php"><?=$languageArray['nav_product_info'][$language] ?></a>
                                 </li>
-                                <li class="uk-parent">
-                                    <a href="testimony.html"><?=$languageArray['nav_testimony'][$language] ?></a>
+                                <li class="menu-item">
+                                    <a href="testimony.php"><?=$languageArray['nav_testimony'][$language] ?></a>
                                 </li>
-                                <li class="uk-parent">
-                                    <a href="gallery.html"><?=$languageArray['nav_gallery'][$language] ?></a>
+                                <li class="menu-item">
+                                    <a href="gallery.php"><?=$languageArray['nav_gallery'][$language] ?></a>
                                 </li>
-                                <li class="uk-parent">
-                                    <a href="contactus.html"><?=$languageArray['nav_contact_us'][$language] ?>/a>
+                                <li class="menu-item">
+                                    <a href="contactus.php"><?=$languageArray['nav_contact_us'][$language] ?></a>
                                 </li>
-                                <li class="uk-parent">
+                                <li class="menu-item menu-item-has-children">
                                     <a href="#"><?=$languageArray['nav_language'][$language] ?></a>
-                                    <ul class="uk-nav-sub">
+                                    <ul class="sub-menu uk-animation-fade">
                                         <li><a href="php/english.php">English</a></li>
                                         <li><a href="php/chinese.php">中文</a></li>
                                     </ul>
@@ -208,7 +208,7 @@ else{
                                 <textarea name="comment" placeholder="Your message" id="comment" class="required" rows="7" tabindex="4"></textarea>
                             </div>
                             <div class="uk-text-center">
-                                <input name="submit" type="submit" id="submit" class="submit" value="Submit Message">
+                                <input name="submit" type="submit" id="submit" class="submit" value="<?=$languageArray['page_contact_form_submit'][$language] ?>">
                             </div>
                         </form>
                     </div>

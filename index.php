@@ -117,7 +117,7 @@ else{
                                     <a href="gallery.html"><?=$languageArray['nav_gallery'][$language] ?></a>
                                 </li>
                                 <li class="uk-parent">
-                                    <a href="contactus.html"><?=$languageArray['nav_contact_us'][$language] ?>/a>
+                                    <a href="contactus.html"><?=$languageArray['nav_contact_us'][$language] ?></a>
                                 </li>
                                 <li class="uk-parent">
                                     <a href="#"><?=$languageArray['nav_language'][$language] ?></a>
@@ -319,7 +319,7 @@ else{
                     
                 </div>
             </section>
-            <section class="uk-section">
+            <!--section class="uk-section">
                 <div class="uk-container">
                     <div class="tw-element tw-heading uk-text-center">
                         <h3>
@@ -449,7 +449,7 @@ else{
                         </div>
                     </div>
                 </div>
-            </section>
+            </section-->
             <footer class="uk-section uk-padding-remove-vertical uk-light" style="background-color: #222222;">
                 <div class="bottom-area">
                     <div class="uk-container">

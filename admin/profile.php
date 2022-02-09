@@ -237,7 +237,7 @@ to get the desired effect
           <form role="form" id="userForm" method="post" action="php/profile.php" enctype="multipart/form-data">
             <div class="card-body">
               <?php while($row=mysqli_fetch_assoc($user)){ ?>
-                <div class="form-group">
+                <div class="form-group"> 
                   <input type="hidden" class="form-control" id="id" name="id" value="<?=$_SESSION['userID'] ?>" >
                 </div>
                 <div class="form-group">

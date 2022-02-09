@@ -57,28 +57,28 @@ else{
         <div class="uk-navbar-center">
             <ul class="tw-main-menu uk-visible@m">
                 <li class="menu-item">
-                    <a href="aboutus.php">About Company</a>
+                    <a href="aboutus.php"><?=$languageArray['nav_about_us'][$language] ?></a>
                 </li>
                 <li class="menu-item">
-                    <a href="sandalwood.php">Sandalwood History</a>
+                    <a href="sandalwood.php"><?=$languageArray['nav_history'][$language] ?></a>
                 </li>
                 <li class="menu-item">
-                    <a href="product.php">Product Info</a>
+                    <a href="product.php"><?=$languageArray['nav_product_info'][$language] ?></a>
                 </li>
                 <li class="menu-item">
-                    <a href="testimony.php">Testimony</a>
+                    <a href="testimony.php"><?=$languageArray['nav_testimony'][$language] ?></a>
                 </li>
                 <li class="menu-item">
-                    <a href="gallery.php">Gallery</a>
+                    <a href="gallery.php"><?=$languageArray['nav_gallery'][$language] ?></a>
                 </li>
                 <li class="menu-item">
-                    <a href="contactus.php">Contact Us</a>
+                    <a href="contactus.php"><?=$languageArray['nav_contact_us'][$language] ?></a>
                 </li>
                 <li class="menu-item menu-item-has-children">
-                    <a href="#">Language</a>
+                    <a href="#"><?=$languageArray['nav_language'][$language] ?></a>
                     <ul class="sub-menu uk-animation-fade">
-                        <li><a href="#">English</a></li>
-                        <li><a href="#">中文</a></li>
+                        <li><a href="php/english.php">English</a></li>
+                        <li><a href="php/chinese.php">中文</a></li>
                     </ul>
                 </li>
             </ul>
@@ -99,29 +99,29 @@ else{
                 <button class="uk-modal-close-full" type="button" data-uk-close></button>
                 <div class="uk-light uk-height-viewport tw-mobile-modal uk-flex uk-flex-middle uk-flex-center" data-uk-scrollspy="target:>ul>li,>div>a; cls:uk-animation-slide-bottom-medium; delay: 150;">
                     <ul class="uk-nav-default uk-nav-parent-icon" data-uk-nav>
-                        <li class="uk-parent">
-                            <a href="aboutus.php">About Company</a>
+                        <li class="menu-item">
+                            <a href="aboutus.php"><?=$languageArray['nav_about_us'][$language] ?></a>
                         </li>
-                        <li class="uk-parent">
-                            <a href="sandalwood.php">Sandalwood History</a>
+                        <li class="menu-item">
+                            <a href="sandalwood.php"><?=$languageArray['nav_history'][$language] ?></a>
                         </li>
-                        <li class="uk-parent">
-                            <a href="product.php">Product Info</a>
+                        <li class="menu-item">
+                            <a href="product.php"><?=$languageArray['nav_product_info'][$language] ?></a>
                         </li>
-                        <li class="uk-parent">
-                            <a href="testimony.php">Testimony</a>
+                        <li class="menu-item">
+                            <a href="testimony.php"><?=$languageArray['nav_testimony'][$language] ?></a>
                         </li>
-                        <li class="uk-parent">
-                            <a href="gallery.php">Gallery</a>
+                        <li class="menu-item">
+                            <a href="gallery.php"><?=$languageArray['nav_gallery'][$language] ?></a>
                         </li>
-                        <li class="uk-parent">
-                            <a href="contactus.php">Contact Us</a>
+                        <li class="menu-item">
+                            <a href="contactus.php"><?=$languageArray['nav_contact_us'][$language] ?></a>
                         </li>
-                        <li class="uk-parent">
-                            <a href="#">Language</a>
-                            <ul class="uk-nav-sub">
-                                <li><a href="#">English</a></li>
-                                <li><a href="#">中文</a></li>
+                        <li class="menu-item menu-item-has-children">
+                            <a href="#"><?=$languageArray['nav_language'][$language] ?></a>
+                            <ul class="sub-menu uk-animation-fade">
+                                <li><a href="php/english.php">English</a></li>
+                                <li><a href="php/chinese.php">中文</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -138,7 +138,7 @@ else{
 </div><!-- .main-container close -->
 <div class="main-container"><section class="uk-section uk-text-center uk-flex uk-flex-middle uk-flex-center uk-light uk-background-cover uk-background-top-center" data-overlay="0.4" style="background-color: #151515; background-image: url(assets/demo/page-gallery.jpg); height: 500px;">
     <div class="tw-page-title-container tw-element">
-        <h1 class="tw-page-title uk-text-uppercase">GALLERY</h1>
+        <h1 class="tw-page-title uk-text-uppercase"><?=$languageArray['page_gallery'][$language] ?></h1>
     </div>
     <!--<div class="tw-breadcrumb-container uk-position-absolute uk-position-bottom-center tw-element">
         <a href="index.php" class="tw-breadrumb-child home">Home</a>
@@ -152,11 +152,10 @@ else{
 
             <div class="tw-portfolio-filter uk-text-center uk-text-uppercase">
                 <ul class="uk-list">
-                    <li><span data-filter="*">Show All</span></li>
-                    <li><span data-filter=".category-overview">Overview</span></li>
-                    <li><span data-filter=".category-farm">Farm</span></li>
-                    <li><span data-filter=".category-tree">Tree</span></li>
-                    <li><span data-filter=".category-tea">Tea Leaf</span></li>
+                    <li><span data-filter="*"><?=$languageArray['page_gallery_all'][$language] ?></span></li>
+                    <li><span data-filter=".category-farm"><?=$languageArray['page_gallery_farm'][$language] ?></span></li>
+                    <li><span data-filter=".category-tree"><?=$languageArray['page_gallery_tree'][$language] ?></span></li>
+                    <li><span data-filter=".category-tea"><?=$languageArray['page_gallery_leaf'][$language] ?></span></li>
                 </ul>
             </div>
 
@@ -166,8 +165,8 @@ else{
                     <div class="portfolio-media tw-image-hover">
                         <img src="assets/demo/portfolio/port1.jpg" alt="" />
                         <a href="#" class="portfolio-content uk-light">
-                            <h3 class="portfolio-title"><span>One Day In Paradise</span></h3>
-                            <div class="tw-meta"><span>Print</span></div>
+                            <h3 class="portfolio-title"><span></span></h3>
+                            <div class="tw-meta"><span></span></div>
                         </a>
                     </div>
                 </div>
@@ -176,8 +175,8 @@ else{
                     <div class="portfolio-media tw-image-hover">
                         <img src="assets/demo/portfolio/port2.jpg" alt="" />
                         <a href="#" class="portfolio-content uk-light">
-                            <h3 class="portfolio-title"><span>Day & Age Ora</span></h3>
-                            <div class="tw-meta"><span>Branding</span></div>
+                            <h3 class="portfolio-title"><span>-</span></h3>
+                            <div class="tw-meta"><span></span></div>
                         </a>
                     </div>
                 </div>
@@ -186,8 +185,8 @@ else{
                     <div class="portfolio-media tw-image-hover">
                         <img src="assets/demo/portfolio/port3.jpg" alt="" />
                         <a href="#" class="portfolio-content uk-light">
-                            <h3 class="portfolio-title"><span>Kolonihagen Branding</span></h3>
-                            <div class="tw-meta"><span>Photography</span></div>
+                            <h3 class="portfolio-title"><span></span></h3>
+                            <div class="tw-meta"><span></span></div>
                         </a>
                     </div>
                 </div>
@@ -196,8 +195,8 @@ else{
                     <div class="portfolio-media tw-image-hover">
                         <img src="assets/demo/portfolio/port4.jpg" alt="" />
                         <a href="#" class="portfolio-content uk-light">
-                            <h3 class="portfolio-title"><span>Axiom Essential Watch</span></h3>
-                            <div class="tw-meta"><span>Branding</span></div>
+                            <h3 class="portfolio-title"><span></span></h3>
+                            <div class="tw-meta"><span></span></div>
                         </a>
                     </div>
                 </div>
@@ -206,8 +205,8 @@ else{
                     <div class="portfolio-media tw-image-hover">
                         <img src="assets/demo/portfolio/port5.jpg" alt="" />
                         <a href="#" class="portfolio-content uk-light">
-                            <h3 class="portfolio-title"><span>Alud. Winter Magazine nº1 Cover 1</span></h3>
-                            <div class="tw-meta"><span>Print</span></div>
+                            <h3 class="portfolio-title"><span></span></h3>
+                            <div class="tw-meta"><span></span></div>
                         </a>
                     </div>
                 </div>
@@ -216,8 +215,8 @@ else{
                     <div class="portfolio-media tw-image-hover">
                         <img src="assets/demo/portfolio/port6.jpg" alt="" />
                         <a href="#" class="portfolio-content uk-light">
-                            <h3 class="portfolio-title"><span>HAY + COS Collab</span></h3>
-                            <div class="tw-meta"><span>Photography</span></div>
+                            <h3 class="portfolio-title"><span></span></h3>
+                            <div class="tw-meta"><span></span></div>
                         </a>
                     </div>
                 </div>
