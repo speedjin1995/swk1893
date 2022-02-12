@@ -60,9 +60,9 @@ else{
                 </div>
                 <div class="uk-navbar-center">
                     <ul class="tw-main-menu uk-visible@m">
-                        <li class="menu-item">
+                        <!--li class="menu-item">
                             <a href="aboutus.php"><?=$languageArray['nav_about_us'][$language] ?></a>
-                        </li>
+                        </li-->
                         <li class="menu-item">
                             <a href="sandalwood.php"><?=$languageArray['nav_history'][$language] ?></a>
                         </li>
@@ -102,9 +102,9 @@ else{
                         <button class="uk-modal-close-full" type="button" data-uk-close></button>
                         <div class="uk-light uk-height-viewport tw-mobile-modal uk-flex uk-flex-middle uk-flex-center" data-uk-scrollspy="target:>ul>li,>div>a; cls:uk-animation-slide-bottom-medium; delay: 150;">
                             <ul class="uk-nav-default uk-nav-parent-icon" data-uk-nav>
-                                <li class="uk-parent">
+                                <!--li class="uk-parent">
                                     <a href="aboutus.php"><?=$languageArray['nav_about_us'][$language] ?></a>
-                                </li>
+                                </li-->
                                 <li class="uk-parent">
                                     <a href="sandalwood.php"><?=$languageArray['nav_history'][$language] ?></a>
                                 </li>
@@ -141,7 +141,7 @@ else{
         <div class="main-container">
             <section class="uk-section uk-text-center uk-flex uk-flex-middle uk-flex-center uk-light uk-background-cover uk-background-top-center" data-overlay="0.4" style="background-color: #151515; background-image: url(assets/demo/sandalwood.jpg); height: 500px;">
                 <div class="tw-page-title-container tw-element">
-                    <h1 class="tw-page-title uk-text-uppercase">Sandalwood</h1>
+                    <h1 class="tw-page-title uk-text-uppercase"><?=$languageArray['page_sandalwood'][$language] ?></h1>
                 </div>
             </section>
             <section class="uk-section uk-section-normal">
@@ -163,7 +163,7 @@ else{
                                         <h1 class="tw-big-title">檀香树</h1>
                                         <p>檀香树每年都会增值它的价值是一年至少5至12巴仙， 因为天气的变化， 马来西亚气候变成了种植檀香树最佳地方， 就如以前美国的檀香山，因为天气暖化，而不能种檀香树，就是现在的夏威夷。
                                         </p>
-                                        <a href="#" class="uk-button uk-button-silver uk-button-default uk-button-small uk-button-radius tw-hover"><span class="tw-hover-inner"><span>Read More</span><i class="ion-ios-arrow-thin-right"></i></span></a>
+                                        <!--a href="#" class="uk-button uk-button-silver uk-button-default uk-button-small uk-button-radius tw-hover"><span class="tw-hover-inner"><span>Read More</span><i class="ion-ios-arrow-thin-right"></i></span></a-->
                                     </div>
                                 </div>
                             </div>
@@ -181,7 +181,7 @@ else{
                                         <h1 class="tw-big-title">檀香树的医药解释</h1>
                                         <p>檀香树酸性非常的高,所以他的茶叶会使人减瘦。檀香树的茶叶本品味辛性温，气味芳香功能宣发气滞，畅膈宽胸，温胃散寒。凡胸腹疼痛，噎膈呕吐等症，均可应用。
                                         </p>
-                                        <a href="#" class="uk-button uk-button-silver uk-button-default uk-button-small uk-button-radius tw-hover"><span class="tw-hover-inner"><span>Read More</span><i class="ion-ios-arrow-thin-right"></i></span></a>
+                                        <!--a href="#" class="uk-button uk-button-silver uk-button-default uk-button-small uk-button-radius tw-hover"><span class="tw-hover-inner"><span>Read More</span><i class="ion-ios-arrow-thin-right"></i></span></a-->
                                     </div>
                                 </div>
                                 <div data-uk-scrollspy="target: > *; cls:uk-animation-slide-bottom-medium; delay: 400;">
@@ -223,7 +223,7 @@ else{
                                         <h1 class="tw-big-title">檀香树的应用</h1>
                                         <p>1．用于寒凝气滞，胸腹疼痛，常与藿香、白豆蔻、砂仁、丁香等同用。若用于胸痹绞痛，常与丹参、砂仁同用，如丹参饮。<br />2。用于胃寒疼痛，呕吐清水，可与菖蒲、丁香、木香等同用。
                                         </p>
-                                        <a href="#" class="uk-button uk-button-silver uk-button-default uk-button-small uk-button-radius tw-hover"><span class="tw-hover-inner"><span>Read More</span><i class="ion-ios-arrow-thin-right"></i></span></a>
+                                        <!--a href="#" class="uk-button uk-button-silver uk-button-default uk-button-small uk-button-radius tw-hover"><span class="tw-hover-inner"><span>Read More</span><i class="ion-ios-arrow-thin-right"></i></span></a-->
                                     </div>
                                 </div>
                             </div>

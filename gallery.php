@@ -56,9 +56,9 @@ else{
         </div>
         <div class="uk-navbar-center">
             <ul class="tw-main-menu uk-visible@m">
-                <li class="menu-item">
+                <!--li class="menu-item">
                     <a href="aboutus.php"><?=$languageArray['nav_about_us'][$language] ?></a>
-                </li>
+                </li-->
                 <li class="menu-item">
                     <a href="sandalwood.php"><?=$languageArray['nav_history'][$language] ?></a>
                 </li>
@@ -99,9 +99,9 @@ else{
                 <button class="uk-modal-close-full" type="button" data-uk-close></button>
                 <div class="uk-light uk-height-viewport tw-mobile-modal uk-flex uk-flex-middle uk-flex-center" data-uk-scrollspy="target:>ul>li,>div>a; cls:uk-animation-slide-bottom-medium; delay: 150;">
                     <ul class="uk-nav-default uk-nav-parent-icon" data-uk-nav>
-                        <li class="menu-item">
+                        <!--li class="menu-item">
                             <a href="aboutus.php"><?=$languageArray['nav_about_us'][$language] ?></a>
-                        </li>
+                        </li-->
                         <li class="menu-item">
                             <a href="sandalwood.php"><?=$languageArray['nav_history'][$language] ?></a>
                         </li>

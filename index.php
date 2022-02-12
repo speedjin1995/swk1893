@@ -59,9 +59,9 @@ else{
                 </div>
                 <div class="uk-navbar-center">
                     <ul class="tw-main-menu uk-visible@m">
-                        <li class="menu-item">
+                        <!--li class="menu-item">
                             <a href="aboutus.php"><?=$languageArray['nav_about_us'][$language] ?></a>
-                        </li>
+                        </li-->
                         <li class="menu-item">
                             <a href="sandalwood.php"><?=$languageArray['nav_history'][$language] ?></a>
                         </li>
@@ -101,23 +101,23 @@ else{
                         <button class="uk-modal-close-full" type="button" data-uk-close></button>
                         <div class="uk-light uk-height-viewport tw-mobile-modal uk-flex uk-flex-middle uk-flex-center" data-uk-scrollspy="target:>ul>li,>div>a; cls:uk-animation-slide-bottom-medium; delay: 150;">
                             <ul class="uk-nav-default uk-nav-parent-icon" data-uk-nav>
+                                <!--li class="uk-parent">
+                                    <a href="aboutus.php"><?=$languageArray['nav_about_us'][$language] ?></a>
+                                </li-->
                                 <li class="uk-parent">
-                                    <a href="aboutus.html"><?=$languageArray['nav_about_us'][$language] ?></a>
+                                    <a href="sandalwood.php"><?=$languageArray['nav_history'][$language] ?></a>
                                 </li>
                                 <li class="uk-parent">
-                                    <a href="sandalwood.html"><?=$languageArray['nav_history'][$language] ?></a>
+                                    <a href="product.php"><?=$languageArray['nav_product_info'][$language] ?></a>
                                 </li>
                                 <li class="uk-parent">
-                                    <a href="product.html"><?=$languageArray['nav_product_info'][$language] ?></a>
+                                    <a href="testimony.php"><?=$languageArray['nav_testimony'][$language] ?></a>
                                 </li>
                                 <li class="uk-parent">
-                                    <a href="testimony.html"><?=$languageArray['nav_testimony'][$language] ?></a>
+                                    <a href="gallery.php"><?=$languageArray['nav_gallery'][$language] ?></a>
                                 </li>
                                 <li class="uk-parent">
-                                    <a href="gallery.html"><?=$languageArray['nav_gallery'][$language] ?></a>
-                                </li>
-                                <li class="uk-parent">
-                                    <a href="contactus.html"><?=$languageArray['nav_contact_us'][$language] ?></a>
+                                    <a href="contactus.php"><?=$languageArray['nav_contact_us'][$language] ?></a>
                                 </li>
                                 <li class="uk-parent">
                                     <a href="#"><?=$languageArray['nav_language'][$language] ?></a>
@@ -143,30 +143,16 @@ else{
                     <div class="slider-item" data-overlay="0.4" style="background-color: #151515; background-image: url(assets/demo/slider/slider-main-one.jpg);" data-uk-height-viewport="offset-top: true">
                         <div class="slider-content">
                             <div class="tw-element uk-text-center full tw-heading" data-uk-scrollspy="target: > *; cls:uk-animation-slide-bottom-medium; delay: 400;">
-                                <h4 class="tw-sub-title">
-                                    Tan Xiang Cha
-                                </h4>
-                                <h1>
-                                    Classic Tea
-                                </h1>
-                                <a href="#" class="uk-button uk-button-default uk-button-small uk-button-radius tw-hover">
-                                    <span class="tw-hover-inner"><span>Read More</span><i class="ion-ios-arrow-thin-right"></i></span>
-                                </a>
+                                <h4 class="tw-sub-title"><?=$languageArray['page_home_slider1'][$language] ?></h4>
+                                <h1><?=$languageArray['page_home_slider1_desc'][$language] ?></h1>
                             </div>
                         </div>
                     </div>
                     <div class="slider-item" data-overlay="0.4" style="background-color: #151515; background-image: url(assets/demo/slider/slider-main-two.jpg);" data-uk-height-viewport="offset-top: true">
                         <div class="slider-content">
                             <div class="tw-element uk-text-center full tw-heading" data-uk-scrollspy="target: > *; cls:uk-animation-slide-bottom-medium; delay: 400;">
-                                <h4 class="tw-sub-title">
-                                    Tan Xiang Cha
-                                </h4>
-                                <h1>
-                                    Royale Tea
-                                </h1>
-                                <a href="#" class="uk-button uk-button-default uk-button-small uk-button-radius tw-hover">
-                                    <span class="tw-hover-inner"><span>Take me in</span><i class="ion-ios-arrow-thin-right"></i></span>
-                                </a>
+                                <h4 class="tw-sub-title"><?=$languageArray['page_home_slider1'][$language] ?></h4>
+                                <h1><?=$languageArray['page_home_slider2_desc'][$language] ?></h1>
                             </div>
                         </div>
                     </div>
@@ -176,62 +162,56 @@ else{
                 <div class="tw-element tw-portfolio tw-isotope-container" data-isotope-item=".portfolio-item">
                     <div class="tw-portfolio-filter uk-text-center uk-text-uppercase">
                         <ul class="uk-list">
-                            <li><span data-filter="*">Gallery</span></li>
+                            <li><span data-filter="*"><?=$languageArray['page_home_gallery'][$language] ?></span></li>
                         </ul>
                     </div>
                     <div class="isotope-container data-uk-grid-medium uk-grid-collapse with-bg tw-calc-width uk-child-width-1-1 uk-child-width-1-3@m" data-uk-grid data-uk-scrollspy="target: > .portfolio-item; cls:uk-animation-slide-bottom-medium; delay: 300;">
                         <div class="portfolio-item category-print">
                             <div class="portfolio-media tw-image-hover">
                                 <img src="assets/demo/portfolio/grid/grid1.jpg" alt="" />
-                                <a href="#" class="portfolio-content uk-light">
+                                <!--a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>One Day In Paradise</span></h3>
-                                    <div class="tw-meta"><span>Print</span></div>
-                                </a>
+                                </a-->
                             </div>
                         </div>
                         <div class="portfolio-item category-branding category-web-design">
                             <div class="portfolio-media tw-image-hover">
                                 <img src="assets/demo/portfolio/grid/grid2.jpg" alt="" />
-                                <a href="#" class="portfolio-content uk-light">
+                                <!--a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>Day & Age Ora</span></h3>
-                                    <div class="tw-meta"><span>Branding</span></div>
-                                </a>
+                                </a-->
                             </div>
                         </div>
                         <div class="portfolio-item category-photography category-web-design">
                             <div class="portfolio-media tw-image-hover">
                                 <img src="assets/demo/portfolio/grid/grid3.jpg" alt="" />
-                                <a href="#" class="portfolio-content uk-light">
+                                <!--a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>Kolonihagen Branding</span></h3>
-                                    <div class="tw-meta"><span>Photography</span></div>
-                                </a>
+                                </a-->
                             </div>
                         </div>
                         <div class="portfolio-item category-branding category-web-design">
                             <div class="portfolio-media tw-image-hover">
                                 <img src="assets/demo/portfolio/grid/grid4.jpg" alt="" />
-                                <a href="#" class="portfolio-content uk-light">
+                                <!--a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>Axiom Essential Watch</span></h3>
-                                    <div class="tw-meta"><span>Branding</span></div>
-                                </a>
+                                </a-->
                             </div>
                         </div>
                         <div class="portfolio-item category-print">
                             <div class="portfolio-media tw-image-hover">
                                 <img src="assets/demo/portfolio/grid/grid5.jpg" alt="" />
-                                <a href="#" class="portfolio-content uk-light">
+                                <!--a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>Alud. Winter Magazine nº1 Cover 1</span></h3>
-                                    <div class="tw-meta"><span>Print</span></div>
-                                </a>
+                                </a-->
                             </div>
                         </div>
                         <div class="portfolio-item category-print">
                             <div class="portfolio-media tw-image-hover">
                                 <img src="assets/demo/portfolio/grid/grid6.jpg" alt="" />
-                                <a href="#" class="portfolio-content uk-light">
+                                <!--a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>HAY + COS Collab</span></h3>
-                                    <div class="tw-meta"><span>Photography</span></div>
-                                </a>
+                                </a-->
                             </div>                                
                         </div>
                         
@@ -250,7 +230,7 @@ else{
                 <div class="tw-element tw-portfolio tw-isotope-container" data-isotope-item=".portfolio-item">
                     <div class="tw-portfolio-filter uk-text-center uk-text-uppercase">
                         <ul class="uk-list">
-                            <li><span data-filter="*">Testimony</span></li>
+                            <li><span data-filter="*"><?=$languageArray['page_home_testimony'][$language] ?></span></li>
                         </ul>
                     </div>
                     <div class="isotope-container data-uk-grid-medium uk-grid-collapse with-bg tw-calc-width uk-child-width-1-1 uk-child-width-1-3@m" data-uk-grid data-uk-scrollspy="target: > .portfolio-item; cls:uk-animation-slide-bottom-medium; delay: 300;">
