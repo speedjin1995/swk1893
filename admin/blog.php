@@ -9,7 +9,7 @@ if(!isset($_SESSION['userID'])){
   echo 'window.location.href = "login.html";</script>';
 }
 else{
-    $blog = $db->query("SELECT * FROM testimony");
+    $blog = $db->query("SELECT * FROM blog");
     $userRole = $_SESSION['userRole'];
 }
 ?>

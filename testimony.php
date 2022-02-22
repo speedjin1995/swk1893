@@ -25,7 +25,7 @@ else{
     $language = $_SESSION['language'];
 }
 
-$products = $db->query("SELECT * FROM testimony");
+$products = $db->query("SELECT * FROM blog");
 ?>
 <html lang="en">
     <head>
@@ -231,17 +231,17 @@ $products = $db->query("SELECT * FROM testimony");
                                             <div class="shop-item">
                                                 <div class="shop-content">
                                                     <div class="shop-image-container uk-inline tw-onhover visible">
-                                                        <img alt="Backpack In Black" src="admin/php/'.$row['product_photo'].'">
+                                                        <img alt="Backpack In Black" src="admin/php/'.$row['img'].'">
                                                         <div class="uk-position-bottom">
                                                             <a class="add-to-cart" onclick="edit('.$row['id'].')">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
                                                         </div>
                                                     </div>';
                                                     
                                         if($language == "ch"){
-                                            echo '<h4 onclick="edit('.$row['id'].')">'.$row['product_name_ch'].'</h4>';
+                                            echo '<h4 onclick="edit('.$row['id'].')">'.$row['title_ch'].'</h4>';
                                         }
                                         else{
-                                            echo '<h4 onclick="edit('.$row['id'].')">'.$row['product_name'].'</h4>';
+                                            echo '<h4 onclick="edit('.$row['id'].')">'.$row['title_en'].'</h4>';
                                         }
 
                                         echo '</div>

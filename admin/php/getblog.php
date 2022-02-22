@@ -6,7 +6,7 @@ session_start();
 if(isset($_POST['messageId'])){
 	$id = filter_input(INPUT_POST, 'messageId', FILTER_SANITIZE_STRING);
 
-    if ($update_stmt = $db->prepare("SELECT * FROM testimony WHERE id=?")) {
+    if ($update_stmt = $db->prepare("SELECT * FROM blog WHERE id=?")) {
         $update_stmt->bind_param('s', $id);
         
         // Execute the prepared query.

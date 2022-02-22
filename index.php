@@ -24,6 +24,8 @@ if(!isset($_SESSION['language'])){
 else{
     $language = $_SESSION['language'];
 }
+
+$products = $db->query("SELECT * FROM blog");
 ?>
 <html lang="en">
     <head>
@@ -234,27 +236,28 @@ else{
                         </ul>
                     </div>
                     <div class="isotope-container data-uk-grid-medium uk-grid-collapse with-bg tw-calc-width uk-child-width-1-1 uk-child-width-1-3@m" data-uk-grid data-uk-scrollspy="target: > .portfolio-item; cls:uk-animation-slide-bottom-medium; delay: 300;">
-                        <div class="portfolio-item category-print">
-                            <div class="portfolio-media tw-image-hover">
-                                <img src="" alt="" />
-                                <a href="#" class="portfolio-content uk-light">
-                                    <h3 class="portfolio-title"><span>One Day In Paradise</span></h3>
-                                    <div class="tw-meta"><span>Print</span></div>
-                                </a>
-                            </div>
+                    <?php while($row=mysqli_fetch_assoc($products)){
+                        echo '<div class="portfolio-item category-branding category-web-design">
+                        <div class="portfolio-media tw-image-hover">
+                            <img src="admin/php/'.$row['img'].'"/>
+                            <a href="#" class="portfolio-content uk-light">';
+
+                        if($language == "ch"){
+                            echo '<h3 onclick="edit('.$row['id'].')">'.$row['title_ch'].'</h3>';
+                        }
+                        else{
+                            echo '<h3 onclick="edit('.$row['id'].')">'.$row['title_en'].'</h3>';
+                        }   
+                            
+                        echo '</a>
                         </div>
-                        <div class="portfolio-item category-branding category-web-design">
-                            <div class="portfolio-media tw-image-hover">
-                                <img src="" alt="" />
-                                <a href="#" class="portfolio-content uk-light">
-                                    <h3 class="portfolio-title"><span>Day & Age Ora</span></h3>
-                                    <div class="tw-meta"><span>Branding</span></div>
-                                </a>
-                            </div>
-                        </div>
+                    </div>';
+                        
+                    }?>
+                        
                         <div class="portfolio-item category-photography category-web-design">
                             <div class="portfolio-media tw-image-hover">
-                                <img src="" alt="" />
+                                <img src="" />
                                 <a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>Kolonihagen Branding</span></h3>
                                     <div class="tw-meta"><span>Photography</span></div>
