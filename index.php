@@ -236,61 +236,24 @@ $products = $db->query("SELECT * FROM blog");
                         </ul>
                     </div>
                     <div class="isotope-container data-uk-grid-medium uk-grid-collapse with-bg tw-calc-width uk-child-width-1-1 uk-child-width-1-3@m" data-uk-grid data-uk-scrollspy="target: > .portfolio-item; cls:uk-animation-slide-bottom-medium; delay: 300;">
-                    <?php while($row=mysqli_fetch_assoc($products)){
-                        echo '<div class="portfolio-item category-branding category-web-design">
-                        <div class="portfolio-media tw-image-hover">
-                            <img src="admin/php/'.$row['img'].'"/>
-                            <a href="#" class="portfolio-content uk-light">';
-
-                        if($language == "ch"){
-                            echo '<h3 onclick="edit('.$row['id'].')">'.$row['title_ch'].'</h3>';
-                        }
-                        else{
-                            echo '<h3 onclick="edit('.$row['id'].')">'.$row['title_en'].'</h3>';
-                        }   
+                        <?php while($row=mysqli_fetch_assoc($products)){
+                            echo '<div class="portfolio-item category-branding category-web-design">
+                            <div class="portfolio-media tw-image-hover">
+                                <img src="admin/php/'.$row['img'].'"/>
+                                <a href="#" class="portfolio-content uk-light">';
+    
+                            if($language == "ch"){
+                                echo '<h3 onclick="edit('.$row['id'].')">'.$row['title_ch'].'</h3>';
+                            }
+                            else{
+                                echo '<h3 onclick="edit('.$row['id'].')">'.$row['title_en'].'</h3>';
+                            }   
+                                
+                            echo '</a>
+                            </div>
+                        </div>';
                             
-                        echo '</a>
-                        </div>
-                    </div>';
-                        
-                    }?>
-                        
-                        <div class="portfolio-item category-photography category-web-design">
-                            <div class="portfolio-media tw-image-hover">
-                                <img src="" />
-                                <a href="#" class="portfolio-content uk-light">
-                                    <h3 class="portfolio-title"><span>Kolonihagen Branding</span></h3>
-                                    <div class="tw-meta"><span>Photography</span></div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-item category-branding category-web-design">
-                            <div class="portfolio-media tw-image-hover">
-                                <img src="" alt="" />
-                                <a href="#" class="portfolio-content uk-light">
-                                    <h3 class="portfolio-title"><span>Axiom Essential Watch</span></h3>
-                                    <div class="tw-meta"><span>Branding</span></div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-item category-print">
-                            <div class="portfolio-media tw-image-hover">
-                                <img src="" alt="" />
-                                <a href="#" class="portfolio-content uk-light">
-                                    <h3 class="portfolio-title"><span>Alud. Winter Magazine nº1 Cover 1</span></h3>
-                                    <div class="tw-meta"><span>Print</span></div>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="portfolio-item category-print">
-                            <div class="portfolio-media tw-image-hover">
-                                <img src="" alt="" />
-                                <a href="#" class="portfolio-content uk-light">
-                                    <h3 class="portfolio-title"><span>HAY + COS Collab</span></h3>
-                                    <div class="tw-meta"><span>Photography</span></div>
-                                </a>
-                            </div>                                
-                        </div>
+                        }?>
 
                         <div class="grid-sizer"></div>
 
