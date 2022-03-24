@@ -142,7 +142,7 @@ $products = $db->query("SELECT * FROM blog");
         <div class="main-container">
             <section class="tw-slider tw-slider-fullscreen uk-light" data-uk-height-viewport="offset-top: true">
                 <div class="owl-carousel owl-theme" data-autoplay="true" data-autoplay-timeout="4000" data-autoplay-hoverpause="true">
-                    <div class="slider-item" data-overlay="0.4" style="background-color: #151515; background-image: url(assets/demo/slider/slider-main-one.jpg);" data-uk-height-viewport="offset-top: true">
+                    <div class="slider-item" data-overlay="0.4" style="background-color: #151515; background-image: url(assets/demo/slider/slider-main-two.jpg);" data-uk-height-viewport="offset-top: true">
                         <div class="slider-content">
                             <div class="tw-element uk-text-center full tw-heading" data-uk-scrollspy="target: > *; cls:uk-animation-slide-bottom-medium; delay: 400;">
                                 <h4 class="tw-sub-title"><?=$languageArray['page_home_slider1'][$language] ?></h4>
@@ -150,7 +150,7 @@ $products = $db->query("SELECT * FROM blog");
                             </div>
                         </div>
                     </div>
-                    <div class="slider-item" data-overlay="0.4" style="background-color: #151515; background-image: url(assets/demo/slider/slider-main-two.jpg);" data-uk-height-viewport="offset-top: true">
+                    <div class="slider-item" data-overlay="0.4" style="background-color: #151515; background-image: url(assets/demo/slider/slider-main-one.jpg);" data-uk-height-viewport="offset-top: true">
                         <div class="slider-content">
                             <div class="tw-element uk-text-center full tw-heading" data-uk-scrollspy="target: > *; cls:uk-animation-slide-bottom-medium; delay: 400;">
                                 <h4 class="tw-sub-title"><?=$languageArray['page_home_slider1'][$language] ?></h4>
@@ -178,7 +178,7 @@ $products = $db->query("SELECT * FROM blog");
                         </div>
                         <div class="portfolio-item category-branding category-web-design">
                             <div class="portfolio-media tw-image-hover">
-                                <img src="assets/demo/portfolio/grid/grid2.jpg" alt="" />
+                                <img src="assets/demo/portfolio/grid/grid10.jpg" alt="" />
                                 <!--a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>Day & Age Ora</span></h3>
                                 </a-->
@@ -186,7 +186,7 @@ $products = $db->query("SELECT * FROM blog");
                         </div>
                         <div class="portfolio-item category-photography category-web-design">
                             <div class="portfolio-media tw-image-hover">
-                                <img src="assets/demo/portfolio/grid/grid3.jpg" alt="" />
+                                <img src="assets/demo/portfolio/grid/grid7.jpg" alt="" />
                                 <!--a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>Kolonihagen Branding</span></h3>
                                 </a-->
@@ -194,7 +194,7 @@ $products = $db->query("SELECT * FROM blog");
                         </div>
                         <div class="portfolio-item category-branding category-web-design">
                             <div class="portfolio-media tw-image-hover">
-                                <img src="assets/demo/portfolio/grid/grid4.jpg" alt="" />
+                                <img src="assets/demo/portfolio/grid/grid8.jpg" alt="" />
                                 <!--a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>Axiom Essential Watch</span></h3>
                                 </a-->
@@ -202,7 +202,7 @@ $products = $db->query("SELECT * FROM blog");
                         </div>
                         <div class="portfolio-item category-print">
                             <div class="portfolio-media tw-image-hover">
-                                <img src="assets/demo/portfolio/grid/grid5.jpg" alt="" />
+                                <img src="assets/demo/portfolio/grid/grid9.jpg" alt="" />
                                 <!--a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>Alud. Winter Magazine nº1 Cover 1</span></h3>
                                 </a-->
@@ -210,7 +210,7 @@ $products = $db->query("SELECT * FROM blog");
                         </div>
                         <div class="portfolio-item category-print">
                             <div class="portfolio-media tw-image-hover">
-                                <img src="assets/demo/portfolio/grid/grid6.jpg" alt="" />
+                                <img src="assets/demo/portfolio/grid/grid5.jpg" alt="" />
                                 <!--a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>HAY + COS Collab</span></h3>
                                 </a-->
