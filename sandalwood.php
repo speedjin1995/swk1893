@@ -160,8 +160,8 @@ else{
                                 <div class="uk-flex uk-flex-middle">
                                     <div class="tw-element promo-text-container full tw-box big-typography" data-uk-scrollspy="target: > *; cls:uk-animation-slide-bottom-medium; delay: 400;">
                                         <h6 class="tw-sub-title"></h6>
-                                        <h1 class="tw-big-title">檀香树</h1>
-                                        <p>檀香树每年都会增值它的价值是一年至少5至12巴仙， 因为天气的变化， 马来西亚气候变成了种植檀香树最佳地方， 就如以前美国的檀香山，因为天气暖化，而不能种檀香树，就是现在的夏威夷。
+                                        <h1 class="tw-big-title">檀香</h1>
+                                        <p>檀香是一种集药用、香精香料、精细雕刻及宗教用品于一体的重要珍贵用材树种，天然分布于印度尼西亚等地。我国无檀香天然分布，但自南北朝梁代以来开始利用檀香，至今已有1500多年的历史。<br> 中医认为檀香有理气温中、和胃止痛的功效；檀香油具清凉、收敛、强心等作用，能治疗多种疑难杂症，被载入多个国家药典；檀香精油香味独特且持久，是一种基础型定香剂，广泛应用于香精香料行业，经济价值非常高。此外，檀香还是宗教仪式的重要用品，用于雕刻或制作各种宗教用品等。
                                         </p>
                                         <!--a href="#" class="uk-button uk-button-silver uk-button-default uk-button-small uk-button-radius tw-hover"><span class="tw-hover-inner"><span>Read More</span><i class="ion-ios-arrow-thin-right"></i></span></a-->
                                     </div>
@@ -178,8 +178,8 @@ else{
                                 <div class="uk-flex uk-flex-middle">
                                     <div class="tw-element promo-text-container full tw-box big-typography" data-uk-scrollspy="target: > *; cls:uk-animation-slide-bottom-medium; delay: 400;">
                                         <h6 class="tw-sub-title"></h6>
-                                        <h1 class="tw-big-title">檀香树的医药解释</h1>
-                                        <p>檀香树酸性非常的高,所以他的茶叶会使人减瘦。檀香树的茶叶本品味辛性温，气味芳香功能宣发气滞，畅膈宽胸，温胃散寒。凡胸腹疼痛，噎膈呕吐等症，均可应用。
+                                        <h1 class="tw-big-title">引用起源</h1>
+                                        <p>早在南北朝梁代（公元502-549），檀香就已经载入陶弘景的《名医别录》中，随后在苏敬等编撰的《唐·新修本草》（公元659）中，檀香被编入紫真檀木条目下，并且对檀香的产地和分布进行了补充说明。<br> 其明确指出檀香“出昆仑盘盘国，惟不生中华，人间遍有之”，意为我国虽无檀香的天然分布，但却广泛应用檀香。
                                         </p>
                                         <!--a href="#" class="uk-button uk-button-silver uk-button-default uk-button-small uk-button-radius tw-hover"><span class="tw-hover-inner"><span>Read More</span><i class="ion-ios-arrow-thin-right"></i></span></a-->
                                     </div>
@@ -220,10 +220,44 @@ else{
                                 <div class="uk-flex uk-flex-middle">
                                     <div class="tw-element promo-text-container full tw-box big-typography" data-uk-scrollspy="target: > *; cls:uk-animation-slide-bottom-medium; delay: 400;">
                                         <h6 class="tw-sub-title"></h6>
-                                        <h1 class="tw-big-title">檀香树的应用</h1>
-                                        <p>1．用于寒凝气滞，胸腹疼痛，常与藿香、白豆蔻、砂仁、丁香等同用。若用于胸痹绞痛，常与丹参、砂仁同用，如丹参饮。<br />2。用于胃寒疼痛，呕吐清水，可与菖蒲、丁香、木香等同用。
+                                        <h1 class="tw-big-title">檀香花</h1>
+                                        <p>檀香是一种集药用、香精香料、精细雕刻及宗教用品于一体的珍贵用材树种，檀香全身都是宝，因而被誉为“黄金之树”。图为檀香花。<br> 绝大部分常绿乔木树种一年内开花结实1次，而且花期和果期相对固定，但檀香却例外。根据种植地区的热量条件，檀香在一年内可开花结实1-3次，一般在亚热带地区一年开花结实1次，在热带地区则可开花结实2-3次，而且雌雄花异熟，在同一时间点同一植株上甚至可观测到花蕾、开花和果实并存。这些特殊的生物学特性有效避免了檀香的自花授粉，保证了其异花授粉，有利于提高生态适应性。
                                         </p>
                                         <!--a href="#" class="uk-button uk-button-silver uk-button-default uk-button-small uk-button-radius tw-hover"><span class="tw-hover-inner"><span>Read More</span><i class="ion-ios-arrow-thin-right"></i></span></a-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-item category-print uk-padding-large">
+                        <div class="uk-container">
+                            <div class="uk-grid-collapse uk-child-width-1-1 uk-child-width-1-2@m  uk-child-width-1-1@s" data-uk-grid>
+                                <div class="uk-flex uk-flex-middle">
+                                    <div class="tw-element promo-text-container full tw-box big-typography" data-uk-scrollspy="target: > *; cls:uk-animation-slide-bottom-medium; delay: 400;">
+                                        <h6 class="tw-sub-title"></h6>
+                                        <h1 class="tw-big-title">檀香香味</h1>
+                                        <p>檀香又名旃檀、震檀等，系直接自梵文“Chandana”音译而来，意味着木材香味独特且持久。因檀香油独特香味，温馨持久，而且还能与多种香料混合，混合后能使其他易挥发精油的香味变得更加稳定和持久，因而被用作良好的定香剂，是配制各种高级香水、香精不可缺少的基本原料，广泛应用于香精香料行业。<br> 目前檀香制品从香皂到各种化妆品不下数百种。中国林业科学研究院热带林业研究所尖峰岭试验站有几株檀香遭盗伐后，试验站工作人员为了防止檀香树头被盗，同时将种质资源进行保护后再萌芽利用，用水泥砌成矮围墙将树头包围，数月后在以树头为中心5-10米范围内皆可以闻到檀香散发出的阵阵独特香味，足以证明檀香香气的独特性和持久性。
+                                        </p>
+                                        <!--a href="#" class="uk-button uk-button-silver uk-button-default uk-button-small uk-button-radius tw-hover"><span class="tw-hover-inner"><span>Read More</span><i class="ion-ios-arrow-thin-right"></i></span></a-->
+                                    </div>
+                                </div>
+                                <div data-uk-scrollspy="target: > *; cls:uk-animation-slide-bottom-medium; delay: 400;">
+                                    <div class="promo-carousel-container uk-light uk-box-shadow-small">
+                                        <div class="onhover owl-theme" data-uk-scrollspy="target: .shop-item; cls:uk-animation-slide-bottom-medium; delay: 300;">
+                                            <div class="gallery-item">
+                                                <div class="shop-content">
+                                                    <img alt="Backpack In Black" src="assets/demo/sandalwood4.jpg">
+                                                </div>
+                                            </div>
+                                            <!--<div class="gallery-item">
+                                                <div class="shop-content">
+                                                    <img alt="Backpack In Black" src="assets/demo/portfolio/promo/portfolio-4.jpg">
+                                                </div>
+                                            </div>
+                                            <div class="gallery-item">
+                                                <img alt="Backpack In Black" src="assets/demo/portfolio/promo/portfolio-3.jpg">
+                                            </div>-->
+                                        </div>
                                     </div>
                                 </div>
                             </div>
