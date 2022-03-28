@@ -67,6 +67,9 @@ else{
                             <a href="sandalwood.php"><?=$languageArray['nav_history'][$language] ?></a>
                         </li>
                         <li class="menu-item">
+                            <a href="knowledge.php"><?=$languageArray['nav_knowledge'][$language] ?></a>
+                        </li>
+                        <li class="menu-item">
                             <a href="product.php"><?=$languageArray['nav_product_info'][$language] ?></a>
                         </li>
                         <li class="menu-item">
@@ -107,6 +110,9 @@ else{
                                 </li>
                                 <li class="uk-parent">
                                     <a href="sandalwood.php"><?=$languageArray['nav_history'][$language] ?></a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="knowledge.php"><?=$languageArray['nav_knowledge'][$language] ?></a>
                                 </li>
                                 <li class="uk-parent">
                                     <a href="product.php"><?=$languageArray['nav_product_info'][$language] ?></a>
