@@ -68,6 +68,9 @@ $products = $db->query("SELECT * FROM blog");
                             <a href="sandalwood.php"><?=$languageArray['nav_history'][$language] ?></a>
                         </li>
                         <li class="menu-item">
+                            <a href="knowledge.php"><?=$languageArray['nav_knowledge'][$language] ?></a>
+                        </li>
+                        <li class="menu-item">
                             <a href="product.php"><?=$languageArray['nav_product_info'][$language] ?></a>
                         </li>
                         <li class="menu-item">
@@ -108,6 +111,9 @@ $products = $db->query("SELECT * FROM blog");
                                 </li-->
                                 <li class="uk-parent">
                                     <a href="sandalwood.php"><?=$languageArray['nav_history'][$language] ?></a>
+                                </li>
+                                <li class="menu-item">
+                                    <a href="knowledge.php"><?=$languageArray['nav_knowledge'][$language] ?></a>
                                 </li>
                                 <li class="uk-parent">
                                     <a href="product.php"><?=$languageArray['nav_product_info'][$language] ?></a>
@@ -178,7 +184,7 @@ $products = $db->query("SELECT * FROM blog");
                         </div>
                         <div class="portfolio-item category-branding category-web-design">
                             <div class="portfolio-media tw-image-hover">
-                                <img src="assets/demo/portfolio/grid/grid10.jpg" alt="" />
+                                <img src="assets/demo/portfolio/grid/grid11.jpg" alt="" />
                                 <!--a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>Day & Age Ora</span></h3>
                                 </a-->
@@ -194,7 +200,7 @@ $products = $db->query("SELECT * FROM blog");
                         </div>
                         <div class="portfolio-item category-branding category-web-design">
                             <div class="portfolio-media tw-image-hover">
-                                <img src="assets/demo/portfolio/grid/grid8.jpg" alt="" />
+                                <img src="assets/demo/portfolio/grid/grid88.jpg" alt="" />
                                 <!--a href="#" class="portfolio-content uk-light">
                                     <h3 class="portfolio-title"><span>Axiom Essential Watch</span></h3>
                                 </a-->
