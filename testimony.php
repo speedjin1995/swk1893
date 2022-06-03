@@ -27,6 +27,8 @@ else{
 
 $products = $db->query("SELECT * FROM blog");
 ?>
+
+
 <html lang="en">
     <head>
         <meta charset="UTF-8"/>
@@ -45,7 +47,22 @@ $products = $db->query("SELECT * FROM blog");
         <link href="assets/css/theme.css" rel="stylesheet" type="text/css" media="all" />
         <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" media="all" />
         <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700%7CLora:400,400i%7CShadows+Into+Light:400" rel="stylesheet" />
-        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+            /* Make the image fully responsive */
+            .carousel-inner img {
+                height: 600px;
+                width: 100%;
+
+            }
+            .carousel-caption{
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+        </style>
     </head>
     <body class="loading">
     <div class="tw-preloader">
@@ -226,6 +243,62 @@ $products = $db->query("SELECT * FROM blog");
                     </div>
                 </div>
             </section-->
+
+            <div id="demo" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                    <li data-target="#demo" data-slide-to="0" class="active"></li>
+                    <li data-target="#demo" data-slide-to="1"></li>
+                    <li data-target="#demo" data-slide-to="2"></li>
+                </ul>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src="/assets/demo/page-bg.jpg" alt="Testimony 1" width="800" height="200">
+                        <div class="carousel-caption">
+                            <?php if($language == "ch"){                        
+                                    echo '<h3>见证 1</h3>
+                                    <p>茶刚刚进入口中时，味道虽然涩，但当它在缓缓渗入喉咙时，你会感到一种清香的回味!</p>';
+                                }else{
+                                    echo '<h3>Los Angeles</h3>
+                                    <p>When the tea just enters the mouth, the taste is astringent, but when it slowly penetrates into the throat, you will feel a refreshing aftertaste!</p>';
+                                }
+                            ?>           
+                        </div>   
+                    </div>
+                    <div class="carousel-item">
+                    <img src="/assets/demo/page-bg.jpg" alt="Testimony 2" width="800" height="200">
+                        <div class="carousel-caption">                            
+                            <?php if($language == "ch"){                        
+                                    echo '<h3>见证 2</h3>
+                                    <p>这是我这辈子喝过最好的茶!</p>';
+                                }else{
+                                    echo '<h3>Chicago</h3>
+                                    <p>The best tea I ever had in my life!</p>';
+                                }
+                            ?>   
+                        </div>   
+                    </div>
+                    <div class="carousel-item">
+                    <img src="/assets/demo/page-bg.jpg" alt="Testimony 3" width="800" height="200">
+                        <div class="carousel-caption">
+                            <?php if($language == "ch"){                        
+                                    echo '<h3>见证 3</h3>
+                                    <p>清香四溢,尝试了一杯又一杯!</p>';
+                                }else{
+                                    echo '<h3>Chicago</h3>
+                                    <p>The fragrance is overflowing, I tried one cup after another!</p>';
+                                }
+                            ?>
+                        </div>   
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div> 
+
             <section class="uk-section uk-section-shop">
                 <div class="uk-container">
                     <div data-uk-grid>
@@ -365,5 +438,16 @@ $products = $db->query("SELECT * FROM blog");
         <script src="assets/js/isotope.pkgd.min.js"></script>
         <script src="assets/js/owl.carousel.min.js"></script>
         <script src="assets/js/theme.js"></script>
-    </body>
+
+        <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+        <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>    </body>
 </html>
+
+<script type="text/javascript">
+        $('.carousel').carousel({
+            interval: 5000
+        })
+
+</script>
