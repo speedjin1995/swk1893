@@ -252,7 +252,7 @@ $products = $db->query("SELECT * FROM blog");
                 </ul>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                    <img src="/assets/demo/page-bg.jpg" alt="Testimony 1" width="800" height="200">
+                    <img src="assets/demo/page-bg.jpg" alt="Testimony 1" width="800" height="200">
                         <div class="carousel-caption">
                             <?php if($language == "ch"){                        
                                     echo '<h3>见证 1</h3>
@@ -265,7 +265,7 @@ $products = $db->query("SELECT * FROM blog");
                         </div>   
                     </div>
                     <div class="carousel-item">
-                    <img src="/assets/demo/page-bg.jpg" alt="Testimony 2" width="800" height="200">
+                    <img src="assets/demo/page-bg.jpg" alt="Testimony 2" width="800" height="200">
                         <div class="carousel-caption">                            
                             <?php if($language == "ch"){                        
                                     echo '<h3>见证 2</h3>
@@ -278,7 +278,7 @@ $products = $db->query("SELECT * FROM blog");
                         </div>   
                     </div>
                     <div class="carousel-item">
-                    <img src="/assets/demo/page-bg.jpg" alt="Testimony 3" width="800" height="200">
+                    <img src="assets/demo/page-bg.jpg" alt="Testimony 3" width="800" height="200">
                         <div class="carousel-caption">
                             <?php if($language == "ch"){                        
                                     echo '<h3>见证 3</h3>
