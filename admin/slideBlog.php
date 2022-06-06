@@ -9,7 +9,7 @@ if(!isset($_SESSION['userID'])){
   echo 'window.location.href = "login.html";</script>';
 }
 else{
-    $blog = $db->query("SELECT * FROM blog");
+    $slideblog = $db->query("SELECT * FROM slide_blog");
     $userRole = $_SESSION['userRole'];
 }
 ?>
@@ -19,7 +19,7 @@ else{
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>SWK | Testimony</title>
+  <title>SWK | Testimony Slide</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -120,13 +120,13 @@ to get the desired effect
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="blog.php" class="nav-link active">
+            <a href="blog.php" class="nav-link">
               <i class="nav-icon fas fa-th "></i>
               <p>Testimony</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="slideblog.php" class="nav-link">
+            <a href="slideblog.php" class="nav-link active">
               <i class="nav-icon fas fa-th "></i>
               <p>Testimony Slide</p>
             </a>
@@ -194,12 +194,12 @@ to get the desired effect
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Testimony</h1>
+            <h1 class="m-0 text-dark">Testimony Slide</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item">Home</li>
-              <li class="breadcrumb-item active">Testimony</li>
+              <li class="breadcrumb-item active">Testimony Slide</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -223,17 +223,21 @@ to get the desired effect
                   <thead>
                     <tr>
                         <!--th>No.</th-->
-                        <th>Testimony Name</th>
-                        <th>Testimony Description</th>
-                        <th>Action</th>
+                        <th>Testimony Slide Name En</th>
+                        <th>Testimony Slide Name Ch</th>
+                        <th>Testimony Slide Description En</th>
+                        <th>Testimony Slide Description Ch</th>
+                        <th style="width:200px;">Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                      <?php while($row=mysqli_fetch_assoc($blog)){ ?>
+                      <?php while($row=mysqli_fetch_assoc($slideblog)){ ?>
                         <tr class="message_row">
                             <!--td></td-->
                             <td><?=$row['title_en'] ?></td>
                             <td><?=$row['title_ch'] ?></td>
+                            <td><?=$row['desc_en'] ?></td>
+                            <td><?=$row['desc_ch'] ?></td>                            
                             <td>
                                 <div class="row">
                                     <div class="col-3">
@@ -266,9 +270,9 @@ to get the desired effect
   <div class="modal fade" id="blogModal" style="overflow: auto;">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
-        <form role="form" id="blogForm" method="post" action="php/blog.php" enctype="multipart/form-data">
+        <form role="form" id="blogForm" method="post" action="php/slideBlog.php" enctype="multipart/form-data">
             <div class="modal-header">
-              <h4 class="modal-title">Testimony Details</h4>
+              <h4 class="modal-title">Testimony Slide Details</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">×</span>
               </button>
@@ -276,13 +280,6 @@ to get the desired effect
             <div class="modal-body">
               <div class="form-group">
                 <input type="hidden" class="form-control" id="blogId" name="blogId">
-              </div>
-              <div class="form-group">
-                <label for="fileToUpload">Image</label>
-                <div id="image-preview">
-                  <label for="image-upload" id="image-label">Choose Image</label>
-                  <input type="file" name="image-upload" id="image-upload" />
-                </div>
               </div>
               <div class="form-group">
                 <label for="keyCode">English Testimony *</label>
@@ -293,7 +290,7 @@ to get the desired effect
                 <input class="form-control" name="chTitle" id="chTitle" placeholder="Message Key Code" required>
               </div>
               <div class="form-group">
-                <label for="engBlog">English Content</label>
+                <label for="engBlog">English Description</label>
                 <textarea class="textarea" id="engBlog" name="engBlog" placeholder="Place some text here"
                               style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
               </div>
@@ -353,15 +350,7 @@ $(function () {
       "ordering": true,
       "info": true,
     });
-    
-    $.uploadPreview({
-        input_field: "#image-upload",   // Default: .image-upload
-        preview_box: "#image-preview",  // Default: .image-preview
-        label_field: "#image-label",    // Default: .image-label
-        label_default: "Choose Image",   // Default: Choose File
-        label_selected: "Change Image",  // Default: Change File
-        no_label: false                 // Default: false
-    });
+
     
     $('.textarea').summernote();
     
@@ -390,15 +379,15 @@ $(function () {
 });
 
 function edit(id){
-    $.post( "php/getblog.php", { messageId: id}, function( data ) {
+    $.post( "php/getslideBlog.php", { messageId: id}, function( data ) {
         var decode = JSON.parse(data)
         
         if(decode.status === 'success'){
             $('#blogModal').find('#blogId').val(decode.message.id);
             $('#blogModal').find('#engTitle').val(decode.message.title_en);
             $('#blogModal').find('#chTitle').val(decode.message.title_ch);
-            $('#blogModal').find('#engBlog').summernote("code", decode.message.en);
-            $('#blogModal').find('#chineseBlog').summernote("code", decode.message.ch);
+            $('#blogModal').find('#engBlog').summernote("code", decode.message.desc_en);
+            $('#blogModal').find('#chineseBlog').summernote("code", decode.message.desc_ch);
             $('#blogModal').modal('show');
             
             $('#blogForm').validate({
@@ -419,7 +408,7 @@ function edit(id){
 }
 
 function deletes(id){
-    $.post( "php/deleteblog.php", { messageId: id}, function( data ) {
+    $.post( "php/deleteSlideBlog.php", { messageId: id}, function( data ) {
         var decode = JSON.parse(data)
         
         if(decode.status === 'success'){

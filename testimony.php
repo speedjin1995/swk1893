@@ -26,6 +26,8 @@ else{
 }
 
 $products = $db->query("SELECT * FROM blog");
+$slideBlog = $db->query("SELECT * FROM slide_blog");
+$slideBlog1 = $db->query("SELECT * FROM slide_blog");
 ?>
 
 
@@ -246,50 +248,34 @@ $products = $db->query("SELECT * FROM blog");
 
             <div id="demo" class="carousel slide" data-ride="carousel">
                 <ul class="carousel-indicators">
-                    <li data-target="#demo" data-slide-to="0" class="active"></li>
-                    <li data-target="#demo" data-slide-to="1"></li>
-                    <li data-target="#demo" data-slide-to="2"></li>
+                <?php while($row=mysqli_fetch_assoc($slideBlog)){
+
+                    $id = $row['id'] - 1;
+                    echo '<li data-target="#demo" data-slide-to="'.$id.'"'; 
+                    echo 'class="';
+                    echo $id == 0 ? 'active' : '';
+                    echo '"></li>';
+                } ?>
                 </ul>
                 <div class="carousel-inner">
-                    <div class="carousel-item active">
-                    <img src="assets/demo/page-bg.jpg" alt="Testimony 1" width="800" height="200">
-                        <div class="carousel-caption">
-                            <?php if($language == "ch"){                        
-                                    echo '<h3>见证 1</h3>
-                                    <p>茶刚刚进入口中时，味道虽然涩，但当它在缓缓渗入喉咙时，你会感到一种清香的回味!</p>';
-                                }else{
-                                    echo '<h3>Los Angeles</h3>
-                                    <p>When the tea just enters the mouth, the taste is astringent, but when it slowly penetrates into the throat, you will feel a refreshing aftertaste!</p>';
-                                }
-                            ?>           
-                        </div>   
-                    </div>
-                    <div class="carousel-item">
-                    <img src="assets/demo/page-bg.jpg" alt="Testimony 2" width="800" height="200">
-                        <div class="carousel-caption">                            
-                            <?php if($language == "ch"){                        
-                                    echo '<h3>见证 2</h3>
-                                    <p>这是我这辈子喝过最好的茶!</p>';
-                                }else{
-                                    echo '<h3>Chicago</h3>
-                                    <p>The best tea I ever had in my life!</p>';
-                                }
-                            ?>   
-                        </div>   
-                    </div>
-                    <div class="carousel-item">
-                    <img src="assets/demo/page-bg.jpg" alt="Testimony 3" width="800" height="200">
-                        <div class="carousel-caption">
-                            <?php if($language == "ch"){                        
-                                    echo '<h3>见证 3</h3>
-                                    <p>清香四溢,尝试了一杯又一杯!</p>';
-                                }else{
-                                    echo '<h3>Chicago</h3>
-                                    <p>The fragrance is overflowing, I tried one cup after another!</p>';
-                                }
-                            ?>
-                        </div>   
-                    </div>
+                <?php while($row=mysqli_fetch_assoc($slideBlog1)){
+
+                         $id = $row['id'] - 1;
+                        echo '<div class="carousel-item '; 
+                        echo $id == 0 ? 'active' : '';
+                        echo '">';
+                        echo '<img src="assets/demo/page-bg.jpg" alt="'.$row['title_ch'].'" width="800" height="200">
+                            <div class="carousel-caption">';
+                                 if($language == "ch"){                        
+                                        echo '<h3>'.$row['title_ch'].'</h3>
+                                        <p>'.$row['desc_ch'].'</p>';
+                                    }else{
+                                        echo '<h3>'.$row['title_en'].'</h3>
+                                        <p>'.$row['desc_en'].'</p>';
+                                    }   
+                        echo    '</div>   
+                        </div>';
+                    } ?>
                 </div>
                 <a class="carousel-control-prev" href="#demo" data-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
@@ -298,6 +284,17 @@ $products = $db->query("SELECT * FROM blog");
                     <span class="carousel-control-next-icon"></span>
                 </a>
             </div> 
+
+<!-- Left and right controls -->
+<a class="carousel-control-prev" href="#demo" data-slide="prev">
+  <span class="carousel-control-prev-icon"></span>
+</a>
+<a class="carousel-control-next" href="#demo" data-slide="next">
+  <span class="carousel-control-next-icon"></span>
+</a>
+
+</div>
+
 
             <section class="uk-section uk-section-shop">
                 <div class="uk-container">

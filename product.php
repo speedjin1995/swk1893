@@ -190,10 +190,18 @@ $products = $db->query("SELECT * FROM product");
                                                     </div>';
                                                     
                                         if($language == "ch"){
-                                            echo '<h4 onclick="edit('.$row['id'].')">'.$row['product_name_ch'].'</h4>';
+                                            echo '<h4 onclick="edit('.$row['id'].')">'.$row['product_name_ch'].'
+                                                <a id="whatsapp'.$row['id'].'" data-id="'.$row['id'].'"><i class="fa fa-whatsapp" style="font-size:28px;color:green;padding-left:1rem;"></i></a>
+                                                <a onclick="view('.$row['id'].')"><i class="fa fa-search" style="font-size:28px;padding-left:0.1rem;"></i></a>
+                                                <a onclick="email('.$row['id'].')"><i class="fa fa-envelope-o" style="font-size:28px;color:black;padding-left:0.1rem;"></i></a>
+                                            </h4>';
                                         }
                                         else{
-                                            echo '<h4 onclick="edit('.$row['id'].')">'.$row['product_name'].'</h4>';
+                                            echo  '<h4 onclick="edit('.$row['id'].')">'.$row['product_name'].'
+                                                <a onclick="whatsapp('.$row['id'].')"><i class="fa fa-whatsapp" style="font-size:28px;color:green;text-:5rem;"></i></a>
+                                                <a onclick="view('.$row['id'].')"><i class="fa fa-search" style="font-size:28px;padding-left:0.1rem;"></i></a>
+                                                <a onclick="email('.$row['id'].')"><i class="fa fa-envelope-o" style="font-size:28px;color:black;padding-left:0.1rem;"></i></a>                                     
+                                            </h4>';
                                         }
 
                                         echo '</div>
@@ -499,7 +507,9 @@ $products = $db->query("SELECT * FROM product");
                 <!-- /.modal-content -->
             </div>
             <!-- /.modal-dialog -->
-            </div>
+        </div>
+
+
         <!-- .main-container close -->        
         <script src="assets/js/jquery-3.2.0.min.js"></script>
         <script src="assets/js/jquery.ui.js"></script>
@@ -590,6 +600,13 @@ $products = $db->query("SELECT * FROM product");
                     $list.hide();
                 });
 
+                $("[id^=whatsapp]").on("click", function(){
+                    debugger
+                    var id = $('#whatsapp').data('id')
+
+
+                })               
+
             });
         </script>
         <script>
@@ -609,6 +626,12 @@ $products = $db->query("SELECT * FROM product");
                     }
                 })
             }
+
+            $("[id^=whatsapp]").on("click", function(){
+                    debugger
+                    var id = $(this).data('id');
+                    
+            })      
         </script>
     </body>
 </html>
