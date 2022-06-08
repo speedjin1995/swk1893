@@ -45,12 +45,13 @@ $products = $db->query("SELECT * FROM product");
         <link href="assets/css/theme.css" rel="stylesheet" type="text/css" media="all" />
         <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" media="all" />
         <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700%7CLora:400,400i%7CShadows+Into+Light:400" rel="stylesheet" />
-        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     </head>
     <body class="loading">
     <div class="tw-preloader">
             <div data-uk-spinner></div>
-        </div>
+    </div>
         <div class="header-container tw-header tw-header-transparent uk-light">
             <nav class="uk-navbar-container uk-flex-center" data-uk-navbar>
                 <div class="uk-navbar-left">
@@ -184,23 +185,20 @@ $products = $db->query("SELECT * FROM product");
                                                 <div class="shop-content">
                                                     <div class="shop-image-container uk-inline tw-onhover visible">
                                                         <img alt="Backpack In Black" src="admin/php/'.$row['product_photo'].'">
-                                                        <div class="uk-position-bottom">
-                                                            <a class="add-to-cart" onclick="edit('.$row['id'].')">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
-                                                        </div>
                                                     </div>';
                                                     
                                         if($language == "ch"){
-                                            echo '<h4 onclick="edit('.$row['id'].')">'.$row['product_name_ch'].'
-                                                <a id="whatsapp'.$row['id'].'" data-id="'.$row['id'].'"><i class="fa fa-whatsapp" style="font-size:28px;color:green;padding-left:1rem;"></i></a>
-                                                <a onclick="view('.$row['id'].')"><i class="fa fa-search" style="font-size:28px;padding-left:0.1rem;"></i></a>
-                                                <a onclick="email('.$row['id'].')"><i class="fa fa-envelope-o" style="font-size:28px;color:black;padding-left:0.1rem;"></i></a>
+                                            echo '<h4>'.$row['product_name_ch'].'
+                                                <a href="https://api.whatsapp.com/send?phone=60126143748&text='.$row['product_name_ch'].'"><i class="fa fa-whatsapp" style="font-size:28px;color:green;padding-left:1rem;"></i></a>
+                                                <a name="view'.$row['id'].'" data-id="'.$row['id'].'" data-toggle="modal" data-target="#productModal"><i class="fa fa-search" style="font-size:28px;padding-left:0.1rem;color:blue;"></i></a>
+                                                <a name="email'.$row['id'].'" data-id="'.$row['id'].'" data-toggle="modal" data-target="#sendEmail"><i class="fa fa-envelope-o" style="font-size:28px;color:black;padding-left:0.1rem;"></i></a>
                                             </h4>';
                                         }
                                         else{
-                                            echo  '<h4 onclick="edit('.$row['id'].')">'.$row['product_name'].'
-                                                <a onclick="whatsapp('.$row['id'].')"><i class="fa fa-whatsapp" style="font-size:28px;color:green;text-:5rem;"></i></a>
-                                                <a onclick="view('.$row['id'].')"><i class="fa fa-search" style="font-size:28px;padding-left:0.1rem;"></i></a>
-                                                <a onclick="email('.$row['id'].')"><i class="fa fa-envelope-o" style="font-size:28px;color:black;padding-left:0.1rem;"></i></a>                                     
+                                            echo  '<h4>'.$row['product_name'].'
+                                                <a href="https://api.whatsapp.com/send?phone=60126143748&text='.$row['product_name_ch'].'"><i class="fa fa-whatsapp" style="font-size:28px;color:green;padding-left:1rem;"></i></a>
+                                                <a onclick="view'.$row['id'].'" data-id="'.$row['id'].'" data-toggle="modal" data-target="#productModal"><i class="fa fa-search" style="font-size:28px;padding-left:0.1rem;"></i></a>
+                                                <a onclick="email'.$row['id'].'" data-id="'.$row['id'].'" data-toggle="modal" data-target="#sendEmail"><i class="fa fa-envelope-o" style="font-size:28px;color:black;padding-left:0.1rem;"></i></a>                                     
                                             </h4>';
                                         }
 
@@ -209,182 +207,12 @@ $products = $db->query("SELECT * FROM product");
                                         </div>';
                                     } ?>
 
-                                    <!--div>
-                                        <div class="shop-item">
-                                            <div class="shop-content">
-                                                <div class="shop-image-container uk-inline tw-onhover visible">
-                                                    <img alt="Backpack In Black" src="assets/demo/product/product2.jpeg">
-                                                    <div class="uk-position-bottom">
-                                                        <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
-                                                    </div>
-                                                </div>
-                                                <h4><a href="shop-single.html" class="shop-title">Sandalwood Box 1</a></h4>
-                                                <a class="shop-category">Accessories</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <div class="shop-item">
-                                            <div class="shop-content">
-                                                <div class="shop-image-container uk-inline tw-onhover visible">
-                                                    <img alt="Backpack In Black" src="assets/demo/product/product3.jpeg">
-                                                    <div class="uk-position-bottom">
-                                                        <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
-                                                    </div>
-                                                </div>
-                                                <h4><a href="shop-single.html" class="shop-title">Sandalwood Box 3</a></h4>
-                                                <a class="shop-category">Accessories</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    
-                                        <div>
-                                            <div class="shop-item">
-                                                <div class="shop-content">
-                                                    <div class="shop-image-container uk-inline tw-onhover visible">
-                                                        <img alt="Backpack In Black" src="assets/demo/product/product4.jpeg">
-                                                        <div class="uk-position-bottom">
-                                                            <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <h4><a href="shop-single.html" class="shop-title">Sandalwood Box 4</a></h4>
-                                                    <a class="shop-category">Accessories</a>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                    <div>
-                                        <div class="shop-item">
-                                            <div class="shop-content">
-                                                <div class="shop-image-container uk-inline tw-onhover visible">
-                                                    <img alt="Backpack In Black" src="assets/demo/product/product5.jpg">
-                                                    <div class="uk-position-bottom">
-                                                        <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
-                                                    </div>
-                                                </div>
-                                                <h4><a href="shop-single.html" class="shop-title">Tea 1</a></h4>
-                                                <a class="shop-category">Beverages</a>
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                    <div>
-                                        <div class="shop-item">
-                                            <div class="shop-content">
-                                                <div class="shop-image-container uk-inline tw-onhover visible">
-                                                    <img alt="Backpack In Black" src="assets/demo/product/product6.jpg">
-                                                    <div class="uk-position-bottom">
-                                                        <a class="add-to-cart">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
-                                                    </div>
-                                                </div>
-                                                <h4><a href="shop-single.html" class="shop-title">Tea 2</a></h4>
-                                                <a class="shop-category">Beverages</a>
-                                            </div>
-                                        </div>
-                                    </div-->
 
                                 </div>
                             </div>
 
                         </div>
 
-                        <!--<div class="sidebar-area">
-                            <div class="sidebar-inner" data-uk-sticky="bottom: true;offset: 40">
-
-                                <div class="widget-item">
-                                    <aside class="widget widget_categories">
-                                        <h3 class="widget-title"><span>Search</span></h3>
-                                        <div class="call-btn" data-uk-grid>
-                                            <div class="uk-inline uk-width-1-1">
-                                                <a class="uk-form-icon uk-form-icon-flip" href=""><i class="ion-android-search"></i></a>
-                                                <input type="text" placeholder="Search" class="uk-input">
-                                            </div>
-                                        </div>
-                                    </aside>
-                                </div>
-
-                                <div class="widget-item">
-                                    <aside class="widget widget_categories">
-                                        <h3 class="widget-title"><span>Filter by Price</span></h3>
-                                        <div id="slider-range"></div>
-                                        <div class="shop-range-container uk-display-block uk-margin-top">
-                                            <label for="amount">Price:</label><input class="uk-width-1-2" type="text" id="amount" readonly style="background:none; color:#666;">
-                                            <a href="#" class="uk-margin-small-top uk-button uk-float-right uk-button-default uk-button-small uk-button-radius">Filter</a>
-                                        </div>
-                                    </aside>
-                                </div>
-
-                                <div class="widget-item">
-                                    <aside class="widget widget_categories">
-                                        <h3 class="widget-title"><span>Categories</span></h3>
-                                        <ul>
-                                            <li class="cat-item cat-item-2 current-cat"><a href="#">Featured</a> (8)</li>
-                                            <li class="cat-item cat-item-7"><a href="#">Lifestyle</a> (6)</li>
-                                            <li class="cat-item cat-item-9"><a href="#">Music</a> (3)</li>
-                                            <li class="cat-item cat-item-8"><a href="#">Travel</a> (4)</li>
-                                        </ul>
-                                    </aside>
-                                </div>
-
-                                <div class="widget-item">
-                                    <aside class="widget tw-shop-widget">
-                                        <h3 class="widget-title"><span>Top Products</span></h3>
-                                        <ul>
-                                            <li>
-                                                <div class="recent-thumb">
-                                                    <a href="shop-single.html"><img src="assets/demo/shop/recent-1.jpg" alt=""></a>
-                                                </div>
-                                                <div class="recent-content">
-                                                    <h4><a href="#">Backpack In Black</a></h4>
-                                                    <span class="entry-cat">Accessories</span>
-                                                    <span class="entry-price">$40.00</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="recent-thumb">
-                                                    <a href="shop-single.html"><img src="assets/demo/shop/recent-2.jpg" alt=""></a>
-                                                </div>
-                                                <div class="recent-content">
-                                                    <h4><a href="#">BOSS Orange T-Shirt</a></h4>
-                                                    <span class="entry-cat">T-Shirts & Vests</span>
-                                                    <span class="entry-price">$40.00</span>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="recent-thumb">
-                                                    <a href="shop-single.html"><img src="assets/demo/shop/recent-3.jpg" alt=""></a>
-                                                </div>
-                                                <div class="recent-content">
-                                                    <h4><a href="#">Industry T-Shirt</a></h4>
-                                                    <span class="entry-cat">T-Shirts & Vests</span>
-                                                    <span class="entry-price">$40.00</span>
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </aside>
-                                </div>
-
-                                <div class="widget-item">
-                                    <aside class="widget widget_wysija">
-                                        <h3 class="widget-title"><span>Tag Clouds</span></h3>
-                                        <div class="tagcloud">
-                                            <a href="#" title="Travel">Travel</a>
-                                            <a href="#" title="Features">Features</a>
-                                            <a href="#" title="Post">Post</a>
-                                            <a href="#" title="Wordpress">Wordpress</a>
-                                            <a href="#" title="Shop">Shop</a>
-                                            <a href="#" title="Trend">Trend</a>
-                                            <a href="#" title="Product">Product</a>
-                                            <a href="#" title="Woman">Woman</a>
-                                            <a href="#" title="Man">Man</a>
-                                        </div>
-                                    </aside>
-                                </div>
-
-                            </div>
-                        </div>-->
                     </div>
                 </div>
             </section>
@@ -488,27 +316,63 @@ $products = $db->query("SELECT * FROM product");
         <div class="modal fade" id="productModal">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <div class="container">
-                    <div class="row align-items-center productInfo">
-                        
+                    <div class="modal-header" style="font-weight: bold;">
+                        Product Name
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                        </button>
                     </div>
+                    <div class="modal-body">
+                        <div class="container">
+                            <div class="row align-items-center productInfo">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer justify-content-between">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                     </div>
                 </div>
-                <div class="modal-footer justify-content-between">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-                </div>
-                <!-- /.modal-content -->
             </div>
-            <!-- /.modal-dialog -->
         </div>
 
+        <div class="modal fade" id="sendEmail">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <form method="post" action="php/sendEmail.php">
+                        <div class="modal-header" style="font-weight: bold;">
+                            Inquiry Form
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+
+                                <div class="form-group">
+                                    <label for="name" class="col-form-label">Name:</label>
+                                    <input type="text" class="form-control" id="name" name="name">
+                                </div>
+                                <div class="form-group">
+                                    <label for="phoneNumber" class="col-form-label">Phone Number:</label>
+                                    <input class="form-control" id="phoneNumber" name="phoneNumber"></input>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email" class="col-form-label">Email:</label>
+                                    <input class="form-control" id="email" name="email"></input>
+                                </div>
+                                <div class="form-group">
+                                    <label for="description" class="col-form-label">Description:</label>
+                                    <textarea name="description" placeholder="description" id="description" name="description" rows="7" tabindex="4"></textarea>
+                                </div>                                                
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" value="Submit" class="btn btn-primary">Save changes</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
 
         <!-- .main-container close -->        
         <script src="assets/js/jquery-3.2.0.min.js"></script>
@@ -522,6 +386,9 @@ $products = $db->query("SELECT * FROM product");
         <!-- AdminLTE App -->
         <script src="admin/dist/js/adminlte.min.js"></script>
         <script src="http://www.youtube.com/iframe_api?ver=5.0.1"></script><script src="assets/js/theme.js"></script>
+        <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <script>
             $( function() {
                 "use strict";
@@ -536,102 +403,117 @@ $products = $db->query("SELECT * FROM product");
                 });
                 $( "#amount" ).val( "$" + $( "#slider-range" ).slider( "values", 0 ) +
                 " - $" + $( "#slider-range" ).slider( "values", 1 ) );
-            } );
-            // Iterate over each select element
-            $('select').each(function () {
 
-                // Cache the number of options
-                var $this = $(this),
-                    numberOfOptions = $(this).children('option').length;
+                            // Iterate over each select element
+                $('select').each(function () {
 
-                // Hides the select element
-                $this.addClass('s-hidden');
+                    // Cache the number of options
+                    var $this = $(this),
+                        numberOfOptions = $(this).children('option').length;
 
-                // Wrap the select element in a div
-                $this.wrap('<div class="select"></div>');
+                    // Hides the select element
+                    $this.addClass('s-hidden');
 
-                // Insert a styled div to sit over the top of the hidden select element
-                $this.after('<div class="styledSelect"></div>');
+                    // Wrap the select element in a div
+                    $this.wrap('<div class="select"></div>');
 
-                // Cache the styled div
-                var $styledSelect = $this.next('div.styledSelect');
+                    // Insert a styled div to sit over the top of the hidden select element
+                    $this.after('<div class="styledSelect"></div>');
 
-                // Show the first select option in the styled div
-                $styledSelect.text($this.children('option').eq(0).text());
+                    // Cache the styled div
+                    var $styledSelect = $this.next('div.styledSelect');
 
-                // Insert an unordered list after the styled div and also cache the list
-                var $list = $('<ul />', {
-                    'class': 'options'
-                }).insertAfter($styledSelect);
+                    // Show the first select option in the styled div
+                    $styledSelect.text($this.children('option').eq(0).text());
 
-                // Insert a list item into the unordered list for each select option
-                for (var i = 0; i < numberOfOptions; i++) {
-                    $('<li />', {
-                        text: $this.children('option').eq(i).text(),
-                        rel: $this.children('option').eq(i).val()
-                    }).appendTo($list);
-                }
+                    // Insert an unordered list after the styled div and also cache the list
+                    var $list = $('<ul />', {
+                        'class': 'options'
+                    }).insertAfter($styledSelect);
 
-                // Cache the list items
-                var $listItems = $list.children('li');
+                    // Insert a list item into the unordered list for each select option
+                    for (var i = 0; i < numberOfOptions; i++) {
+                        $('<li />', {
+                            text: $this.children('option').eq(i).text(),
+                            rel: $this.children('option').eq(i).val()
+                        }).appendTo($list);
+                    }
 
-                // Show the unordered list when the styled div is clicked (also hides it if the div is clicked again)
-                $styledSelect.click(function (e) {
-                    e.stopPropagation();
-                    $('div.styledSelect.active').each(function () {
-                        $(this).removeClass('active').next('ul.options').hide();
+                    // Cache the list items
+                    var $listItems = $list.children('li');
+
+                    // Show the unordered list when the styled div is clicked (also hides it if the div is clicked again)
+                    $styledSelect.click(function (e) {
+                        e.stopPropagation();
+                        $('div.styledSelect.active').each(function () {
+                            $(this).removeClass('active').next('ul.options').hide();
+                        });
+                        $(this).toggleClass('active').next('ul.options').toggle();
                     });
-                    $(this).toggleClass('active').next('ul.options').toggle();
+
+                    // Hides the unordered list when a list item is clicked and updates the styled div to show the selected list item
+                    // Updates the select element to have the value of the equivalent option
+                    $listItems.click(function (e) {
+                        e.stopPropagation();
+                        $styledSelect.text($(this).text()).removeClass('active');
+                        $this.val($(this).attr('rel'));
+                        $list.hide();
+                        /* alert($this.val()); Uncomment this for demonstration! */
+                    });
+
+                    // Hides the unordered list when clicking outside of it
+                    $(document).click(function () {
+                        $styledSelect.removeClass('active');
+                        $list.hide();
+                    });
+
+
                 });
 
-                // Hides the unordered list when a list item is clicked and updates the styled div to show the selected list item
-                // Updates the select element to have the value of the equivalent option
-                $listItems.click(function (e) {
-                    e.stopPropagation();
-                    $styledSelect.text($(this).text()).removeClass('active');
-                    $this.val($(this).attr('rel'));
-                    $list.hide();
-                    /* alert($this.val()); Uncomment this for demonstration! */
-                });
-
-                // Hides the unordered list when clicking outside of it
-                $(document).click(function () {
-                    $styledSelect.removeClass('active');
-                    $list.hide();
-                });
-
-                $("[id^=whatsapp]").on("click", function(){
+                $("[name^=view]").on("click", function(){
                     debugger
-                    var id = $('#whatsapp').data('id')
+                        var id = $(this).data('id')
+                        $.post( "php/getProduct.php", { messageId: id}, function( data ) {
+                        debugger;
+                        var decode = JSON.parse(data)
+                            
+                        if(decode.status === 'success'){
+                            <?php if($language == "ch"){
+                                echo "$('#productModal').find('.productInfo').html(decode.message.product_desc_ch);";
+                            }
+                            else{
+                                echo "$('#productModal').find('.productInfo').html(decode.message.product_desc);";
+                            } ?>
+                            
+                            $('#productModal').modal('show');
+                        }
+                    })
 
+                });
 
-                })               
+                $("[name^=view]").on("click", function(){
+                    debugger
+                        var id = $(this).data('id')
+                        $.post( "php/getProduct.php", { messageId: id}, function( data ) {
+                        debugger;
+                        var decode = JSON.parse(data)
+                            
+                        if(decode.status === 'success'){
+                            <?php if($language == "ch"){
+                                echo "$('#productModal').find('.productInfo').html(decode.message.product_desc_ch);";
+                            }
+                            else{
+                                echo "$('#productModal').find('.productInfo').html(decode.message.product_desc);";
+                            } ?>
+                            
+                            $('#productModal').modal('show');
+                        }
+                    })
+
+                });
 
             });
-        </script>
-        <script>
-            function edit(id){
-                $.post( "php/getProduct.php", { messageId: id}, function( data ) {
-                    var decode = JSON.parse(data)
-                        
-                    if(decode.status === 'success'){
-                        <?php if($language == "ch"){
-                            echo "$('#productModal').find('.productInfo').html(decode.message.product_desc_ch);";
-                        }
-                        else{
-                            echo "$('#productModal').find('.productInfo').html(decode.message.product_desc);";
-                        } ?>
-                        
-                        $('#productModal').modal('show');
-                    }
-                })
-            }
 
-            $("[id^=whatsapp]").on("click", function(){
-                    debugger
-                    var id = $(this).data('id');
-                    
-            })      
         </script>
     </body>
 </html>
