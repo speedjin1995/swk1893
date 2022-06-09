@@ -2,13 +2,13 @@
 
 if(!$_POST) exit;
 
-if(isset($_POST['name'], $_POST['phoneNumber'], $_POST['email'], $_POST['description'])){
+if(isset($_POST['author'], $_POST['phone'], $_POST['email'], $_POST['comment'])){
 	if (!defined("PHP_EOL")) define("PHP_EOL", "\r\n");
 
-	$name     = $_POST['name'];
+	$name     = $_POST['author'];
 	$email    = $_POST['email'];
-	$phone   = $_POST['phoneNumber'];
-	$description  = $_POST['description'];
+	$phone   = $_POST['phone'];
+	$description  = $_POST['comment'];
 	$subject = 'Inquiry Form from ' . $name . '';
 	$description = stripslashes($description);
 	// Configuration option.
@@ -46,8 +46,9 @@ if(isset($_POST['name'], $_POST['phoneNumber'], $_POST['email'], $_POST['descrip
 	if(mail($address, $e_subject, $msg, $headers)) {
 		$to = $email;
 		$subject = "Contact Me";
-		$txt = "Thanks you for your interested on our products! I will get back to you soon";
-		$headers = "From: " . $address . "\r\n" . "CC: speedjin1995@gmail.com";
+		$txt = "Thanks you for your interested to our products! I will get back to you soon";
+		$headers = "From: " . $address . "\r\n" .
+		"CC: speedjin1995@gmail.com";
 		
 		mail($to,$subject,$txt,$headers);
 		// Email has sent successfully, echo a success page.
@@ -57,16 +58,16 @@ if(isset($_POST['name'], $_POST['phoneNumber'], $_POST['email'], $_POST['descrip
 		echo "<p>Thank you <strong>$name</strong>, your message has been submitted to us.</p>";
 		echo "</div>";
 		echo "</fieldset>";
-		header("location:../product.php");
+		header("location:../contactus.php");
 	} 
 	else {
 		echo 'ERROR!';
-		header("location:../product.php");
+		header("location:../contactus.php");
 	}
 }
 else{
     echo 'FAIL TO SEND EMAIL! PLEASE CONTACT CUSTOMER SERVICE.';
-	header("location:../product.php");
+	header("location:../contactus.php");
 }
 
 // Email address verification, do not edit.

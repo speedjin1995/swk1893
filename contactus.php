@@ -197,7 +197,7 @@ else{
                         <p><?=$languageArray['page_contact_form_desc'][$language] ?></p>
                     </div>
                     <div class="tw-contact-form tw-element" data-uk-scrollspy="target: > form > div; cls:uk-animation-slide-bottom-small; delay: 500;">
-                        <form action="#" method="post" class=" uk-grid-small uk-child-width-1-1" data-uk-grid>
+                        <form method="post" action="php/sendContact.php" class=" uk-grid-small uk-child-width-1-1" data-uk-grid>
                             <div>
                                 <input id="author" name="author" placeholder="Name *" type="text" value="" size="30" aria-required="true">
                             </div>
