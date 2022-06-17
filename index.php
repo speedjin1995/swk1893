@@ -37,7 +37,8 @@ $slideBlog1 = $db->query("SELECT * FROM slide_blog");
         <link rel="shortcut icon" href="assets/demo/icon.png">
 
         <title>SWK | Sandalwood Tea</title>
-        
+<link rel="stylesheet" href="assets/css/swiper.min.css">
+<link rel="stylesheet" href="assets/css/style.css">
         <link href="assets/css/uikit.min.css" rel="stylesheet" type="text/css" media="all" />
         <link href="assets/css/uikit-width-ex.min.css" rel="stylesheet" type="text/css" media="all" />
         <link href="assets/css/ionicons.min.css" rel="stylesheet" type="text/css" media="all" />
@@ -61,7 +62,9 @@ $slideBlog1 = $db->query("SELECT * FROM slide_blog");
                 flex-direction: column;
                 justify-content: center;
             }
-
+            li a{
+                font-size:15px;
+            }
         </style>
 
     </head>
@@ -186,7 +189,7 @@ $slideBlog1 = $db->query("SELECT * FROM slide_blog");
                 </div>
             </section>
 
-            <section class="uk-section uk-section-normal">
+            <section class="uk-section uk-section-normal uk-padding-remove-bottom ">
                 <div class="tw-element tw-portfolio promo">
                     <div class="tw-element tw-heading uk-text-center">
                         <h3><?=$languageArray['nav_about_us'][$language] ?></h3>
@@ -209,7 +212,11 @@ $slideBlog1 = $db->query("SELECT * FROM slide_blog");
                                         <div class="onhover owl-theme" data-uk-scrollspy="target: .shop-item; cls:uk-animation-slide-bottom-medium; delay: 300;">
                                             <div class="gallery-item">
                                                 <div class="shop-content">
-                                                    <img alt="Backpack In Black" src="assets/demo/sandalwood2.jpg">
+                                                <video width="600" height="400" controls>
+                                                    <source src="assets/video/about.mp4" type="video/mp4">
+                                                    <!-- <source src="movie.ogg" type="video/ogg"> -->
+                                                    Your browser does not support the video tag.
+                                                </video>
                                                 </div>
                                             </div>
                                         </div>
@@ -222,7 +229,7 @@ $slideBlog1 = $db->query("SELECT * FROM slide_blog");
                 </div>
             </section>
 
-            <section class="uk-section">
+            <section class="uk-section uk-padding-remove-bottom uk-padding-remove-top">
                 <div class="uk-container">
                     <div class="tw-element tw-heading uk-text-center">
                         <h3><?=$languageArray['testimony_why_choose_us'][$language] ?></h3>
@@ -319,12 +326,8 @@ $slideBlog1 = $db->query("SELECT * FROM slide_blog");
                 </div>
             </section>
 
-            <section class="uk-section">
-                <div class="uk-container">
-
-                </div>
-            </section>
-
+            <br>
+            <br>
             <div id="demo" class="carousel slide" data-ride="carousel">
                 <ul class="carousel-indicators">
                 <?php while($row=mysqli_fetch_assoc($slideBlog)){
@@ -347,10 +350,10 @@ $slideBlog1 = $db->query("SELECT * FROM slide_blog");
                             <div class="carousel-caption">';
                                  if($language == "ch"){                        
                                         echo '<h3>'.$row['title_ch'].'</h3>
-                                        <p>'.$row['desc_ch'].'</p>';
+                                        <p style="color: white;margin-top: 20px;">'.$row['desc_ch'].'</p>';
                                     }else{
                                         echo '<h3>'.$row['title_en'].'</h3>
-                                        <p>'.$row['desc_en'].'</p>';
+                                        <p style="color: white;margin-top: 20px;">'.$row['desc_en'].'</p>';
                                     }   
                         echo    '</div>   
                         </div>';
@@ -364,11 +367,126 @@ $slideBlog1 = $db->query("SELECT * FROM slide_blog");
                 </a>
             </div>
 
-            <section class="uk-section">
-                <div class="uk-container">
-                    
+            <section class="content-section" data-background="#008674" style="background: rgb(0, 134, 116);">
+                <div class="container">
+                    <div class="row">
+                    <div class="col-12">
+                        <div class="timeline-slider">
+                        <h2 class="title">History of Sandalwood</h2>
+                        <div class="timeline-years">
+                            <div class="swiper-wrapper">
+                        <div class="swiper-slide"><span>2011</span></div>
+                        <!-- end swiper-slide -->
+                        <div class="swiper-slide"><span>2012</span></div>
+                        <!-- end swiper-slide -->
+                        <div class="swiper-slide"><span>2013</span></div>
+                        <!-- end swiper-slide -->
+                        <div class="swiper-slide"><span>2014</span></div>
+                        <!-- end swiper-slide -->
+                        <div class="swiper-slide"><span>2015</span></div>
+                        <!-- end swiper-slide -->
+                        <div class="swiper-slide"><span>2016</span></div>
+                        <!-- end swiper-slide -->
+                        <div class="swiper-slide"><span>2017</span></div>
+                        <!-- end swiper-slide -->
+                        <div class="swiper-slide"><span>2018</span></div>
+                        <!-- end swiper-slide -->
+                        <div class="swiper-slide"><span>2019</span></div>
+                        <!-- end swiper-slide -->
+                        <div class="swiper-slide"><span>2020</span></div>
+                        <!-- end swiper-slide -->
+                            </div>
+                            <!-- end swiper-wrapper -->
+                    <div class="swiper-pagination"></div>
+                        </div>
+                        <!-- end timeline-years -->
+                        <div class="timeline-content">
+                            <div class="swiper-wrapper">
+
+                                <div class="swiper-slide">
+                                    <div class="content">
+                                        <h2>2011 World’s food and fabrics</h2>
+                                                <p>Agriculture provides most of the world’s food and fabrics. Cotton, wool, and leather are all agricultural products. </p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="content">
+                                        <h2>2012 World’s food and fabrics</h2>
+                                                <p>Agriculture provides most of the world’s food and fabrics. Cotton, wool, and leather are all agricultural products. </p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="content">
+                                        <h2>2013 World’s food and fabrics</h2>
+                                                <p>Agriculture provides most of the world’s food and fabrics. Cotton, wool, and leather are all agricultural products. </p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="content">
+                                        <h2>2014 World’s food and fabrics</h2>
+                                                <p>Agriculture provides most of the world’s food and fabrics. Cotton, wool, and leather are all agricultural products. </p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="content">
+                                        <h2>2015 World’s food and fabrics</h2>
+                                                <p>Agriculture provides most of the world’s food and fabrics. Cotton, wool, and leather are all agricultural products. </p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="content">
+                                        <h2>2016 World’s food and fabrics</h2>
+                                                <p>Agriculture provides most of the world’s food and fabrics. Cotton, wool, and leather are all agricultural products. </p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="content">
+                                        <h2>2017 World’s food and fabrics</h2>
+                                                <p>Agriculture provides most of the world’s food and fabrics. Cotton, wool, and leather are all agricultural products. </p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="content">
+                                        <h2>2018 World’s food and fabrics</h2>
+                                                <p>Agriculture provides most of the world’s food and fabrics. Cotton, wool, and leather are all agricultural products. </p>
+                                    </div>
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="content">
+                                            <h2>2019World’s food and fabrics</h2>
+                                                    <p>Agriculture provides most of the world’s food and fabrics. Cotton, wool, and leather are all agricultural products. </p>
+                                    </div>
+                                    <!-- end content -->
+                                </div>
+
+                                <div class="swiper-slide">
+                                    <div class="content">
+                                            <h2>2020 World’s food and fabrics</h2>
+                                                    <p>Agriculture provides most of the world’s food and fabrics. Cotton, wool, and leather are all agricultural products. </p>
+                                    </div>
+                                </div>
+                           
+                                </div>
+
+                        </div>
+
+                    </div>
+                    <!-- end timeline-slider -->
+                    </div>
+                    <!-- end col-12 --> 
+                    </div>
+                    <!-- end row --> 
                 </div>
             </section>
+
             <!--section class="uk-section">
                 <div class="uk-container">
                     <div class="tw-element tw-heading uk-text-center">
@@ -511,7 +629,7 @@ $slideBlog1 = $db->query("SELECT * FROM slide_blog");
                                             <a href="#"><img src="assets/demo/logo.png"></a>
                                         </h3>
                                     </div>
-                                    <p><?=$languageArray['footer_description'][$language] ?></p>
+                                    <p style="color: #999;margin-top: 20px;"><?=$languageArray['footer_description'][$language] ?></p>
                                     <!--<div class="tw-socials">
                                         <a href="#"><i class="ion-social-facebook"></i></a>
                                         <a href="#"><i class="ion-social-instagram"></i></a>
@@ -596,7 +714,10 @@ $slideBlog1 = $db->query("SELECT * FROM slide_blog");
                 </div>
             </footer>
         </div>
-        <!-- .main-container close -->        
+        <!-- .main-container close -->
+        <script src="assets/js/jquery.min.js"></script> 
+        <script src="assets/js/swiper.min.js"></script> 
+        <script src="assets/js/scripts.js"></script>     
         <script src="assets/js/jquery-3.2.0.min.js"></script>
         <script src="assets/js/jquery.easypiechart.min.js"></script>
         <script src="assets/js/uikit.min.js"></script>

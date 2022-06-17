@@ -43,7 +43,11 @@ else{
         <link href="assets/css/theme.css" rel="stylesheet" type="text/css" media="all" />
         <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" media="all" />
         <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700%7CLora:400,400i%7CShadows+Into+Light:400" rel="stylesheet" />
-        
+        <style>
+            li a{
+                font-size:15px;
+            }
+        </style>    
     </head>
     <body class="loading">
     <div class="tw-preloader">

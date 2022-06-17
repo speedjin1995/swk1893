@@ -63,7 +63,9 @@ $slideBlog1 = $db->query("SELECT * FROM slide_blog");
                 flex-direction: column;
                 justify-content: center;
             }
-
+            li a{
+                font-size:15px;
+            }
         </style>
     </head>
     <body class="loading">
