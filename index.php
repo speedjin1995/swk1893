@@ -26,6 +26,8 @@ else{
 }
 
 $products = $db->query("SELECT * FROM blog");
+$slideBlog = $db->query("SELECT * FROM slide_blog");
+$slideBlog1 = $db->query("SELECT * FROM slide_blog");
 ?>
 <html lang="en">
     <head>
@@ -45,6 +47,23 @@ $products = $db->query("SELECT * FROM blog");
         <link href="assets/css/theme.css" rel="stylesheet" type="text/css" media="all" />
         <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" media="all" />
         <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700%7CLora:400,400i%7CShadows+Into+Light:400" rel="stylesheet" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <style>
+            /* Make the image fully responsive */
+            .carousel-inner img {
+                height: 600px;
+                width: 100%;
+
+            }
+            .carousel-caption{
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+        </style>
+
     </head>
     <body class="loading">
         <div class="tw-preloader">
@@ -166,12 +185,82 @@ $products = $db->query("SELECT * FROM blog");
                     </div>
                 </div>
             </section>
+
+            <section class="uk-section uk-section-normal">
+                <div class="tw-element tw-portfolio promo">
+                    <div class="tw-element tw-heading uk-text-center">
+                        <h3><?=$languageArray['nav_about_us'][$language] ?></h3>
+                    </div>
+
+                    <div class="portfolio-item category-print uk-padding-large">
+                        <div class="uk-container">
+                            <div class="uk-grid-collapse uk-child-width-1-1 uk-child-width-1-2@m  uk-child-width-1-1@s" data-uk-grid>
+                                <div class="uk-flex uk-flex-middle">
+                                    <div class="tw-element promo-text-container full tw-box big-typography" data-uk-scrollspy="target: > *; cls:uk-animation-slide-bottom-medium; delay: 400;">
+                                        <h6 class="tw-sub-title"></h6>
+                                        <h1 class="tw-big-title">檀香树的医药解释</h1>
+                                        <p>檀香树酸性非常的高,所以他的茶叶会使人减瘦。檀香树的茶叶本品味辛性温，气味芳香功能宣发气滞，畅膈宽胸，温胃散寒。凡胸腹疼痛，噎膈呕吐等症，均可应用。
+                                        </p>
+                                        <!--a href="#" class="uk-button uk-button-silver uk-button-default uk-button-small uk-button-radius tw-hover"><span class="tw-hover-inner"><span>Read More</span><i class="ion-ios-arrow-thin-right"></i></span></a-->
+                                    </div>
+                                </div>
+                                <div data-uk-scrollspy="target: > *; cls:uk-animation-slide-bottom-medium; delay: 400;">
+                                    <div class="promo-carousel-container uk-light uk-box-shadow-small">
+                                        <div class="onhover owl-theme" data-uk-scrollspy="target: .shop-item; cls:uk-animation-slide-bottom-medium; delay: 300;">
+                                            <div class="gallery-item">
+                                                <div class="shop-content">
+                                                    <img alt="Backpack In Black" src="assets/demo/sandalwood2.jpg">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+            <section class="uk-section">
+                <div class="uk-container">
+                    <div class="tw-element tw-heading uk-text-center">
+                        <h3><?=$languageArray['testimony_why_choose_us'][$language] ?></h3>
+                        <p class="subtitle"><?=$languageArray['testimony_why_choose_us2'][$language] ?></p>
+                    </div>
+                    
+                    <div class="tw-element uk-child-width-1-1 uk-child-width-1-3@m uk-child-width-1-2@s" data-uk-grid data-uk-scrollspy="target: > div; cls:uk-animation-slide-bottom-medium; delay: 300;">
+                        <div>
+                            <div class="tw-element tw-box small-typography layout-2">
+                                <i class="ion-leaf"></i>
+                                <h4><?=$languageArray['testimony_antioxidant'][$language] ?></h4>
+                                <p class="description"><?=$languageArray['testimony_antioxidant2'][$language] ?></p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="tw-element tw-box small-typography layout-2">
+                                <i class="ion-leaf"></i>
+                                <h4><?=$languageArray['testimony_tannin'][$language] ?></h4>
+                                <p class="description"><?=$languageArray['testimony_tannin2'][$language] ?></p>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <div class="tw-element tw-box small-typography layout-2">
+                                <i class="ion-leaf"></i>
+                                <h4><?=$languageArray['testimony_peace_of_mind'][$language] ?></h4>
+                                <p class="description"><?=$languageArray['testimony_peace_of_mind2'][$language] ?></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <section class="uk-section uk-padding-remove-bottom">
                 <div class="tw-element tw-portfolio tw-isotope-container" data-isotope-item=".portfolio-item">
-                    <div class="tw-portfolio-filter uk-text-center uk-text-uppercase">
-                        <ul class="uk-list">
-                            <li><span data-filter="*"><?=$languageArray['page_home_gallery'][$language] ?></span></li>
-                        </ul>
+                    <div class="tw-element tw-heading uk-text-center">
+                        <h3><?=$languageArray['page_home_gallery'][$language] ?></h3>
                     </div>
                     <div class="isotope-container data-uk-grid-medium uk-grid-collapse with-bg tw-calc-width uk-child-width-1-1 uk-child-width-1-3@m" data-uk-grid data-uk-scrollspy="target: > .portfolio-item; cls:uk-animation-slide-bottom-medium; delay: 300;">
                         <div class="portfolio-item category-print">
@@ -229,43 +318,52 @@ $products = $db->query("SELECT * FROM blog");
                     </div>
                 </div>
             </section>
+
             <section class="uk-section">
                 <div class="uk-container">
 
                 </div>
             </section>
-            <section class="uk-section uk-padding-remove-bottom">
-                <div class="tw-element tw-portfolio tw-isotope-container" data-isotope-item=".portfolio-item">
-                    <div class="tw-portfolio-filter uk-text-center uk-text-uppercase">
-                        <ul class="uk-list">
-                            <li><span data-filter="*"><?=$languageArray['page_home_testimony'][$language] ?></span></li>
-                        </ul>
-                    </div>
-                    <div class="isotope-container data-uk-grid-medium uk-grid-collapse with-bg tw-calc-width uk-child-width-1-1 uk-child-width-1-3@m" data-uk-grid data-uk-scrollspy="target: > .portfolio-item; cls:uk-animation-slide-bottom-medium; delay: 300;">
-                        <?php while($row=mysqli_fetch_assoc($products)){
-                            echo '<div class="portfolio-item category-branding category-web-design">
-                            <div class="portfolio-media tw-image-hover">
-                                <img src="admin/php/'.$row['img'].'"/>
-                                <a href="#" class="portfolio-content uk-light">';
-    
-                            if($language == "ch"){
-                                echo '<h3 onclick="edit('.$row['id'].')">'.$row['title_ch'].'</h3>';
-                            }
-                            else{
-                                echo '<h3 onclick="edit('.$row['id'].')">'.$row['title_en'].'</h3>';
-                            }   
-                                
-                            echo '</a>
-                            </div>
+
+            <div id="demo" class="carousel slide" data-ride="carousel">
+                <ul class="carousel-indicators">
+                <?php while($row=mysqli_fetch_assoc($slideBlog)){
+
+                    $id = $row['id'] - 1;
+                    echo '<li data-target="#demo" data-slide-to="'.$id.'"'; 
+                    echo 'class="';
+                    echo $id == 0 ? 'active' : '';
+                    echo '"></li>';
+                } ?>
+                </ul>
+                <div class="carousel-inner">
+                <?php while($row=mysqli_fetch_assoc($slideBlog1)){
+
+                         $id = $row['id'] - 1;
+                        echo '<div class="carousel-item '; 
+                        echo $id == 0 ? 'active' : '';
+                        echo '">';
+                        echo '<img src="assets/demo/page-bg.jpg" alt="'.$row['title_ch'].'" width="800" height="200">
+                            <div class="carousel-caption">';
+                                 if($language == "ch"){                        
+                                        echo '<h3>'.$row['title_ch'].'</h3>
+                                        <p>'.$row['desc_ch'].'</p>';
+                                    }else{
+                                        echo '<h3>'.$row['title_en'].'</h3>
+                                        <p>'.$row['desc_en'].'</p>';
+                                    }   
+                        echo    '</div>   
                         </div>';
-                            
-                        }?>
-
-                        <div class="grid-sizer"></div>
-
-                    </div>
+                    } ?>
                 </div>
-            </section>
+                <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                    <span class="carousel-control-prev-icon"></span>
+                </a>
+                <a class="carousel-control-next" href="#demo" data-slide="next">
+                    <span class="carousel-control-next-icon"></span>
+                </a>
+            </div>
+
             <section class="uk-section">
                 <div class="uk-container">
                     
@@ -506,5 +604,15 @@ $products = $db->query("SELECT * FROM blog");
         <script src="assets/js/isotope.pkgd.min.js"></script>
         <script src="assets/js/owl.carousel.min.js"></script>
         <script src="assets/js/theme.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>    
     </body>
 </html>
+
+<script type="text/javascript">
+            $('.carousel').carousel({
+                interval: 5000
+            })
+
+</script>

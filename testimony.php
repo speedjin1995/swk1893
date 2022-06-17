@@ -285,41 +285,24 @@ $slideBlog1 = $db->query("SELECT * FROM slide_blog");
                 </a>
             </div> 
 
-<!-- Left and right controls -->
-<a class="carousel-control-prev" href="#demo" data-slide="prev">
-  <span class="carousel-control-prev-icon"></span>
-</a>
-<a class="carousel-control-next" href="#demo" data-slide="next">
-  <span class="carousel-control-next-icon"></span>
-</a>
-
-</div>
-
 
             <section class="uk-section uk-section-shop">
                 <div class="uk-container">
+                    <div class="tw-element tw-heading uk-text-center">
+                        <h3><?=$languageArray['certificate_title'][$language] ?></h3>
+                    </div>
                     <div data-uk-grid>
                         <div class="content-area uk-width-expand">
                             <div class="tw-element tw-shop">
-                                <div class="shop-container uk-child-width-1-1@xxs uk-child-width-1-2@xs uk-child-width-1-3@s uk-child-width-1-2@m uk-child-width-1-3@l" data-uk-grid data-uk-scrollspy="target: > .shop-item; cls:uk-animation-slide-bottom-medium; delay: 300;">
+                                <div class="shop-container uk-child-width-1-1@xxxxs uk-child-width-1-2@xxxs uk-child-width-1-3@xxs uk-child-width-1-4@xs uk-child-width-1-5@s " data-uk-grid>
                                     <?php while($row=mysqli_fetch_assoc($products)){
                                         echo '<div>
                                             <div class="shop-item">
                                                 <div class="shop-content">
                                                     <div class="shop-image-container uk-inline tw-onhover visible">
-                                                        <img alt="Backpack In Black" src="admin/php/'.$row['img'].'">
-                                                        <div class="uk-position-bottom">
-                                                            <a class="add-to-cart" onclick="edit('.$row['id'].')">More Info &nbsp;<i class="icon ion-arrow-right-a"></i></a>
-                                                        </div>
+                                                        <img style="width:120px;height:120px;" alt="Backpack In Black" src="admin/php/'.$row['img'].'">
                                                     </div>';
                                                     
-                                        if($language == "ch"){
-                                            echo '<h4 onclick="edit('.$row['id'].')">'.$row['title_ch'].'</h4>';
-                                        }
-                                        else{
-                                            echo '<h4 onclick="edit('.$row['id'].')">'.$row['title_en'].'</h4>';
-                                        }
-
                                         echo '</div>
                                             </div>
                                         </div>';
@@ -343,14 +326,6 @@ $slideBlog1 = $db->query("SELECT * FROM slide_blog");
                                         </h3>
                                     </div>
                                     <p><?=$languageArray['footer_description'][$language] ?></p>
-                                    <!--<div class="tw-socials">
-                                        <a href="#"><i class="ion-social-facebook"></i></a>
-                                        <a href="#"><i class="ion-social-instagram"></i></a>
-                                        <a href="#"><i class="ion-social-pinterest"></i></a>
-                                        <a href="#"><i class="ion-social-twitter"></i></a>
-                                        <a href="#"><i class="ion-social-youtube"></i></a>
-                                        <a href="#"><i class="ion-social-rss"></i></a>
-                                    </div>-->
                                 </div>
                             </div>
 
@@ -439,7 +414,8 @@ $slideBlog1 = $db->query("SELECT * FROM slide_blog");
         <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
         <!-- <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script> -->
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>    </body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>    
+</body>
 </html>
 
 <script type="text/javascript">

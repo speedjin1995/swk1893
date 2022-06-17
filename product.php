@@ -46,7 +46,14 @@ $products = $db->query("SELECT * FROM product");
         <link href="assets/css/responsive.css" rel="stylesheet" type="text/css" media="all" />
         <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700%7CLora:400,400i%7CShadows+Into+Light:400" rel="stylesheet" />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
+<style>
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Droid Sans';
+    letter-spacing: 0;
+    margin: 0 0 10px;
+    color: #151515;
+}
+</style>
     </head>
     <body class="loading">
     <div class="tw-preloader">
@@ -184,21 +191,21 @@ $products = $db->query("SELECT * FROM product");
                                             <div class="shop-item">
                                                 <div class="shop-content">
                                                     <div class="shop-image-container uk-inline tw-onhover visible">
-                                                        <img alt="Backpack In Black" src="admin/php/'.$row['product_photo'].'">
+                                                        <img style="width:300px;height:300px;" alt="Backpack In Black" src="admin/php/'.$row['product_photo'].'">
                                                     </div>';
                                                     
                                         if($language == "ch"){
-                                            echo '<h4>'.$row['product_name_ch'].'
-                                                <a href="https://api.whatsapp.com/send?phone=60126143748&text='.$row['product_name_ch'].'"><i class="fa fa-whatsapp" style="font-size:28px;color:green;padding-left:1rem;"></i></a>
+                                            echo '<h4 style="font-size:1.2rem;">'.$row['product_name_ch'].'
+                                                <a href="https://api.whatsapp.com/send?phone=60126143748&text='.$row['product_name_ch'].'"><i class="fa fa-whatsapp" style="font-size:28px;color:green;padding-left:0.5rem;"></i></a>
                                                 <a name="view'.$row['id'].'" data-id="'.$row['id'].'" data-toggle="modal" data-target="#productModal"><i class="fa fa-search" style="font-size:28px;padding-left:0.1rem;color:blue;"></i></a>
                                                 <a name="email'.$row['id'].'" data-id="'.$row['id'].'" data-toggle="modal" data-target="#sendEmail"><i class="fa fa-envelope-o" style="font-size:28px;color:black;padding-left:0.1rem;"></i></a>
                                             </h4>';
                                         }
                                         else{
-                                            echo  '<h4>'.$row['product_name'].'
-                                                <a href="https://api.whatsapp.com/send?phone=60126143748&text='.$row['product_name_ch'].'"><i class="fa fa-whatsapp" style="font-size:28px;color:green;padding-left:1rem;"></i></a>
-                                                <a onclick="view'.$row['id'].'" data-id="'.$row['id'].'" data-toggle="modal" data-target="#productModal"><i class="fa fa-search" style="font-size:28px;padding-left:0.1rem;"></i></a>
-                                                <a onclick="email'.$row['id'].'" data-id="'.$row['id'].'" data-toggle="modal" data-target="#sendEmail"><i class="fa fa-envelope-o" style="font-size:28px;color:black;padding-left:0.1rem;"></i></a>                                     
+                                            echo  '<h4 style="font-size:1.2rem;">'.$row['product_name'].'
+                                                <a href="https://api.whatsapp.com/send?phone=60126143748&text='.$row['product_name'].'"><i class="fa fa-whatsapp" style="font-size:28px;color:green;padding-left:0.5rem;"></i></a>
+                                                <a name="view'.$row['id'].'" data-id="'.$row['id'].'" data-toggle="modal" data-target="#productModal"><i class="fa fa-search" style="font-size:28px;padding-left:0.1rem;color:blue;"></i></a>
+                                                <a name="email'.$row['id'].'" data-id="'.$row['id'].'" data-toggle="modal" data-target="#sendEmail"><i class="fa fa-envelope-o" style="font-size:28px;color:black;padding-left:0.1rem;"></i></a>                                     
                                             </h4>';
                                         }
 
@@ -206,8 +213,6 @@ $products = $db->query("SELECT * FROM product");
                                             </div>
                                         </div>';
                                     } ?>
-
-
                                 </div>
                             </div>
 
@@ -317,7 +322,7 @@ $products = $db->query("SELECT * FROM product");
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header" style="font-weight: bold;">
-                        Product Name
+                        <label id="productName"></label>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">×</span>
                         </button>
@@ -471,17 +476,17 @@ $products = $db->query("SELECT * FROM product");
                 });
 
                 $("[name^=view]").on("click", function(){
-                    debugger
                         var id = $(this).data('id')
                         $.post( "php/getProduct.php", { messageId: id}, function( data ) {
-                        debugger;
                         var decode = JSON.parse(data)
                             
                         if(decode.status === 'success'){
                             <?php if($language == "ch"){
+                                echo "$('#productModal').find('#productName').html(decode.message.product_name_ch);";
                                 echo "$('#productModal').find('.productInfo').html(decode.message.product_desc_ch);";
                             }
                             else{
+                                echo "$('#productModal').find('#productName').html(decode.message.product_name);";
                                 echo "$('#productModal').find('.productInfo').html(decode.message.product_desc);";
                             } ?>
                             
@@ -491,26 +496,6 @@ $products = $db->query("SELECT * FROM product");
 
                 });
 
-                $("[name^=view]").on("click", function(){
-                    debugger
-                        var id = $(this).data('id')
-                        $.post( "php/getProduct.php", { messageId: id}, function( data ) {
-                        debugger;
-                        var decode = JSON.parse(data)
-                            
-                        if(decode.status === 'success'){
-                            <?php if($language == "ch"){
-                                echo "$('#productModal').find('.productInfo').html(decode.message.product_desc_ch);";
-                            }
-                            else{
-                                echo "$('#productModal').find('.productInfo').html(decode.message.product_desc);";
-                            } ?>
-                            
-                            $('#productModal').modal('show');
-                        }
-                    })
-
-                });
 
             });
 
