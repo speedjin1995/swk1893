@@ -9,7 +9,7 @@ if(!isset($_SESSION['userID'])){
   echo 'window.location.href = "login.html";</script>';
 }
 else{
-    $slideblog = $db->query("SELECT * FROM slide_blog");
+    $blog = $db->query("SELECT * FROM knowledge");
     $userRole = $_SESSION['userRole'];
 }
 ?>
@@ -19,7 +19,7 @@ else{
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="x-ua-compatible" content="ie=edge">
 
-  <title>SWK | Testimony Slide</title>
+  <title>SWK | Knowledge</title>
 
   <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
@@ -126,13 +126,13 @@ to get the desired effect
             </a>
           </li>
           <li class="nav-item">
-            <a href="slideblog.php" class="nav-link active">
+            <a href="slideblog.php" class="nav-link">
               <i class="nav-icon fas fa-th "></i>
               <p>Testimony Slide</p>
             </a>
           </li>
           <li class="nav-item">
-            <a href="knowledge.php" class="nav-link">
+            <a href="knowledge.php" class="nav-link active">
               <i class="nav-icon fas fa-th "></i>
               <p>Knowledge</p>
             </a>
@@ -200,12 +200,12 @@ to get the desired effect
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Testimony Slide</h1>
+            <h1 class="m-0 text-dark">Knowledge</h1>
           </div><!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item">Home</li>
-              <li class="breadcrumb-item active">Testimony Slide</li>
+              <li class="breadcrumb-item active">Knowledge</li>
             </ol>
           </div><!-- /.col -->
         </div><!-- /.row -->
@@ -221,7 +221,7 @@ to get the desired effect
             <div class="card">
               <div class="card-header">
                 <h3 class="card-title"></h3>
-                <button type="button" class="btn btn-block btn-primary btn-sm" id="addBlog" style="width: 10%;float: right;">Add</button>
+                <button type="button" class="btn btn-block btn-primary btn-sm" id="addKnowledge" style="width: 10%;float: right;">Add</button>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -229,21 +229,17 @@ to get the desired effect
                   <thead>
                     <tr>
                         <!--th>No.</th-->
-                        <th>Testimony Slide Name En</th>
-                        <th>Testimony Slide Name Ch</th>
-                        <th>Testimony Slide Description En</th>
-                        <th>Testimony Slide Description Ch</th>
-                        <th style="width:200px;">Action</th>
+                        <th>Knowledge Name</th>
+                        <th>Knowledge Name ch</th>
+                        <th>Action</th>
                     </tr>
                   </thead>
                   <tbody>
-                      <?php while($row=mysqli_fetch_assoc($slideblog)){ ?>
+                      <?php while($row=mysqli_fetch_assoc($blog)){ ?>
                         <tr class="message_row">
                             <!--td></td-->
                             <td><?=$row['title_en'] ?></td>
                             <td><?=$row['title_ch'] ?></td>
-                            <td><?=$row['desc_en'] ?></td>
-                            <td><?=$row['desc_ch'] ?></td>                            
                             <td>
                                 <div class="row">
                                     <div class="col-3">
@@ -276,27 +272,34 @@ to get the desired effect
   <div class="modal fade" id="blogModal" style="overflow: auto;">
     <div class="modal-dialog modal-xl">
       <div class="modal-content">
-        <form role="form" id="blogForm" method="post" action="php/slideBlog.php" enctype="multipart/form-data">
+        <form role="form" id="blogForm" method="post" action="php/knowledge.php" enctype="multipart/form-data">
             <div class="modal-header">
-              <h4 class="modal-title">Testimony Slide Details</h4>
+              <h4 class="modal-title">Knowledge Details</h4>
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <span aria-hidden="true">×</span>
               </button>
             </div>
             <div class="modal-body">
               <div class="form-group">
-                <input type="hidden" class="form-control" id="blogId" name="blogId">
+                <input type="hidden" class="form-control" id="knowledgeId" name="blogId">
               </div>
               <div class="form-group">
-                <label for="keyCode">English Testimony *</label>
+                <label for="fileToUpload">Image</label>
+                <div id="image-preview">
+                  <label for="image-upload" id="image-label">Choose Image</label>
+                  <input type="file" name="image-upload" id="image-upload" />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="keyCode">English Knowledge *</label>
                 <input class="form-control" name="engTitle" id="engTitle" placeholder="Message Key Code" required>
               </div>
               <div class="form-group">
-                <label for="keyCode">中文见证 *</label>
+                <label for="keyCode">中文知识 *</label>
                 <input class="form-control" name="chTitle" id="chTitle" placeholder="Message Key Code" required>
               </div>
               <div class="form-group">
-                <label for="engBlog">English Description</label>
+                <label for="engBlog">English Content</label>
                 <textarea class="textarea" id="engBlog" name="engBlog" placeholder="Place some text here"
                               style="width: 100%; height: 200px; font-size: 14px; line-height: 18px; border: 1px solid #dddddd; padding: 10px;"></textarea>
               </div>
@@ -356,11 +359,19 @@ $(function () {
       "ordering": true,
       "info": true,
     });
-
+    
+    $.uploadPreview({
+        input_field: "#image-upload",   // Default: .image-upload
+        preview_box: "#image-preview",  // Default: .image-preview
+        label_field: "#image-label",    // Default: .image-label
+        label_default: "Choose Image",   // Default: Choose File
+        label_selected: "Change Image",  // Default: Change File
+        no_label: false                 // Default: false
+    });
     
     $('.textarea').summernote();
     
-    $('#addBlog').on('click', function(){
+    $('#addKnowledge').on('click', function(){
         $('#blogModal').find('#blogId').val('');
         $('#blogModal').find('#engTitle').val('');
         $('#blogModal').find('#chTitle').val('');
@@ -385,15 +396,15 @@ $(function () {
 });
 
 function edit(id){
-    $.post( "php/getslideBlog.php", { messageId: id}, function( data ) {
+    $.post( "php/getKnowledge.php", { messageId: id}, function( data ) {
         var decode = JSON.parse(data)
         
         if(decode.status === 'success'){
             $('#blogModal').find('#blogId').val(decode.message.id);
             $('#blogModal').find('#engTitle').val(decode.message.title_en);
             $('#blogModal').find('#chTitle').val(decode.message.title_ch);
-            $('#blogModal').find('#engBlog').summernote("code", decode.message.desc_en);
-            $('#blogModal').find('#chineseBlog').summernote("code", decode.message.desc_ch);
+            $('#blogModal').find('#engBlog').summernote("code", decode.message.en);
+            $('#blogModal').find('#chineseBlog').summernote("code", decode.message.ch);
             $('#blogModal').modal('show');
             
             $('#blogForm').validate({
@@ -414,7 +425,7 @@ function edit(id){
 }
 
 function deletes(id){
-    $.post( "php/deleteSlideBlog.php", { messageId: id}, function( data ) {
+    $.post( "php/deleteKnowledge.php", { messageId: id}, function( data ) {
         var decode = JSON.parse(data)
         
         if(decode.status === 'success'){

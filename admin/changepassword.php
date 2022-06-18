@@ -129,7 +129,13 @@ to get the desired effect
               <i class="nav-icon fas fa-th "></i>
               <p>Testimony Slide</p>
             </a>
-          </li>            
+          </li>
+          <li class="nav-item">
+            <a href="knowledge.php" class="nav-link">
+              <i class="nav-icon fas fa-th "></i>
+              <p>Knowledge</p>
+            </a>
+          </li>                      
           <li class="nav-item">
             <a href="message.php" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
